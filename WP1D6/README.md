@@ -6,7 +6,9 @@ This folder is the visual evidence for WP1D.6. It does not approve the RDL or th
 Barbell Row. Both remain `PREVIEW / AWAITING HUMAN REVIEW`.
 
 Code branch: `wp1d6/visual-artifact-audit`
-Code commit: `4206ca8b36118142cfb191e101702639522583c8`
+Code commit: `3049549e15d6e3130948e6b106ffb95fd7e533ca` on
+`wp1d6/visual-artifact-audit` (docs sync; the fixes and tests are in its
+ancestors `4206ca8` and `39943cc`)
 Report: `docs/production/WP1D6_VISUAL_ARTIFACT_AUDIT.md`
 
 ## What was wrong
@@ -71,8 +73,17 @@ Each chunk set was reassembled in this order after encoding, then checked:
 4. byte length equals the JPEG's length;
 5. the decoded image opens and passes `Image.verify()`.
 
-All 22 primary images and all 24 isolation-matrix images passed. No image needed
-more than 3 chunks (limit 18) or more than 24,000 characters per chunk.
+All **49** chunk sets passed: 3 before-fix stills, 24 isolation-matrix renders,
+10 named diagnostics, 6 close-ups and 6 final stills. No image needed more than
+3 chunks (limit 18) or more than 24,000 characters per chunk.
+
+### File count is not view count
+
+This folder holds **98 image files** (49 PNG + 49 JPEG) and **96 unique hashes**.
+Each render ships as a lossless PNG, a JPEG for direct viewing, and one chunk set
+derived from that JPEG, so 49 distinct renders produce 98 files. That is not 98
+independent views. The two duplicate pairs come from the D1 mislabel described
+above, so 47 of the 49 renders are visually distinct.
 
 ## Images and hashes
 
@@ -128,7 +139,28 @@ Full PNG hashes, JPEG hashes and per-image metadata are in
   edge, changes no muscle role, and is not fixed here because the task forbids
   changing the shared anatomy GLB without a proven requirement.
 - The RDL plate stack is partly out of frame at the bottom still, exactly as in
-  WP1D.5. That is framing, not a regression.
+  WP1D.5. That is framing, not a regression. Fixing it would mean changing the
+  camera, which this milestone must not do, so it is left for a human decision.
 - `diagnostics/isolation-matrix/` exists because the task requires proof that
   each input group was tested alone. It is extra evidence, not a replacement for
   the named folders above.
+
+## Status
+
+**PREVIEW / AWAITING HUMAN REVIEW.** No exercise is approved here, and nothing in
+this folder should be read as an approval.
+
+Four images need a person to look at them:
+
+| Image | Folder |
+|---|---|
+| RDL side | `final/rdl-side/` |
+| RDL bottom | `final/rdl-bottom/` |
+| Row side | `final/row-side/` |
+| Row front-45 | `final/row-front45/` |
+
+Two open questions belong with that review: whether the cosmetic muscle/skin
+shading seam is acceptable, and whether the plate crop on the RDL bottom still is
+acceptable. Neither is settled by the numbers above.
+
+Tracking issue: [#1](https://github.com/ThanhTamSW/fitness3D/issues/1) — open.
