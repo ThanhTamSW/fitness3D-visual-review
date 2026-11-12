@@ -7,9 +7,9 @@
 - JPEG size: 924x996 px (max width 1600)
 - JPEG quality: 45
 - Chunks: 3 (`part-000.txt` ... `part-002.txt`)
-- Total base64 characters: 60276
-- SHA-256 (JPEG, before chunking): `b1b4080081a987e40840466507642555fc51bc4a6ca2436c51ae19451dff284e`
-- SHA-256 (JPEG, rebuilt from chunks): `b1b4080081a987e40840466507642555fc51bc4a6ca2436c51ae19451dff284e`
+- Total base64 characters: 60244
+- SHA-256 (JPEG, before chunking): `47fff0cc8a6665c2f88f88294841ad31d3e513a2eb14ef2d3cc1f69dc9f43c21`
+- SHA-256 (JPEG, rebuilt from chunks): `47fff0cc8a6665c2f88f88294841ad31d3e513a2eb14ef2d3cc1f69dc9f43c21`
 - Reassembly check: concatenated chunks decode to a JPEG with magic bytes `FF D8 FF` and the same SHA-256 as the original.
 
 ## Anatomy convention
