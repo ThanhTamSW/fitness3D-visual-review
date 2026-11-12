@@ -1,0 +1,29 @@
+[
+ {
+  "stem": "rdl_side_f180_before",
+  "png_sha256": "58d47f55c942664f438b6cf86ecdb7eca8fa168c98f0d0e1eda73ff7250b4c40",
+  "jpg_sha256": "db315388140767054134034fd8d5e34a9d12a6f41b87e04df88df24e41221ccd",
+  "chunks": 4,
+  "white_px": 5088,
+  "magenta_px": 4904,
+  "blue_px": 5247
+ },
+ {
+  "stem": "row_side_f150_before",
+  "png_sha256": "efea8130c9130c0448adf15324b4212b8d1a64ce54d702289b8a1cdeae59d70c",
+  "jpg_sha256": "c476f69fba02200f243e14e3e342933156950c29619b9690551ba0635109c507",
+  "chunks": 5,
+  "white_px": 2344,
+  "magenta_px": 4698,
+  "blue_px": 5656
+ },
+ {
+  "stem": "row_front45_f150_before",
+  "png_sha256": "45dcc699535aa17d826861fa84d4c824a260b6bcdeda4e9fb9e12dafb3af2924",
+  "jpg_sha256": "c8eebc85ab08225f3500b6911404fae3d06b364c458aa8b51fa43a5ed22caa7c",
+  "chunks": 4,
+  "white_px": 2976,
+  "magenta_px": 0,
+  "blue_px": 0
+ }
+]

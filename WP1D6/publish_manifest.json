@@ -1,0 +1,382 @@
+{
+ "milestone": "WP1D.6",
+ "entries": [
+  {
+   "group": "diagnostics/rdl-body-only",
+   "stem": "rdl_body_only",
+   "png": "diagnostics/rdl-body-only/rdl_body_only.png",
+   "jpg": "diagnostics/rdl-body-only/rdl_body_only.jpg",
+   "png_sha256": "b9a4e664b05f748a1024c6e2942d08e3a4f2f6f96084674ee7f3e49e51c38f44",
+   "jpg_sha256": "dc0f18c7d8ebade7bb1b79e3f169c0e402e7c718901411345793a9deeba5a1dd",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/rdl-body-only/rdl_body_only-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/rdl-body-muscles",
+   "stem": "rdl_body_plus_muscle",
+   "png": "diagnostics/rdl-body-muscles/rdl_body_plus_muscle.png",
+   "jpg": "diagnostics/rdl-body-muscles/rdl_body_plus_muscle.jpg",
+   "png_sha256": "1e3adafd1abd459be386ea1309b61c65aa22b83fce23d1c54b19aa5f0a1fe16d",
+   "jpg_sha256": "4318322e724906fff67df7eed91d5ff203780e2439a31d50fa68f8976ebf18bc",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/rdl-body-muscles/rdl_body_plus_muscle-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/rdl-muscle-only",
+   "stem": "rdl_muscle_only",
+   "png": "diagnostics/rdl-muscle-only/rdl_muscle_only.png",
+   "jpg": "diagnostics/rdl-muscle-only/rdl_muscle_only.jpg",
+   "png_sha256": "7f4c3cb5feed960ac3aad5e755f7af679cefa57ac74dfcc3bb1e8161d5bcde0a",
+   "jpg_sha256": "d0c2644ed5bb15100c821b2bac51a97f579cd6f27c532a00b2cee99d30938ddf",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/rdl-muscle-only/rdl_muscle_only-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/rdl-plate-only",
+   "stem": "rdl_plate_only",
+   "png": "diagnostics/rdl-plate-only/rdl_plate_only.png",
+   "jpg": "diagnostics/rdl-plate-only/rdl_plate_only.jpg",
+   "png_sha256": "113227b4d0b446d472e5392afc209c08140a4894c00cad3ed1e302e76405b6b6",
+   "jpg_sha256": "83240170abc9965693dc10c087192b4e9e0c3bd1752144d12afac79549732c5e",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/rdl-plate-only/rdl_plate_only-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/rdl-equipment-full",
+   "stem": "rdl_equipment_full",
+   "png": "diagnostics/rdl-equipment-full/rdl_equipment_full.png",
+   "jpg": "diagnostics/rdl-equipment-full/rdl_equipment_full.jpg",
+   "png_sha256": "02d57152553bc0b9b3e944e30b3f9a4af7efc627ec786de8970a68e8bd54af40",
+   "jpg_sha256": "76c68b53aed8ce5d9ba92b2ce68fad30c4b72fa24ab0915e08133dd5c904695f",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/rdl-equipment-full/rdl_equipment_full-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/plate-face-closeups",
+   "stem": "rdl_closeup_plate_face",
+   "png": "diagnostics/plate-face-closeups/rdl_closeup_plate_face.png",
+   "jpg": "diagnostics/plate-face-closeups/rdl_closeup_plate_face.jpg",
+   "png_sha256": "cee69b070da500c062b1e60f6f8594eb9cb893046cf62addb5e497c03766f5a3",
+   "jpg_sha256": "b07cb8953bed12dede052160663b98475ed5a236c4c69f9fb1f9808a0a229412",
+   "jpeg_quality": 82,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/plate-face-closeups/rdl_closeup_plate_face-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/overlay-closeups",
+   "stem": "rdl_closeup_overlay",
+   "png": "diagnostics/overlay-closeups/rdl_closeup_overlay.png",
+   "jpg": "diagnostics/overlay-closeups/rdl_closeup_overlay.jpg",
+   "png_sha256": "553a2cd6037565cfce9ff6267510cc9b2a961ae7e05b09e2128b3c9737be7df2",
+   "jpg_sha256": "9da0d6dac4a50d9bf1feb48352c72f78fe48bf0152d87cc601d91902b22841f5",
+   "jpeg_quality": 82,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 3,
+   "chunk_dir": "diagnostics/overlay-closeups/rdl_closeup_overlay-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/plate-face-closeups",
+   "stem": "rdl_closeup_plate_64spp",
+   "png": "diagnostics/plate-face-closeups/rdl_closeup_plate_64spp.png",
+   "jpg": "diagnostics/plate-face-closeups/rdl_closeup_plate_64spp.jpg",
+   "png_sha256": "5745fb0ae14c2d73c9d0f1e728bc038563b2bf238c45120434664a1189396744",
+   "jpg_sha256": "88f4dfc23af412175be2869e924393ef0086b5c97d80584e67193ff47754c0d9",
+   "jpeg_quality": 82,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/plate-face-closeups/rdl_closeup_plate_64spp-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "final/rdl-side",
+   "stem": "rdl_side_final",
+   "png": "final/rdl-side/rdl_side_final.png",
+   "jpg": "final/rdl-side/rdl_side_final.jpg",
+   "png_sha256": "64ea0eb5e3bc50a0c1ea80c47bf321e085e3ce8aeb6ca42971de9f713bed6d43",
+   "jpg_sha256": "6385603c74a2b5dc9c1dd1d7cc2372232305f3a6b9991e7aa782dd788f82c32e",
+   "jpeg_quality": 80,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "final/rdl-side/rdl_side_final-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "final/rdl-bottom",
+   "stem": "rdl_bottom_final",
+   "png": "final/rdl-bottom/rdl_bottom_final.png",
+   "jpg": "final/rdl-bottom/rdl_bottom_final.jpg",
+   "png_sha256": "e7c032c7462e3bedada0a008efecaa09813af5c44209b6fd6c5018ba22bade23",
+   "jpg_sha256": "2da7cd010b308a6e2eece5d880b12d4a59c7cceb3d11d2e8ae54da9c82b08d35",
+   "jpeg_quality": 80,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "final/rdl-bottom/rdl_bottom_final-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "final/rdl-front45",
+   "stem": "rdl_front45_final",
+   "png": "final/rdl-front45/rdl_front45_final.png",
+   "jpg": "final/rdl-front45/rdl_front45_final.jpg",
+   "png_sha256": "f581f4cc3b7042e7ab5753fb7d4d400c6f11567fa55c528c1fb12d24d4318386",
+   "jpg_sha256": "6c98b6ab18b62375a2d56769722013d26294ee59ac432c027809e2c7f80c7e3d",
+   "jpeg_quality": 80,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "final/rdl-front45/rdl_front45_final-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/row-body-only",
+   "stem": "row_body_only",
+   "png": "diagnostics/row-body-only/row_body_only.png",
+   "jpg": "diagnostics/row-body-only/row_body_only.jpg",
+   "png_sha256": "852e810b5fdb257e9557388e042bb9ed90cb2082ad28546a2dde2171129b155d",
+   "jpg_sha256": "8cd217d327c89da9e1467a76beef49994c34c54721ff6c4649fa7a6b48773cd2",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/row-body-only/row_body_only-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/row-body-muscles",
+   "stem": "row_body_plus_muscle",
+   "png": "diagnostics/row-body-muscles/row_body_plus_muscle.png",
+   "jpg": "diagnostics/row-body-muscles/row_body_plus_muscle.jpg",
+   "png_sha256": "1f09a4c5686626f57a7e952db2e4fa34b8ee6655ddfef2fa6d25c59d6f46b005",
+   "jpg_sha256": "be076bb654c15ae908f32c0428fe4f2135373e590b1d0041225bc581632e7ee2",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/row-body-muscles/row_body_plus_muscle-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/row-muscle-only",
+   "stem": "row_muscle_only",
+   "png": "diagnostics/row-muscle-only/row_muscle_only.png",
+   "jpg": "diagnostics/row-muscle-only/row_muscle_only.jpg",
+   "png_sha256": "b3f306ff40a93795426f0000f0479ece1708b21dd3f2cfddb87c0b48a9c9d36c",
+   "jpg_sha256": "be945ba11269771c3adaee39ec93a942b9abc43cfbd9660671460164dbca7cdb",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/row-muscle-only/row_muscle_only-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/row-plate-only",
+   "stem": "row_plate_only",
+   "png": "diagnostics/row-plate-only/row_plate_only.png",
+   "jpg": "diagnostics/row-plate-only/row_plate_only.jpg",
+   "png_sha256": "63ddccd4afcc296c3068a405f8357d2e234ed9773bd530ee19d450480d58a84f",
+   "jpg_sha256": "f29746dc0db260a0dfddef85ae81dc764d35d9ba0992b77f3d10bb993fe49b44",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/row-plate-only/row_plate_only-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/row-equipment-full",
+   "stem": "row_equipment_full",
+   "png": "diagnostics/row-equipment-full/row_equipment_full.png",
+   "jpg": "diagnostics/row-equipment-full/row_equipment_full.jpg",
+   "png_sha256": "f960b17b6f775855f923a143fbb4fbbd27a8e843a7c0e3605cb038b2e5c5e169",
+   "jpg_sha256": "b88927b2d490f9052e1a32f7569ffc21bd37296566e63a5daa3968e59f296c04",
+   "jpeg_quality": 78,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/row-equipment-full/row_equipment_full-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/plate-face-closeups",
+   "stem": "row_closeup_plate_face",
+   "png": "diagnostics/plate-face-closeups/row_closeup_plate_face.png",
+   "jpg": "diagnostics/plate-face-closeups/row_closeup_plate_face.jpg",
+   "png_sha256": "00d4228114d09e6b9d4a90d82b420af418cfb0440e5cc690d1ccb3fb242bc9cc",
+   "jpg_sha256": "53e4c3b08a1234a7e6e3261e96e82c53be22db956fc86e8c6d2d4001c4b0fa33",
+   "jpeg_quality": 82,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/plate-face-closeups/row_closeup_plate_face-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/overlay-closeups",
+   "stem": "row_closeup_overlay",
+   "png": "diagnostics/overlay-closeups/row_closeup_overlay.png",
+   "jpg": "diagnostics/overlay-closeups/row_closeup_overlay.jpg",
+   "png_sha256": "d65960829c9e822532b5e09767142b3b1dfa3b095cb7f69092de65f00c55e3c9",
+   "jpg_sha256": "034baa7fdf022221fb31187a1db7533f6f90ef397e0424e29b49602e740c62cb",
+   "jpeg_quality": 82,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 3,
+   "chunk_dir": "diagnostics/overlay-closeups/row_closeup_overlay-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "diagnostics/plate-face-closeups",
+   "stem": "row_closeup_plate_64spp",
+   "png": "diagnostics/plate-face-closeups/row_closeup_plate_64spp.png",
+   "jpg": "diagnostics/plate-face-closeups/row_closeup_plate_64spp.jpg",
+   "png_sha256": "51aba9b2e82e5177bd2a2a284c36b03252b95b7a5ff939b291db65e95932c220",
+   "jpg_sha256": "fb83f18c0030ac74e2a7ecb79224cf7dd9c6fd04da9e95a2a146fa35dc7f3ea1",
+   "jpeg_quality": 82,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "diagnostics/plate-face-closeups/row_closeup_plate_64spp-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "final/row-side",
+   "stem": "row_side_final",
+   "png": "final/row-side/row_side_final.png",
+   "jpg": "final/row-side/row_side_final.jpg",
+   "png_sha256": "037cb93b23da5011ad2d7b367a8b79ffa176ecf9c7af1dc80141ae9ad2cdd6a9",
+   "jpg_sha256": "055303e16f28fb95f7c7fe1782d781729a0b4331b72d892d8dc8568be1364036",
+   "jpeg_quality": 80,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "final/row-side/row_side_final-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "final/row-front45",
+   "stem": "row_front45_final",
+   "png": "final/row-front45/row_front45_final.png",
+   "jpg": "final/row-front45/row_front45_final.jpg",
+   "png_sha256": "efaf16a5d7eba14a512c3feb3989dfab66c7d2811b5c0da461eb9c48a4d3e4bf",
+   "jpg_sha256": "7ff9b45f5e7106edb1559329a3b51987d57176986547a143559e6489feb82b87",
+   "jpeg_quality": 80,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "final/row-front45/row_front45_final-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  },
+  {
+   "group": "final/row-top",
+   "stem": "row_top_final",
+   "png": "final/row-top/row_top_final.png",
+   "jpg": "final/row-top/row_top_final.jpg",
+   "png_sha256": "cd935e25d9521b41129fdc7dd0e72d2900ecb70663b08d041060e9817af0b0fa",
+   "jpg_sha256": "28d82e283cb5c5e8e7678300251189b0b7a0dccd763bf02a665ed5987e639831",
+   "jpeg_quality": 80,
+   "pixel_size": [
+    900,
+    1200
+   ],
+   "chunks": 2,
+   "chunk_dir": "final/row-top/row_top_final-b64/",
+   "max_chunk_chars": 24000,
+   "verified": true
+  }
+ ],
+ "max_chunk_chars": 24000,
+ "max_chunks": 18,
+ "failures": []
+}

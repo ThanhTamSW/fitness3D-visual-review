@@ -1,0 +1,194 @@
+[
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_d1_no_shadow",
+  "png_sha256": "f0d1792b1a2f7f95d313d875f3a01201ea3f18d6db26d49efd22882e64129e36",
+  "jpg_sha256": "ff6efa58903e11664604e85e64d6d6a987603a1909bde98551b466ac245be013",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_d2_shadow_off",
+  "png_sha256": "98c42a93d18ce99af0d4bb29811500d3983f850eb85dd4dd6eaec8212095ce60",
+  "jpg_sha256": "550cc39bf6ac56fc0c5f35648d6cebeabaea2015f6b6473e68e6a32ee67e41aa",
+  "chunks": 2,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_d3_samples_64",
+  "png_sha256": "391874bd6c79c06abf57a3b42285e746199a52a99d3808a4ffac06d9725eabea",
+  "jpg_sha256": "4c336b3a1525d0f61a690779821699b5b0e18910216abbec48772b236f1b43e7",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_e0_equipment_full",
+  "png_sha256": "3aa30ce7c3d4b3130bffc6d7aceaeec7b53746283b1ead4826107c05f7bc7bdb",
+  "jpg_sha256": "ff6efa58903e11664604e85e64d6d6a987603a1909bde98551b466ac245be013",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_e1_no_plates",
+  "png_sha256": "4f3ac88965e7af88192da225677cea3cd92ca87506d0f3594440369bad3d5c2e",
+  "jpg_sha256": "695aabff6858f3af58634b4d961ad6301442f98579ec4e959c958d37cf42f190",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_e2_no_collars",
+  "png_sha256": "05f30f2083700ce172694a38641a5860c7c8bc2929fef3711c64631c6fc470f7",
+  "jpg_sha256": "76f2e48a6d8e11619240121e9ad085fe53c799fb488ee1a615ce68488f80a6eb",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_e3_shaft_only",
+  "png_sha256": "08fa9e56827fba8ecf10a922a9fe4a52b507793a6bad33525b20beae4c8ca1d8",
+  "jpg_sha256": "b8e49d89ce1dc4ecaec7016bb05f3d17c4789d8078b3084138b75fc4b80cf049",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_e4_plates_only",
+  "png_sha256": "d2051e05e6ccc21927aeb218d1a116da9b17bdb0d37a6553747b526e65e81aa9",
+  "jpg_sha256": "fcb14ae559997273b307034cf790d8a3ea968dd19d9ab4dd034de01eb2238fa5",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_m0_body_only",
+  "png_sha256": "3967d53fddd66775047a414ac02b91c26d5228a203d5b7b2b2347702a310e7b9",
+  "jpg_sha256": "2309b8a4fba6ecdc4a4e560b7f394e81176d4751ba038745da37d99192803d82",
+  "chunks": 2,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_m1_body_plus_muscle",
+  "png_sha256": "c7876f6ec61b23eaf6b1097db745c64fe362995002006a377d61209a1f1c71e1",
+  "jpg_sha256": "8fbb2a913e241bf2c6cfa9e3f3212a6c29602eddf23a0bb441b4277e7d9a1135",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_m2_muscle_only",
+  "png_sha256": "f804df8f3b106a5889dc902ebe1ba156706c653caa7509eff73ec18bb5907626",
+  "jpg_sha256": "9452e4be721e00019c857ac7fc1ee6701bd4091582528584a5f4b82e5fd00ec2",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "rdl_m3_shell_and_equipment",
+  "png_sha256": "4e990aa997541f565e7a1894624e4863303894fc5ec49e98abc59f7c80395aa3",
+  "jpg_sha256": "e05233c10074ed1efc6947137c247fee37da0d3ea20737bc4bac1af512da575d",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_d1_no_shadow",
+  "png_sha256": "3be3e3c61ef2d1907921da098140e15f2e7bbaf35e00b53813dac03173b9dd5e",
+  "jpg_sha256": "0b38d8e23d9906156a7c51cccff65065c8cb32d43bf832f003a47ff02ccfb2d1",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_d2_shadow_off",
+  "png_sha256": "bf4fe30f1f182daa98ba6ecc717e7f8900082135e9009a349db1807136baa2ce",
+  "jpg_sha256": "ea52e1eb96063663aa85cb07d2fce5d9c6ddfe838dc2a2c422f56c18be7a0ee2",
+  "chunks": 2,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_d3_samples_64",
+  "png_sha256": "891da3f4c0e03dad67e5a2001cf6e80d93f46beb3fb81414263bd1c6b220431c",
+  "jpg_sha256": "a5f9c0868119117bb85f27d49d72046f03ba4ebbff84560bdac4d315f6ace823",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_e0_equipment_full",
+  "png_sha256": "af562ac199ed595445400f9ceb6ba0d332aea800303fd28db5a2a3d0c50b90c5",
+  "jpg_sha256": "0b38d8e23d9906156a7c51cccff65065c8cb32d43bf832f003a47ff02ccfb2d1",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_e1_no_plates",
+  "png_sha256": "5b6878e0c5774741fa73d2f7c00ee31a4f3855637c80f1808b015c7475b1876b",
+  "jpg_sha256": "5893daac0bbb2ea158d1ce063ef746bcd2a5e292e85a365df829b678bd6966ba",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_e2_no_collars",
+  "png_sha256": "26fc7593a6538a78457d5e790ae0cb08a44558c4bac6e1ba5ec7f3e0393dc3f7",
+  "jpg_sha256": "d15ffd1a7440b4d62d44dbd0a3ca42cff775639791033b38c40700f388f9dbf3",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_e3_shaft_only",
+  "png_sha256": "a12fc8a663ed90b79ed1fa91ceb4b8b3fdb3626b497d86e88fc4c08204d4fb21",
+  "jpg_sha256": "d582699796acde7278be57d45946a246b7215b0fd61b2696fc3fe80d29433cce",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_e4_plates_only",
+  "png_sha256": "56635a73687299ed8b43af9f8a90142d4405f5546d1b7d33976b81b5476263d8",
+  "jpg_sha256": "17218816f17979cc6d75dc805a705236a17d3dad52dc64077f02a1e010cff622",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_m0_body_only",
+  "png_sha256": "e4dbd7239d4a55db448b46cc37d06a490fa3f58551a6276580eb6952e40b0e77",
+  "jpg_sha256": "3ba0f0d4a21d181a0ceb087c973ecd40cb144f0232977309f83ab5fc0cff981f",
+  "chunks": 2,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_m1_body_plus_muscle",
+  "png_sha256": "a38ca7da7fb5f29248c41af63412752605d6137c45aedd806de8ceef07990828",
+  "jpg_sha256": "4a987234759b128690d36df1573a1fafae3ae116b9edb48d9b7489cd559a807f",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_m2_muscle_only",
+  "png_sha256": "b2abe16c088b18848f4c80e61be8e9d65f8b5e1c17fe19fc73e54589f8e95178",
+  "jpg_sha256": "a6e5cd4a3797d5359a8e7eabd4d4f0d796ddca19ed6051c89e7f5302744e541f",
+  "chunks": 1,
+  "verified": true
+ },
+ {
+  "group": "diagnostics/isolation-matrix",
+  "stem": "row_m3_shell_and_equipment",
+  "png_sha256": "f81f869fdadfd2c3a5452217b25a1dd8c302a02a655521882993f4c97d979ac5",
+  "jpg_sha256": "4b9f54260ba691f5ed506875ab958e953b6bff8326e552a7ff2636426e81e9b7",
+  "chunks": 1,
+  "verified": true
+ }
+]
