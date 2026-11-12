@@ -1,0 +1,53 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v2_no_reprojection",
+   "note": "temporal reprojection off",
+   "overrides": {
+    "use_taa_reprojection": false
+   },
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": true,
+    "shadows": true,
+    "soft_shadows": true
+   },
+   "passes": 4,
+   "images": [
+    {
+     "file": "repeat/rdl_v2_no_reprojection_p0.png",
+     "sha256": "03ac4ac46b7cdfbeee12d5f1af9cf2613c60c92b5780288a98362d22c77b6de2"
+    },
+    {
+     "file": "repeat/rdl_v2_no_reprojection_p1.png",
+     "sha256": "e7546b0cc4a21b260ef257f9a360d4f452b2c0f8e12639ffce67dfcfb15c0391"
+    },
+    {
+     "file": "repeat/rdl_v2_no_reprojection_p2.png",
+     "sha256": "ddc442be256021c2d246125501d90cbb589061b05b28763765d2a0fe07f8c79e"
+    },
+    {
+     "file": "repeat/rdl_v2_no_reprojection_p3.png",
+     "sha256": "669b2c5ba87af1e24ee97b29a7b1784ee0b96a10c80ef37ce38fa9c351830c52"
+    }
+   ],
+   "distinct_hashes": 4
+  }
+ ]
+}

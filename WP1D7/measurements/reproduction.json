@@ -1,0 +1,123 @@
+{
+ "milestone": "WP1D.7",
+ "purpose": "Is the published WP1D.6 still reproducible by re-running its own script?",
+ "script": "review/wp1d6-visual-artifact-audit/10_finals.py",
+ "runs": [
+  "raw/refinals",
+  "raw/refinals2"
+ ],
+ "shots": [
+  {
+   "file": "rdl_body_only.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 29,
+    "changed_fraction": 3e-05,
+    "max_delta": 24,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 957,
+    "changed_fraction": 0.00089,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_body_plus_muscle.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 61845,
+    "changed_fraction": 0.05726,
+    "max_delta": 88,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 49922,
+    "changed_fraction": 0.04622,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_bottom_final.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 51567,
+    "changed_fraction": 0.04775,
+    "max_delta": 113,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 55788,
+    "changed_fraction": 0.05166,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_equipment_full.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 32737,
+    "changed_fraction": 0.03031,
+    "max_delta": 106,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 86336,
+    "changed_fraction": 0.07994,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_front45_final.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 51160,
+    "changed_fraction": 0.04737,
+    "max_delta": 113,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 105754,
+    "changed_fraction": 0.09792,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_muscle_only.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 15881,
+    "changed_fraction": 0.0147,
+    "max_delta": 54,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 68380,
+    "changed_fraction": 0.06331,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_plate_only.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 94151,
+    "changed_fraction": 0.08718,
+    "max_delta": 185,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 7587,
+    "changed_fraction": 0.00702,
+    "bit_identical": false
+   }
+  },
+  {
+   "file": "rdl_side_final.png",
+   "run1_vs_run2": {
+    "changed_gt_8": 116511,
+    "changed_fraction": 0.10788,
+    "max_delta": 186,
+    "bit_identical": false
+   },
+   "run1_vs_published": {
+    "changed_gt_8": 119323,
+    "changed_fraction": 0.11048,
+    "bit_identical": false
+   }
+  }
+ ]
+}

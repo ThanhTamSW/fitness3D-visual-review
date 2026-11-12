@@ -1,0 +1,56 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v6_minimal_no_shadows",
+   "note": "v5 plus shadows off: is the oscillation shadow-map state?",
+   "overrides": {
+    "use_taa_reprojection": false,
+    "use_raytracing": false,
+    "ray_tracing_options.use_denoise": false,
+    "use_shadows": false
+   },
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": false,
+    "soft_shadows": true
+   },
+   "passes": 4,
+   "images": [
+    {
+     "file": "repeat/rdl_v6_minimal_no_shadows_p0.png",
+     "sha256": "ac60a3aeae296cbffd405d804c74094f5fbd786ebd627021a05893b18a2bbf6e"
+    },
+    {
+     "file": "repeat/rdl_v6_minimal_no_shadows_p1.png",
+     "sha256": "7a7a5dedddc7600b35a2970f30074dd0184f0346c68713fb00c6e12272eb7abb"
+    },
+    {
+     "file": "repeat/rdl_v6_minimal_no_shadows_p2.png",
+     "sha256": "10fc185b37739b564df6d38ac08e886e984315cbf12c684692c0e99a44b24a6f"
+    },
+    {
+     "file": "repeat/rdl_v6_minimal_no_shadows_p3.png",
+     "sha256": "892db0d487186cf408ff5208a47f251db21dd6df8547c55f9b81a5d126751547"
+    }
+   ],
+   "distinct_hashes": 4
+  }
+ ]
+}

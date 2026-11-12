@@ -1,0 +1,89 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "variant": "no_shadows",
+ "overrides": {
+  "use_shadows": false
+ },
+ "effective": {
+  "shadows": false,
+  "soft_shadows": true,
+  "shadow_high_bitdepth": false,
+  "shadow_ray_count": 1,
+  "shadow_step_count": 6,
+  "shadow_resolution_scale": 1.0,
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "samples": 16
+ },
+ "frames": [
+  {
+   "frame": 176,
+   "file": "shadow/rdl_no_shadows_f176.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 177,
+   "file": "shadow/rdl_no_shadows_f177.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 178,
+   "file": "shadow/rdl_no_shadows_f178.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 179,
+   "file": "shadow/rdl_no_shadows_f179.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 180,
+   "file": "shadow/rdl_no_shadows_f180.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 181,
+   "file": "shadow/rdl_no_shadows_f181.png",
+   "subject_mean": 79.499,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 182,
+   "file": "shadow/rdl_no_shadows_f182.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 183,
+   "file": "shadow/rdl_no_shadows_f183.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 184,
+   "file": "shadow/rdl_no_shadows_f184.png",
+   "subject_mean": 79.5,
+   "subject_pixels": 790400
+  }
+ ],
+ "step_deltas_255": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  -0.001,
+  0.001,
+  0.0,
+  0.0
+ ],
+ "max_abs_step": 0.001,
+ "sign_flips_over_1_5": 0,
+ "constant_brightness": true
+}

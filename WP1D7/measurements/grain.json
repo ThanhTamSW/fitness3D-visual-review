@@ -1,0 +1,276 @@
+{
+ "milestone": "WP1D.7",
+ "flat_gradient_threshold": 3.0,
+ "window": 5,
+ "published": [
+  {
+   "name": "rdl_side",
+   "png": {
+    "file": "rdl_side_final.png",
+    "usable": true,
+    "flat_pixels": 1050592,
+    "grain_mean": 0.652,
+    "grain_p99": 8.0,
+    "grain_max": 118.667,
+    "grain_on_8x8_grid": 0.647,
+    "grain_off_8x8_grid": 0.654,
+    "blocking_ratio": 0.99
+   }
+  },
+  {
+   "name": "rdl_bottom",
+   "png": {
+    "file": "rdl_bottom_final.png",
+    "usable": true,
+    "flat_pixels": 1041767,
+    "grain_mean": 0.533,
+    "grain_p99": 5.667,
+    "grain_max": 100.333,
+    "grain_on_8x8_grid": 0.537,
+    "grain_off_8x8_grid": 0.531,
+    "blocking_ratio": 1.011
+   }
+  },
+  {
+   "name": "row_side",
+   "png": {
+    "file": "row_side_final.png",
+    "usable": true,
+    "flat_pixels": 1045054,
+    "grain_mean": 0.535,
+    "grain_p99": 5.0,
+    "grain_max": 43.333,
+    "grain_on_8x8_grid": 0.534,
+    "grain_off_8x8_grid": 0.535,
+    "blocking_ratio": 0.999
+   }
+  },
+  {
+   "name": "row_front45",
+   "png": {
+    "file": "row_front45_final.png",
+    "usable": true,
+    "flat_pixels": 1047550,
+    "grain_mean": 0.569,
+    "grain_p99": 7.0,
+    "grain_max": 87.333,
+    "grain_on_8x8_grid": 0.581,
+    "grain_off_8x8_grid": 0.565,
+    "blocking_ratio": 1.028
+   }
+  }
+ ],
+ "diagnostics": [
+  {
+   "file": "rdl_d1_body_only.png",
+   "usable": true,
+   "flat_pixels": 770544,
+   "grain_mean": 0.373,
+   "grain_p99": 2.0,
+   "grain_max": 47.333,
+   "grain_on_8x8_grid": 0.375,
+   "grain_off_8x8_grid": 0.372,
+   "blocking_ratio": 1.007
+  },
+  {
+   "file": "rdl_d2_muscle_only.png",
+   "usable": true,
+   "flat_pixels": 786500,
+   "grain_mean": 0.323,
+   "grain_p99": 1.0,
+   "grain_max": 20.0,
+   "grain_on_8x8_grid": 0.326,
+   "grain_off_8x8_grid": 0.322,
+   "blocking_ratio": 1.013
+  },
+  {
+   "file": "rdl_d3_body_plus_muscle.png",
+   "usable": true,
+   "flat_pixels": 783581,
+   "grain_mean": 0.32,
+   "grain_p99": 1.0,
+   "grain_max": 13.333,
+   "grain_on_8x8_grid": 0.323,
+   "grain_off_8x8_grid": 0.319,
+   "blocking_ratio": 1.015
+  },
+  {
+   "file": "rdl_d4_plus_skeleton.png",
+   "usable": true,
+   "flat_pixels": 766018,
+   "grain_mean": 0.361,
+   "grain_p99": 1.333,
+   "grain_max": 69.0,
+   "grain_on_8x8_grid": 0.366,
+   "grain_off_8x8_grid": 0.36,
+   "blocking_ratio": 1.015
+  },
+  {
+   "file": "rdl_d5_neutral_material.png",
+   "usable": true,
+   "flat_pixels": 784187,
+   "grain_mean": 0.323,
+   "grain_p99": 1.0,
+   "grain_max": 13.333,
+   "grain_on_8x8_grid": 0.327,
+   "grain_off_8x8_grid": 0.322,
+   "blocking_ratio": 1.016
+  },
+  {
+   "file": "rdl_d6_wireframe.png",
+   "usable": true,
+   "flat_pixels": 780963,
+   "grain_mean": 0.297,
+   "grain_p99": 1.0,
+   "grain_max": 129.667,
+   "grain_on_8x8_grid": 0.302,
+   "grain_off_8x8_grid": 0.296,
+   "blocking_ratio": 1.021
+  },
+  {
+   "file": "rdl_d7_normal_visualisation.png",
+   "usable": true,
+   "flat_pixels": 770378,
+   "grain_mean": 0.352,
+   "grain_p99": 1.0,
+   "grain_max": 101.0,
+   "grain_on_8x8_grid": 0.356,
+   "grain_off_8x8_grid": 0.351,
+   "blocking_ratio": 1.016
+  },
+  {
+   "file": "rdl_a_r0.png",
+   "usable": true,
+   "flat_pixels": 765110,
+   "grain_mean": 0.383,
+   "grain_p99": 2.0,
+   "grain_max": 72.333,
+   "grain_on_8x8_grid": 0.387,
+   "grain_off_8x8_grid": 0.381,
+   "blocking_ratio": 1.014,
+   "cell": "A"
+  },
+  {
+   "file": "rdl_a_r1.png",
+   "usable": true,
+   "flat_pixels": 736552,
+   "grain_mean": 0.417,
+   "grain_p99": 1.333,
+   "grain_max": 122.333,
+   "grain_on_8x8_grid": 0.409,
+   "grain_off_8x8_grid": 0.42,
+   "blocking_ratio": 0.975,
+   "cell": "A"
+  },
+  {
+   "file": "rdl_b_r0.png",
+   "usable": true,
+   "flat_pixels": 766132,
+   "grain_mean": 0.355,
+   "grain_p99": 1.0,
+   "grain_max": 57.333,
+   "grain_on_8x8_grid": 0.359,
+   "grain_off_8x8_grid": 0.354,
+   "blocking_ratio": 1.013,
+   "cell": "B"
+  },
+  {
+   "file": "rdl_b_r1.png",
+   "usable": true,
+   "flat_pixels": 782907,
+   "grain_mean": 0.321,
+   "grain_p99": 1.0,
+   "grain_max": 22.0,
+   "grain_on_8x8_grid": 0.325,
+   "grain_off_8x8_grid": 0.32,
+   "blocking_ratio": 1.016,
+   "cell": "B"
+  },
+  {
+   "file": "rdl_c_r0.png",
+   "usable": true,
+   "flat_pixels": 782907,
+   "grain_mean": 0.321,
+   "grain_p99": 1.0,
+   "grain_max": 22.0,
+   "grain_on_8x8_grid": 0.325,
+   "grain_off_8x8_grid": 0.32,
+   "blocking_ratio": 1.016,
+   "cell": "C"
+  },
+  {
+   "file": "rdl_c_r1.png",
+   "usable": true,
+   "flat_pixels": 782907,
+   "grain_mean": 0.321,
+   "grain_p99": 1.0,
+   "grain_max": 22.0,
+   "grain_on_8x8_grid": 0.325,
+   "grain_off_8x8_grid": 0.32,
+   "blocking_ratio": 1.016,
+   "cell": "C"
+  },
+  {
+   "file": "rdl_d_r0.png",
+   "usable": true,
+   "flat_pixels": 782673,
+   "grain_mean": 0.326,
+   "grain_p99": 1.0,
+   "grain_max": 121.333,
+   "grain_on_8x8_grid": 0.329,
+   "grain_off_8x8_grid": 0.325,
+   "blocking_ratio": 1.011,
+   "cell": "D"
+  },
+  {
+   "file": "rdl_d_r1.png",
+   "usable": true,
+   "flat_pixels": 762297,
+   "grain_mean": 0.358,
+   "grain_p99": 1.0,
+   "grain_max": 134.667,
+   "grain_on_8x8_grid": 0.364,
+   "grain_off_8x8_grid": 0.356,
+   "blocking_ratio": 1.024,
+   "cell": "D"
+  }
+ ],
+ "jpeg_roundtrip": [
+  {
+   "source": "rdl_d3_body_plus_muscle.png",
+   "quality": 80,
+   "png_grain": 0.32,
+   "jpg_grain": 0.036,
+   "added": -0.284,
+   "blocking_ratio": 1.282,
+   "file": "grain/rdl_d3_body_plus_muscle_q80.jpg"
+  },
+  {
+   "source": "rdl_d3_body_plus_muscle.png",
+   "quality": 92,
+   "png_grain": 0.32,
+   "jpg_grain": 0.13,
+   "added": -0.19,
+   "blocking_ratio": 1.611,
+   "file": "grain/rdl_d3_body_plus_muscle_q92.jpg"
+  },
+  {
+   "source": "rdl_d4_plus_skeleton.png",
+   "quality": 80,
+   "png_grain": 0.361,
+   "jpg_grain": 0.114,
+   "added": -0.247,
+   "blocking_ratio": 1.188,
+   "file": "grain/rdl_d4_plus_skeleton_q80.jpg"
+  },
+  {
+   "source": "rdl_d4_plus_skeleton.png",
+   "quality": 92,
+   "png_grain": 0.361,
+   "jpg_grain": 0.194,
+   "added": -0.167,
+   "blocking_ratio": 1.417,
+   "file": "grain/rdl_d4_plus_skeleton_q92.jpg"
+  }
+ ]
+}

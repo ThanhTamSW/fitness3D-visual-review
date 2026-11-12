@@ -1,0 +1,51 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v1_production",
+   "note": "as shipped",
+   "overrides": {},
+   "effective": {
+    "taa_reprojection": true,
+    "raytracing": false,
+    "denoise": true,
+    "shadows": true,
+    "soft_shadows": true
+   },
+   "passes": 4,
+   "images": [
+    {
+     "file": "repeat/rdl_v1_production_p0.png",
+     "sha256": "613a8a4df95741627adbd70370a3232d1c944453092c43a27c81b7fb2883e4f2"
+    },
+    {
+     "file": "repeat/rdl_v1_production_p1.png",
+     "sha256": "1b9f1e9aacba47701227a134ad33f3817c0997245b137ed7328a980edd546fe5"
+    },
+    {
+     "file": "repeat/rdl_v1_production_p2.png",
+     "sha256": "04b021ada37cba4b791cd910759811962e4ed91ec391d598c48d179289c4197b"
+    },
+    {
+     "file": "repeat/rdl_v1_production_p3.png",
+     "sha256": "489bd35eafa929b2e52cf9b14e08e6922bdf6324ef46d3963d376853ae8ea10d"
+    }
+   ],
+   "distinct_hashes": 4
+  }
+ ]
+}

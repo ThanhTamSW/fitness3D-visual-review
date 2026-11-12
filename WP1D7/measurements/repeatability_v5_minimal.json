@@ -1,0 +1,55 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v5_minimal",
+   "note": "reprojection off, raytracing off, denoiser off",
+   "overrides": {
+    "use_taa_reprojection": false,
+    "use_raytracing": false,
+    "ray_tracing_options.use_denoise": false
+   },
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": true,
+    "soft_shadows": true
+   },
+   "passes": 4,
+   "images": [
+    {
+     "file": "repeat/rdl_v5_minimal_p0.png",
+     "sha256": "58aa817982f037d0d98837bc12d37ddc6c3ef0cc541e0698e217a794eb8a98de"
+    },
+    {
+     "file": "repeat/rdl_v5_minimal_p1.png",
+     "sha256": "c730337bc5bc2e864352c9b3359671381ae99ffcfcef00a66237584d4e81c495"
+    },
+    {
+     "file": "repeat/rdl_v5_minimal_p2.png",
+     "sha256": "76eb4717eb2d6cfd804b470009fae8d1104cf8301de7d78dd070cb4c913f75e7"
+    },
+    {
+     "file": "repeat/rdl_v5_minimal_p3.png",
+     "sha256": "97044284b2b466de5c0fb308c0d4fe0b1b74bd2c772763c9a91508943d4ce17c"
+    }
+   ],
+   "distinct_hashes": 4
+  }
+ ]
+}

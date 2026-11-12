@@ -1,0 +1,26 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "variant": "reviewed",
+ "frame": 1,
+ "resolution": [
+  900,
+  1200
+ ],
+ "effective": {
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "raytracing": false,
+  "denoise": true,
+  "reprojection": true,
+  "muscles_visible": true,
+  "skeleton_visible": true
+ },
+ "subject_pixels": 1080000,
+ "warm_bright_pixels": 0,
+ "bright_pixels": 0,
+ "warm_fraction_of_subject": 0.0,
+ "body_mean_luminance": 69.913,
+ "file": "reviewed/rdl_reviewed_f1.png"
+}

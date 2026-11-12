@@ -1,0 +1,156 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "held_fixed": {
+  "samples": 16,
+  "shadow_rays": 1,
+  "shadow_steps": 6,
+  "soft_shadows": true,
+  "shadows": false,
+  "view_transform": "Standard",
+  "look": "None",
+  "exposure": 0.0,
+  "gamma": 1.0,
+  "film_transparent": false,
+  "resolution": [
+   760,
+   1040
+  ],
+  "engine": "BLENDER_EEVEE_NEXT",
+  "camera": "SideCam",
+  "camera_ortho_scale": 2.23805,
+  "contact_shadow": false,
+  "fast_gi": false
+ },
+ "cells": [
+  {
+   "cell": "A",
+   "note": "baseline: raytracing on, denoiser on",
+   "raytracing": true,
+   "denoise": true,
+   "denoise_spatial": true,
+   "denoise_temporal": true,
+   "denoise_bilateral": true,
+   "deterministic": false,
+   "frame": 180,
+   "camera": "SideCam",
+   "resolution": [
+    760,
+    1040
+   ],
+   "samples": 16,
+   "view_transform": "Standard",
+   "materials": "production palette",
+   "pose": "job phases, resolved by render.resolve_poses",
+   "renders": [
+    {
+     "file": "matrix/rdl_a_r0.png",
+     "sha256": "49f5f88881867a92a7bc7a89ebe2dc59dff35a4dcca58bc340398b5bc3336339",
+     "bytes": 646525
+    },
+    {
+     "file": "matrix/rdl_a_r1.png",
+     "sha256": "0a2891c2464f05d21c729094f8a8e6937d0e36250833df35aa6d746a84f5aaad",
+     "bytes": 711482
+    }
+   ]
+  },
+  {
+   "cell": "B",
+   "note": "raytracing off, denoiser left on: isolates the tracer",
+   "raytracing": false,
+   "denoise": true,
+   "denoise_spatial": true,
+   "denoise_temporal": true,
+   "denoise_bilateral": true,
+   "deterministic": false,
+   "frame": 180,
+   "camera": "SideCam",
+   "resolution": [
+    760,
+    1040
+   ],
+   "samples": 16,
+   "view_transform": "Standard",
+   "materials": "production palette",
+   "pose": "job phases, resolved by render.resolve_poses",
+   "renders": [
+    {
+     "file": "matrix/rdl_b_r0.png",
+     "sha256": "1dafb5581c6a597d81b7ae45da005db88df249ac94a9fafc6da6b008865c0553",
+     "bytes": 625056
+    },
+    {
+     "file": "matrix/rdl_b_r1.png",
+     "sha256": "f5b35e62b60a88ce20c16a564c2fc836b0f3a1bf3da2a1a71244aabacda20186",
+     "bytes": 624948
+    }
+   ]
+  },
+  {
+   "cell": "C",
+   "note": "raytracing off, denoiser off: isolates the denoiser",
+   "raytracing": false,
+   "denoise": false,
+   "denoise_spatial": true,
+   "denoise_temporal": true,
+   "denoise_bilateral": true,
+   "deterministic": false,
+   "frame": 180,
+   "camera": "SideCam",
+   "resolution": [
+    760,
+    1040
+   ],
+   "samples": 16,
+   "view_transform": "Standard",
+   "materials": "production palette",
+   "pose": "job phases, resolved by render.resolve_poses",
+   "renders": [
+    {
+     "file": "matrix/rdl_c_r0.png",
+     "sha256": "b6814894d3ffedd7efe5c73a081902f3d0013358aa2411c24ece17025ae46a00",
+     "bytes": 625186
+    },
+    {
+     "file": "matrix/rdl_c_r1.png",
+     "sha256": "b9d0831aed4b1c9a7f737684f98ce8801f41d9515aca3176cf2d967c13a82dcf",
+     "bytes": 624898
+    }
+   ]
+  },
+  {
+   "cell": "D",
+   "note": "raytracing on, denoiser off: tracer without its filter",
+   "raytracing": true,
+   "denoise": false,
+   "denoise_spatial": true,
+   "denoise_temporal": true,
+   "denoise_bilateral": true,
+   "deterministic": false,
+   "frame": 180,
+   "camera": "SideCam",
+   "resolution": [
+    760,
+    1040
+   ],
+   "samples": 16,
+   "view_transform": "Standard",
+   "materials": "production palette",
+   "pose": "job phases, resolved by render.resolve_poses",
+   "renders": [
+    {
+     "file": "matrix/rdl_d_r0.png",
+     "sha256": "ece8ec414c4538e143c41d232d913ea9a04cc4f17a98407584c407f28798201d",
+     "bytes": 640346
+    },
+    {
+     "file": "matrix/rdl_d_r1.png",
+     "sha256": "709da991d496842fdf3682eca10123dff8e120b366306ead5cc5e7d80a92da15",
+     "bytes": 652157
+    }
+   ]
+  }
+ ],
+ "blender": "4.2.23 LTS"
+}

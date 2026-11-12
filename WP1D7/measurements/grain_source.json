@@ -1,0 +1,25 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "variant": "ship_16spp",
+ "overrides": {
+  "taa_render_samples": 16
+ },
+ "effective": {
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1,
+  "shadow_resolution_scale": 1.0,
+  "raytracing": false,
+  "denoise": true,
+  "reprojection": true
+ },
+ "flat_pixels": 315809,
+ "grain_std": 0.283,
+ "grain_mean_abs": 0.246,
+ "grain_p99_abs": 0.7357,
+ "fraction_above_1_code": 0.0,
+ "fraction_above_2_code": 0.0,
+ "file": "grain_source/rdl_ship_16spp.png"
+}

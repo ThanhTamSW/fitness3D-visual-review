@@ -1,0 +1,249 @@
+{
+ "milestone": "WP1D.7",
+ "groups": {
+  "rdl": {
+   "frame": 180,
+   "comparisons": [
+    {
+     "comparable": true,
+     "threshold": 8,
+     "changed_pixels": 72716,
+     "changed_fraction": 0.091999,
+     "max_delta": 203,
+     "mean_delta": 10.7399,
+     "exact_pixels_changed": 74102,
+     "bbox": [
+      222,
+      248,
+      541,
+      931
+     ],
+     "coarse_filled_cells": 4549,
+     "coarse_cells": 49400,
+     "name": "rdl skeleton_added",
+     "a": "rdl_d3_body_plus_muscle.png",
+     "b": "rdl_d4_plus_skeleton.png",
+     "note": "d3 vs d4: what the skeleton mesh contributes"
+    },
+    {
+     "comparable": true,
+     "threshold": 8,
+     "changed_pixels": 72282,
+     "changed_fraction": 0.09145,
+     "max_delta": 192,
+     "mean_delta": 10.6091,
+     "exact_pixels_changed": 73607,
+     "bbox": [
+      222,
+      248,
+      541,
+      931
+     ],
+     "coarse_filled_cells": 4526,
+     "coarse_cells": 49400,
+     "name": "rdl muscle_added",
+     "a": "rdl_d1_body_only.png",
+     "b": "rdl_d3_body_plus_muscle.png",
+     "note": "d1 vs d3: what the muscle overlay contributes to the skin"
+    },
+    {
+     "comparable": true,
+     "threshold": 8,
+     "changed_pixels": 37118,
+     "changed_fraction": 0.046961,
+     "max_delta": 48,
+     "mean_delta": 1.2252,
+     "exact_pixels_changed": 72997,
+     "bbox": [
+      223,
+      249,
+      541,
+      913
+     ],
+     "coarse_filled_cells": 2316,
+     "coarse_cells": 49400,
+     "name": "rdl neutral_vs_production",
+     "a": "rdl_d3_body_plus_muscle.png",
+     "b": "rdl_d5_neutral_material.png",
+     "note": "d3 vs d5: how much of the mark is colour rather than geometry"
+    }
+   ],
+   "notes": [
+    "d5 neutral scene: no skeleton, so no ivory can appear"
+   ],
+   "ivory_pixels": {
+    "rdl_d1_body_only.png": 17,
+    "rdl_d2_muscle_only.png": 0,
+    "rdl_d3_body_plus_muscle.png": 0,
+    "rdl_d4_plus_skeleton.png": 1451,
+    "rdl_d5_neutral_material.png": 0,
+    "rdl_d6_wireframe.png": 0,
+    "rdl_d7_normal_visualisation.png": 8766
+   }
+  }
+ },
+ "matrix": {
+  "rdl": {
+   "cells": {
+    "A": {
+     "repeat_diff": {
+      "comparable": true,
+      "threshold": 8,
+      "changed_pixels": 39207,
+      "changed_fraction": 0.049604,
+      "max_delta": 232,
+      "mean_delta": 5.327,
+      "exact_pixels_changed": 90040,
+      "bbox": [
+       247,
+       332,
+       518,
+       931
+      ],
+      "coarse_filled_cells": 2800,
+      "coarse_cells": 49400,
+      "name": "rdl A repeat",
+      "a": "rdl_a_r0.png",
+      "b": "rdl_a_r1.png"
+     },
+     "files": [
+      "rdl_a_r0.png",
+      "rdl_a_r1.png"
+     ]
+    },
+    "B": {
+     "repeat_diff": {
+      "comparable": true,
+      "threshold": 8,
+      "changed_pixels": 90187,
+      "changed_fraction": 0.114103,
+      "max_delta": 190,
+      "mean_delta": 10.8763,
+      "exact_pixels_changed": 92432,
+      "bbox": [
+       222,
+       248,
+       541,
+       931
+      ],
+      "coarse_filled_cells": 5651,
+      "coarse_cells": 49400,
+      "name": "rdl B repeat",
+      "a": "rdl_b_r0.png",
+      "b": "rdl_b_r1.png"
+     },
+     "files": [
+      "rdl_b_r0.png",
+      "rdl_b_r1.png"
+     ]
+    },
+    "C": {
+     "repeat_diff": {
+      "comparable": true,
+      "threshold": 8,
+      "changed_pixels": 0,
+      "changed_fraction": 0.0,
+      "max_delta": 2,
+      "mean_delta": 0.0,
+      "exact_pixels_changed": 35,
+      "name": "rdl C repeat",
+      "a": "rdl_c_r0.png",
+      "b": "rdl_c_r1.png"
+     },
+     "files": [
+      "rdl_c_r0.png",
+      "rdl_c_r1.png"
+     ]
+    },
+    "D": {
+     "repeat_diff": {
+      "comparable": true,
+      "threshold": 8,
+      "changed_pixels": 19354,
+      "changed_fraction": 0.024486,
+      "max_delta": 239,
+      "mean_delta": 3.0035,
+      "exact_pixels_changed": 43704,
+      "bbox": [
+       266,
+       341,
+       506,
+       856
+      ],
+      "coarse_filled_cells": 1373,
+      "coarse_cells": 49400,
+      "name": "rdl D repeat",
+      "a": "rdl_d_r0.png",
+      "b": "rdl_d_r1.png"
+     },
+     "files": [
+      "rdl_d_r0.png",
+      "rdl_d_r1.png"
+     ]
+    }
+   },
+   "vs_baseline": [
+    {
+     "comparable": true,
+     "threshold": 8,
+     "changed_pixels": 16079,
+     "changed_fraction": 0.020343,
+     "max_delta": 220,
+     "mean_delta": 1.0645,
+     "exact_pixels_changed": 89893,
+     "bbox": [
+      247,
+      266,
+      509,
+      929
+     ],
+     "coarse_filled_cells": 1022,
+     "coarse_cells": 49400,
+     "name": "rdl A vs B",
+     "a": "rdl_a_r0.png",
+     "b": "rdl_b_r0.png"
+    },
+    {
+     "comparable": true,
+     "threshold": 8,
+     "changed_pixels": 90179,
+     "changed_fraction": 0.114093,
+     "max_delta": 231,
+     "mean_delta": 11.0361,
+     "exact_pixels_changed": 92498,
+     "bbox": [
+      222,
+      248,
+      541,
+      931
+     ],
+     "coarse_filled_cells": 5649,
+     "coarse_cells": 49400,
+     "name": "rdl A vs C",
+     "a": "rdl_a_r0.png",
+     "b": "rdl_c_r0.png"
+    },
+    {
+     "comparable": true,
+     "threshold": 8,
+     "changed_pixels": 90296,
+     "changed_fraction": 0.114241,
+     "max_delta": 242,
+     "mean_delta": 11.5159,
+     "exact_pixels_changed": 92484,
+     "bbox": [
+      222,
+      248,
+      541,
+      931
+     ],
+     "coarse_filled_cells": 5651,
+     "coarse_cells": 49400,
+     "name": "rdl A vs D",
+     "a": "rdl_a_r0.png",
+     "b": "rdl_d_r0.png"
+    }
+   ]
+  }
+ }
+}

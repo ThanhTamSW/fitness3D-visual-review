@@ -1,0 +1,89 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "variant": "shadow_rays_1",
+ "overrides": {
+  "shadow_ray_count": 1
+ },
+ "effective": {
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_high_bitdepth": false,
+  "shadow_ray_count": 1,
+  "shadow_step_count": 6,
+  "shadow_resolution_scale": 1.0,
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "samples": 16
+ },
+ "frames": [
+  {
+   "frame": 176,
+   "file": "shadow/rdl_shadow_rays_1_f176.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 177,
+   "file": "shadow/rdl_shadow_rays_1_f177.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 178,
+   "file": "shadow/rdl_shadow_rays_1_f178.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 179,
+   "file": "shadow/rdl_shadow_rays_1_f179.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 180,
+   "file": "shadow/rdl_shadow_rays_1_f180.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 181,
+   "file": "shadow/rdl_shadow_rays_1_f181.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 182,
+   "file": "shadow/rdl_shadow_rays_1_f182.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 183,
+   "file": "shadow/rdl_shadow_rays_1_f183.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 184,
+   "file": "shadow/rdl_shadow_rays_1_f184.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  }
+ ],
+ "step_deltas_255": [
+  9.396,
+  0.0,
+  0.0,
+  0.0,
+  -9.396,
+  0.0,
+  0.0,
+  9.396
+ ],
+ "max_abs_step": 9.396,
+ "sign_flips_over_1_5": 0,
+ "constant_brightness": false
+}

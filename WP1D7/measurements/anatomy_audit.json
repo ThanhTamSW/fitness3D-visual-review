@@ -1,0 +1,967 @@
+{
+ "milestone": "WP1D.7",
+ "model": {
+  "path": "build\\anatomy.glb",
+  "sha256": "83e3d08f14f52fa3d6f5bdd4b8b2ba29cb0e7158cffb405d81574a111d06b8f0",
+  "bytes": 3596440
+ },
+ "blender": "4.2.23 LTS",
+ "thresholds": {
+  "outside_mm": 2.0,
+  "coincident_mm": 0.2
+ },
+ "objects": [
+  {
+   "name": "abs",
+   "slug": "abs",
+   "verts": 3177,
+   "polys": 6354,
+   "groups": 20,
+   "materials": [
+    "abs"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 9531,
+   "welded_components": 6,
+   "unique_positions": 3177,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 3,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.012,
+     "p99_m": 0.0017,
+     "beyond_2mm": 27,
+     "spike_vertices": 1
+    },
+    "posed": {
+     "max_m": 0.0265,
+     "p99_m": 0.0211,
+     "beyond_2mm": 546,
+     "spike_vertices": 14
+    }
+   }
+  },
+  {
+   "name": "back",
+   "slug": "back",
+   "verts": 2397,
+   "polys": 4786,
+   "groups": 20,
+   "materials": [
+    "back"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 7179,
+   "welded_components": 15,
+   "unique_positions": 2396,
+   "duplicate_vertices": 1,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 4,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 296,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0079,
+     "p99_m": 0.0016,
+     "beyond_2mm": 19,
+     "spike_vertices": 1
+    },
+    "posed": {
+     "max_m": 0.0463,
+     "p99_m": 0.0347,
+     "beyond_2mm": 413,
+     "spike_vertices": 2
+    }
+   }
+  },
+  {
+   "name": "biceps",
+   "slug": "biceps",
+   "verts": 331,
+   "polys": 670,
+   "groups": 20,
+   "materials": [
+    "biceps"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 1005,
+   "welded_components": 4,
+   "unique_positions": 331,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 3,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "spike_vertices": 0
+    },
+    "posed": {
+     "max_m": 0.0353,
+     "p99_m": 0.0244,
+     "beyond_2mm": 19,
+     "spike_vertices": 3
+    }
+   }
+  },
+  {
+   "name": "body",
+   "slug": null,
+   "verts": 41999,
+   "polys": 14000,
+   "groups": 20,
+   "materials": [
+    "body"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 42000,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 42000,
+   "welded_components": 1,
+   "unique_positions": 7159,
+   "duplicate_vertices": 34840,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 4,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 5828
+  },
+  {
+   "name": "calves",
+   "slug": "calves",
+   "verts": 1016,
+   "polys": 2052,
+   "groups": 20,
+   "materials": [
+    "calves"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 12,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 4,
+   "edges": 3084,
+   "welded_components": 10,
+   "unique_positions": 1016,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 2,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0076,
+     "p99_m": 0.0057,
+     "beyond_2mm": 61,
+     "spike_vertices": 0
+    },
+    "posed": {
+     "max_m": 0.0079,
+     "p99_m": 0.0038,
+     "beyond_2mm": 24,
+     "spike_vertices": 1
+    }
+   }
+  },
+  {
+   "name": "chest",
+   "slug": "chest",
+   "verts": 320,
+   "polys": 632,
+   "groups": 20,
+   "materials": [
+    "chest"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 948,
+   "welded_components": 6,
+   "unique_positions": 320,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 4,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0066,
+     "p99_m": 0.0033,
+     "beyond_2mm": 12,
+     "spike_vertices": 1
+    },
+    "posed": {
+     "max_m": 0.0288,
+     "p99_m": 0.0262,
+     "beyond_2mm": 142,
+     "spike_vertices": 0
+    }
+   }
+  },
+  {
+   "name": "glutes",
+   "slug": "glutes",
+   "verts": 844,
+   "polys": 1670,
+   "groups": 20,
+   "materials": [
+    "glutes"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 6,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 2,
+   "edges": 2508,
+   "welded_components": 8,
+   "unique_positions": 844,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 4,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 60,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0081,
+     "p99_m": 0.0015,
+     "beyond_2mm": 7,
+     "spike_vertices": 0
+    },
+    "posed": {
+     "max_m": 0.0141,
+     "p99_m": 0.004,
+     "beyond_2mm": 14,
+     "spike_vertices": 0
+    }
+   }
+  },
+  {
+   "name": "hamstrings",
+   "slug": "hamstrings",
+   "verts": 1214,
+   "polys": 2434,
+   "groups": 20,
+   "materials": [
+    "hamstrings"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 6,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 2,
+   "edges": 3654,
+   "welded_components": 10,
+   "unique_positions": 1214,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 4,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 208,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0003,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "spike_vertices": 0
+    },
+    "posed": {
+     "max_m": 0.0016,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "spike_vertices": 0
+    }
+   }
+  },
+  {
+   "name": "obliques",
+   "slug": "obliques",
+   "verts": 11581,
+   "polys": 6632,
+   "groups": 20,
+   "materials": [
+    "obliques"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 9986,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 3240,
+   "edges": 14941,
+   "welded_components": 4,
+   "unique_positions": 3267,
+   "duplicate_vertices": 8314,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 3,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0106,
+     "p99_m": 0.0087,
+     "beyond_2mm": 2775,
+     "spike_vertices": 457
+    },
+    "posed": {
+     "max_m": 0.0349,
+     "p99_m": 0.0275,
+     "beyond_2mm": 4020,
+     "spike_vertices": 453
+    }
+   }
+  },
+  {
+   "name": "quads",
+   "slug": "quads",
+   "verts": 1703,
+   "polys": 3430,
+   "groups": 20,
+   "materials": [
+    "quads"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 5145,
+   "welded_components": 8,
+   "unique_positions": 1703,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 2,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0061,
+     "p99_m": 0.0032,
+     "beyond_2mm": 29,
+     "spike_vertices": 0
+    },
+    "posed": {
+     "max_m": 0.0046,
+     "p99_m": 0.0019,
+     "beyond_2mm": 16,
+     "spike_vertices": 0
+    }
+   }
+  },
+  {
+   "name": "shoulders",
+   "slug": "shoulders",
+   "verts": 584,
+   "polys": 1160,
+   "groups": 20,
+   "materials": [
+    "shoulders"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 1740,
+   "welded_components": 6,
+   "unique_positions": 584,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 4,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "spike_vertices": 0
+    },
+    "posed": {
+     "max_m": 0.0,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "spike_vertices": 0
+    }
+   }
+  },
+  {
+   "name": "skeleton",
+   "slug": null,
+   "verts": 3463,
+   "polys": 5805,
+   "groups": 20,
+   "materials": [
+    "skeleton"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 659,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 8,
+   "flipped_faces": 4,
+   "degenerate_faces": 2,
+   "flat_shaded_faces": 71,
+   "edges": 9037,
+   "welded_components": 230,
+   "unique_positions": 3159,
+   "duplicate_vertices": 304,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 1,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0352,
+     "p99_m": 0.0188,
+     "beyond_2mm": 186,
+     "spike_vertices": 23
+    },
+    "posed": {
+     "max_m": 0.0695,
+     "p99_m": 0.0238,
+     "beyond_2mm": 379,
+     "spike_vertices": 40
+    }
+   }
+  },
+  {
+   "name": "triceps",
+   "slug": "triceps",
+   "verts": 593,
+   "polys": 1162,
+   "groups": 20,
+   "materials": [
+    "triceps"
+   ],
+   "parent": "AnatomyRig",
+   "modifiers": [
+    [
+     "ARMATURE",
+     "AnatomyRig"
+    ]
+   ],
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "inconsistent_winding_edges": 0,
+   "flipped_faces": 0,
+   "degenerate_faces": 0,
+   "flat_shaded_faces": 0,
+   "edges": 1743,
+   "welded_components": 6,
+   "unique_positions": 593,
+   "duplicate_vertices": 0,
+   "vertex_groups": 20,
+   "unweighted_vertices": 0,
+   "weight_sum_off_vertices": 0,
+   "worst_weight_sum_error": 0.0,
+   "max_influences": 3,
+   "leaked_vertices": 0,
+   "leaked_bones": [],
+   "cross_side_vertices": 0,
+   "protrusion": {
+    "rest": {
+     "max_m": 0.0316,
+     "p99_m": 0.0,
+     "beyond_2mm": 4,
+     "spike_vertices": 2
+    },
+    "posed": {
+     "max_m": 0.0318,
+     "p99_m": 0.0228,
+     "beyond_2mm": 29,
+     "spike_vertices": 3
+    }
+   }
+  }
+ ],
+ "states": {
+  "rest": {
+   "body_verts": 41999,
+   "body_polys": 14000,
+   "protrusion": {
+    "chest": {
+     "max_m": 0.0066,
+     "p99_m": 0.0033,
+     "beyond_2mm": 12,
+     "beyond_5mm": 2,
+     "spike_vertices": 1,
+     "sampled": 320
+    },
+    "back": {
+     "max_m": 0.0079,
+     "p99_m": 0.0016,
+     "beyond_2mm": 19,
+     "beyond_5mm": 9,
+     "spike_vertices": 1,
+     "sampled": 2397
+    },
+    "shoulders": {
+     "max_m": 0.0,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 584
+    },
+    "biceps": {
+     "max_m": 0.0,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 331
+    },
+    "triceps": {
+     "max_m": 0.0316,
+     "p99_m": 0.0,
+     "beyond_2mm": 4,
+     "beyond_5mm": 4,
+     "spike_vertices": 2,
+     "sampled": 593
+    },
+    "abs": {
+     "max_m": 0.012,
+     "p99_m": 0.0017,
+     "beyond_2mm": 27,
+     "beyond_5mm": 1,
+     "spike_vertices": 1,
+     "sampled": 3177
+    },
+    "obliques": {
+     "max_m": 0.0106,
+     "p99_m": 0.0087,
+     "beyond_2mm": 2775,
+     "beyond_5mm": 1162,
+     "spike_vertices": 457,
+     "sampled": 11581
+    },
+    "glutes": {
+     "max_m": 0.0081,
+     "p99_m": 0.0015,
+     "beyond_2mm": 7,
+     "beyond_5mm": 3,
+     "spike_vertices": 0,
+     "sampled": 844
+    },
+    "quads": {
+     "max_m": 0.0061,
+     "p99_m": 0.0032,
+     "beyond_2mm": 29,
+     "beyond_5mm": 3,
+     "spike_vertices": 0,
+     "sampled": 1703
+    },
+    "hamstrings": {
+     "max_m": 0.0003,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 1214
+    },
+    "calves": {
+     "max_m": 0.0076,
+     "p99_m": 0.0057,
+     "beyond_2mm": 61,
+     "beyond_5mm": 18,
+     "spike_vertices": 0,
+     "sampled": 1016
+    },
+    "skeleton": {
+     "max_m": 0.0352,
+     "p99_m": 0.0188,
+     "beyond_2mm": 186,
+     "beyond_5mm": 135,
+     "spike_vertices": 23,
+     "sampled": 3463
+    }
+   },
+   "coincident": {
+    "sampled": 27223,
+    "coincident": 376
+   }
+  },
+  "rdl_reviewed": {
+   "body_verts": 41999,
+   "body_polys": 14000,
+   "protrusion": {
+    "chest": {
+     "max_m": 0.0085,
+     "p99_m": 0.008,
+     "beyond_2mm": 52,
+     "beyond_5mm": 19,
+     "spike_vertices": 0,
+     "sampled": 320
+    },
+    "back": {
+     "max_m": 0.035,
+     "p99_m": 0.0227,
+     "beyond_2mm": 234,
+     "beyond_5mm": 192,
+     "spike_vertices": 16,
+     "sampled": 2397
+    },
+    "shoulders": {
+     "max_m": 0.0006,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 584
+    },
+    "biceps": {
+     "max_m": 0.0153,
+     "p99_m": 0.0065,
+     "beyond_2mm": 6,
+     "beyond_5mm": 4,
+     "spike_vertices": 0,
+     "sampled": 331
+    },
+    "triceps": {
+     "max_m": 0.031,
+     "p99_m": 0.0242,
+     "beyond_2mm": 28,
+     "beyond_5mm": 24,
+     "spike_vertices": 1,
+     "sampled": 593
+    },
+    "abs": {
+     "max_m": 0.0307,
+     "p99_m": 0.0143,
+     "beyond_2mm": 273,
+     "beyond_5mm": 191,
+     "spike_vertices": 4,
+     "sampled": 3177
+    },
+    "obliques": {
+     "max_m": 0.0214,
+     "p99_m": 0.0128,
+     "beyond_2mm": 2793,
+     "beyond_5mm": 1312,
+     "spike_vertices": 522,
+     "sampled": 11581
+    },
+    "glutes": {
+     "max_m": 0.0081,
+     "p99_m": 0.0039,
+     "beyond_2mm": 22,
+     "beyond_5mm": 6,
+     "spike_vertices": 1,
+     "sampled": 844
+    },
+    "quads": {
+     "max_m": 0.0064,
+     "p99_m": 0.0035,
+     "beyond_2mm": 33,
+     "beyond_5mm": 5,
+     "spike_vertices": 0,
+     "sampled": 1703
+    },
+    "hamstrings": {
+     "max_m": 0.0002,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 1214
+    },
+    "calves": {
+     "max_m": 0.0086,
+     "p99_m": 0.0071,
+     "beyond_2mm": 76,
+     "beyond_5mm": 27,
+     "spike_vertices": 0,
+     "sampled": 1016
+    },
+    "skeleton": {
+     "max_m": 0.0863,
+     "p99_m": 0.0227,
+     "beyond_2mm": 302,
+     "beyond_5mm": 224,
+     "spike_vertices": 29,
+     "sampled": 3463
+    }
+   },
+   "coincident": {
+    "sampled": 27223,
+    "coincident": 344
+   }
+  },
+  "row_reviewed": {
+   "body_verts": 41999,
+   "body_polys": 14000,
+   "protrusion": {
+    "chest": {
+     "max_m": 0.0288,
+     "p99_m": 0.0262,
+     "beyond_2mm": 142,
+     "beyond_5mm": 117,
+     "spike_vertices": 0,
+     "sampled": 320
+    },
+    "back": {
+     "max_m": 0.0463,
+     "p99_m": 0.0347,
+     "beyond_2mm": 413,
+     "beyond_5mm": 331,
+     "spike_vertices": 2,
+     "sampled": 2397
+    },
+    "shoulders": {
+     "max_m": 0.0,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 584
+    },
+    "biceps": {
+     "max_m": 0.0353,
+     "p99_m": 0.0244,
+     "beyond_2mm": 19,
+     "beyond_5mm": 16,
+     "spike_vertices": 3,
+     "sampled": 331
+    },
+    "triceps": {
+     "max_m": 0.0318,
+     "p99_m": 0.0228,
+     "beyond_2mm": 29,
+     "beyond_5mm": 29,
+     "spike_vertices": 3,
+     "sampled": 593
+    },
+    "abs": {
+     "max_m": 0.0265,
+     "p99_m": 0.0211,
+     "beyond_2mm": 546,
+     "beyond_5mm": 390,
+     "spike_vertices": 14,
+     "sampled": 3177
+    },
+    "obliques": {
+     "max_m": 0.0349,
+     "p99_m": 0.0275,
+     "beyond_2mm": 4020,
+     "beyond_5mm": 3223,
+     "spike_vertices": 453,
+     "sampled": 11581
+    },
+    "glutes": {
+     "max_m": 0.0141,
+     "p99_m": 0.004,
+     "beyond_2mm": 14,
+     "beyond_5mm": 6,
+     "spike_vertices": 0,
+     "sampled": 844
+    },
+    "quads": {
+     "max_m": 0.0046,
+     "p99_m": 0.0019,
+     "beyond_2mm": 16,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 1703
+    },
+    "hamstrings": {
+     "max_m": 0.0016,
+     "p99_m": 0.0,
+     "beyond_2mm": 0,
+     "beyond_5mm": 0,
+     "spike_vertices": 0,
+     "sampled": 1214
+    },
+    "calves": {
+     "max_m": 0.0079,
+     "p99_m": 0.0038,
+     "beyond_2mm": 24,
+     "beyond_5mm": 6,
+     "spike_vertices": 1,
+     "sampled": 1016
+    },
+    "skeleton": {
+     "max_m": 0.0695,
+     "p99_m": 0.0238,
+     "beyond_2mm": 379,
+     "beyond_5mm": 303,
+     "spike_vertices": 40,
+     "sampled": 3463
+    }
+   },
+   "coincident": {
+    "sampled": 27223,
+    "coincident": 130
+   }
+  }
+ },
+ "summary_static": {
+  "meshes": 13,
+  "inconsistent_winding_edges": 8,
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 2,
+  "unweighted_vertices": 0,
+  "leaked_vertices": 0,
+  "flat_shaded_faces": 3319
+ }
+}

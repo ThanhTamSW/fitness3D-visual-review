@@ -1,0 +1,56 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v7_minimal_no_soft_shadows",
+   "note": "v5 plus hard shadows: is the oscillation the soft-shadow jitter?",
+   "overrides": {
+    "use_taa_reprojection": false,
+    "use_raytracing": false,
+    "ray_tracing_options.use_denoise": false,
+    "use_soft_shadows": false
+   },
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": true,
+    "soft_shadows": false
+   },
+   "passes": 4,
+   "images": [
+    {
+     "file": "repeat/rdl_v7_minimal_no_soft_shadows_p0.png",
+     "sha256": "09d9732f8aa7ba3a9f794f5ee4cea3a001f60e74e9dd1d4c270d758243c870a4"
+    },
+    {
+     "file": "repeat/rdl_v7_minimal_no_soft_shadows_p1.png",
+     "sha256": "8b2100f8c0fabc142ea5e224610f1809effa5721e29517514777e8dfbcd92416"
+    },
+    {
+     "file": "repeat/rdl_v7_minimal_no_soft_shadows_p2.png",
+     "sha256": "e0b141605308ab78455993c6d0d49d0cf90c117b4c8b242f8a28fa31c61d63c9"
+    },
+    {
+     "file": "repeat/rdl_v7_minimal_no_soft_shadows_p3.png",
+     "sha256": "9e821b4f8727fa6328e3dc06fadcee609c5939897396a35aa0cddaf0379d7a28"
+    }
+   ],
+   "distinct_hashes": 4
+  }
+ ]
+}

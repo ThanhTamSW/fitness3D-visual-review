@@ -1,0 +1,89 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 1,
+ "resolution": [
+  900,
+  1200
+ ],
+ "controlled": {
+  "visible": "body shell only (all other meshes hidden)",
+  "shadows": false,
+  "film_transparent": true,
+  "asset_modified": false,
+  "weld": {
+   "verts_before": 41999,
+   "verts_after": 7095,
+   "threshold_m": 0.0005
+  }
+ },
+ "records": [
+  {
+   "tag": "s0_shipping",
+   "file": "skin_seams/rdl_s0_shipping.png",
+   "metrics": {
+    "subject_pixels": 84549,
+    "residual_std": 2.2588,
+    "residual_mean_abs": 1.3969,
+    "residual_p99": 11.693,
+    "strong_edge_fraction": 0.0794,
+    "plate_edge_fraction": 0.01724,
+    "mean_luminance": 156.774
+   }
+  },
+  {
+   "tag": "s1_shipping_repeat",
+   "file": "skin_seams/rdl_s1_shipping_repeat.png",
+   "metrics": {
+    "subject_pixels": 84533,
+    "residual_std": 2.2438,
+    "residual_mean_abs": 1.3852,
+    "residual_p99": 11.529,
+    "strong_edge_fraction": 0.07934,
+    "plate_edge_fraction": 0.01728,
+    "mean_luminance": 156.753
+   }
+  },
+  {
+   "tag": "s2_welded",
+   "file": "skin_seams/rdl_s2_welded.png",
+   "metrics": {
+    "subject_pixels": 84533,
+    "residual_std": 2.0654,
+    "residual_mean_abs": 0.9681,
+    "residual_p99": 10.707,
+    "strong_edge_fraction": 0.07721,
+    "plate_edge_fraction": 0.01782,
+    "mean_luminance": 157.145
+   }
+  },
+  {
+   "tag": "s3_welded_repeat",
+   "file": "skin_seams/rdl_s3_welded_repeat.png",
+   "metrics": {
+    "subject_pixels": 84533,
+    "residual_std": 2.0654,
+    "residual_mean_abs": 0.9681,
+    "residual_p99": 10.716,
+    "strong_edge_fraction": 0.07721,
+    "plate_edge_fraction": 0.01782,
+    "mean_luminance": 157.145
+   }
+  }
+ ],
+ "repeat_shipping": {
+  "changed_gt_8": 2,
+  "changed_fraction": 2e-05,
+  "max_delta": 9.0
+ },
+ "repeat_welded": {
+  "changed_gt_8": 0,
+  "changed_fraction": 0.0,
+  "max_delta": 4.0
+ },
+ "shipping_vs_welded": {
+  "changed_gt_8": 14752,
+  "changed_fraction": 0.16586,
+  "max_delta": 100.0
+ }
+}

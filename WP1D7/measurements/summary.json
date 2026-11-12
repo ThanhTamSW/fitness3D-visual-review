@@ -1,0 +1,1537 @@
+{
+ "milestone": "WP1D.7",
+ "model": {
+  "path": "build\\anatomy.glb",
+  "sha256": "83e3d08f14f52fa3d6f5bdd4b8b2ba29cb0e7158cffb405d81574a111d06b8f0",
+  "bytes": 3596440
+ },
+ "blender": "4.2.23 LTS",
+ "anatomy": {
+  "static": {
+   "meshes": 13,
+   "inconsistent_winding_edges": 8,
+   "nonmanifold_edges": 0,
+   "degenerate_faces": 2,
+   "unweighted_vertices": 0,
+   "leaked_vertices": 0,
+   "flat_shaded_faces": 3319
+  },
+  "meshes": [
+   {
+    "name": "abs",
+    "slug": "abs",
+    "verts": 3177,
+    "polys": 6354,
+    "unique_positions": 3177,
+    "duplicate_vertices": 0,
+    "welded_components": 6,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 3,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.012,
+      "p99_m": 0.0017,
+      "beyond_2mm": 27,
+      "spike_vertices": 1
+     },
+     "posed": {
+      "max_m": 0.0265,
+      "p99_m": 0.0211,
+      "beyond_2mm": 546,
+      "spike_vertices": 14
+     }
+    }
+   },
+   {
+    "name": "back",
+    "slug": "back",
+    "verts": 2397,
+    "polys": 4786,
+    "unique_positions": 2396,
+    "duplicate_vertices": 1,
+    "welded_components": 15,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 296,
+    "max_influences": 4,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0079,
+      "p99_m": 0.0016,
+      "beyond_2mm": 19,
+      "spike_vertices": 1
+     },
+     "posed": {
+      "max_m": 0.0463,
+      "p99_m": 0.0347,
+      "beyond_2mm": 413,
+      "spike_vertices": 2
+     }
+    }
+   },
+   {
+    "name": "biceps",
+    "slug": "biceps",
+    "verts": 331,
+    "polys": 670,
+    "unique_positions": 331,
+    "duplicate_vertices": 0,
+    "welded_components": 4,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 3,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0,
+      "p99_m": 0.0,
+      "beyond_2mm": 0,
+      "spike_vertices": 0
+     },
+     "posed": {
+      "max_m": 0.0353,
+      "p99_m": 0.0244,
+      "beyond_2mm": 19,
+      "spike_vertices": 3
+     }
+    }
+   },
+   {
+    "name": "body",
+    "slug": null,
+    "verts": 41999,
+    "polys": 14000,
+    "unique_positions": 7159,
+    "duplicate_vertices": 34840,
+    "welded_components": 1,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 5828,
+    "max_influences": 4,
+    "protrusion": null
+   },
+   {
+    "name": "calves",
+    "slug": "calves",
+    "verts": 1016,
+    "polys": 2052,
+    "unique_positions": 1016,
+    "duplicate_vertices": 0,
+    "welded_components": 10,
+    "flat_shaded_faces": 4,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 2,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0076,
+      "p99_m": 0.0057,
+      "beyond_2mm": 61,
+      "spike_vertices": 0
+     },
+     "posed": {
+      "max_m": 0.0079,
+      "p99_m": 0.0038,
+      "beyond_2mm": 24,
+      "spike_vertices": 1
+     }
+    }
+   },
+   {
+    "name": "chest",
+    "slug": "chest",
+    "verts": 320,
+    "polys": 632,
+    "unique_positions": 320,
+    "duplicate_vertices": 0,
+    "welded_components": 6,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 4,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0066,
+      "p99_m": 0.0033,
+      "beyond_2mm": 12,
+      "spike_vertices": 1
+     },
+     "posed": {
+      "max_m": 0.0288,
+      "p99_m": 0.0262,
+      "beyond_2mm": 142,
+      "spike_vertices": 0
+     }
+    }
+   },
+   {
+    "name": "glutes",
+    "slug": "glutes",
+    "verts": 844,
+    "polys": 1670,
+    "unique_positions": 844,
+    "duplicate_vertices": 0,
+    "welded_components": 8,
+    "flat_shaded_faces": 2,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 60,
+    "max_influences": 4,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0081,
+      "p99_m": 0.0015,
+      "beyond_2mm": 7,
+      "spike_vertices": 0
+     },
+     "posed": {
+      "max_m": 0.0141,
+      "p99_m": 0.004,
+      "beyond_2mm": 14,
+      "spike_vertices": 0
+     }
+    }
+   },
+   {
+    "name": "hamstrings",
+    "slug": "hamstrings",
+    "verts": 1214,
+    "polys": 2434,
+    "unique_positions": 1214,
+    "duplicate_vertices": 0,
+    "welded_components": 10,
+    "flat_shaded_faces": 2,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 208,
+    "max_influences": 4,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0003,
+      "p99_m": 0.0,
+      "beyond_2mm": 0,
+      "spike_vertices": 0
+     },
+     "posed": {
+      "max_m": 0.0016,
+      "p99_m": 0.0,
+      "beyond_2mm": 0,
+      "spike_vertices": 0
+     }
+    }
+   },
+   {
+    "name": "obliques",
+    "slug": "obliques",
+    "verts": 11581,
+    "polys": 6632,
+    "unique_positions": 3267,
+    "duplicate_vertices": 8314,
+    "welded_components": 4,
+    "flat_shaded_faces": 3240,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 3,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0106,
+      "p99_m": 0.0087,
+      "beyond_2mm": 2775,
+      "spike_vertices": 457
+     },
+     "posed": {
+      "max_m": 0.0349,
+      "p99_m": 0.0275,
+      "beyond_2mm": 4020,
+      "spike_vertices": 453
+     }
+    }
+   },
+   {
+    "name": "quads",
+    "slug": "quads",
+    "verts": 1703,
+    "polys": 3430,
+    "unique_positions": 1703,
+    "duplicate_vertices": 0,
+    "welded_components": 8,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 2,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0061,
+      "p99_m": 0.0032,
+      "beyond_2mm": 29,
+      "spike_vertices": 0
+     },
+     "posed": {
+      "max_m": 0.0046,
+      "p99_m": 0.0019,
+      "beyond_2mm": 16,
+      "spike_vertices": 0
+     }
+    }
+   },
+   {
+    "name": "shoulders",
+    "slug": "shoulders",
+    "verts": 584,
+    "polys": 1160,
+    "unique_positions": 584,
+    "duplicate_vertices": 0,
+    "welded_components": 6,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 4,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0,
+      "p99_m": 0.0,
+      "beyond_2mm": 0,
+      "spike_vertices": 0
+     },
+     "posed": {
+      "max_m": 0.0,
+      "p99_m": 0.0,
+      "beyond_2mm": 0,
+      "spike_vertices": 0
+     }
+    }
+   },
+   {
+    "name": "skeleton",
+    "slug": null,
+    "verts": 3463,
+    "polys": 5805,
+    "unique_positions": 3159,
+    "duplicate_vertices": 304,
+    "welded_components": 230,
+    "flat_shaded_faces": 71,
+    "inconsistent_winding_edges": 8,
+    "degenerate_faces": 2,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 1,
+    "protrusion": null
+   },
+   {
+    "name": "triceps",
+    "slug": "triceps",
+    "verts": 593,
+    "polys": 1162,
+    "unique_positions": 593,
+    "duplicate_vertices": 0,
+    "welded_components": 6,
+    "flat_shaded_faces": 0,
+    "inconsistent_winding_edges": 0,
+    "degenerate_faces": 0,
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "cross_side_vertices": 0,
+    "max_influences": 3,
+    "protrusion": {
+     "rest": {
+      "max_m": 0.0316,
+      "p99_m": 0.0,
+      "beyond_2mm": 4,
+      "spike_vertices": 2
+     },
+     "posed": {
+      "max_m": 0.0318,
+      "p99_m": 0.0228,
+      "beyond_2mm": 29,
+      "spike_vertices": 3
+     }
+    }
+   }
+  ]
+ },
+ "render": {
+  "matrix": {
+   "milestone": "WP1D.7",
+   "exercise": "barbell_row",
+   "held_fixed": {
+    "samples": 16,
+    "shadow_rays": 1,
+    "shadow_steps": 6,
+    "soft_shadows": true,
+    "shadows": false,
+    "view_transform": "Standard",
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "film_transparent": false,
+    "resolution": [
+     760,
+     1040
+    ],
+    "engine": "BLENDER_EEVEE_NEXT",
+    "camera": "SideCam",
+    "camera_ortho_scale": 2.01719,
+    "contact_shadow": false,
+    "fast_gi": false
+   },
+   "cells": [
+    {
+     "cell": "A",
+     "note": "baseline: raytracing on, denoiser on",
+     "raytracing": true,
+     "denoise": true,
+     "denoise_spatial": true,
+     "denoise_temporal": true,
+     "denoise_bilateral": true,
+     "deterministic": false,
+     "frame": 150,
+     "camera": "SideCam",
+     "resolution": [
+      760,
+      1040
+     ],
+     "samples": 16,
+     "view_transform": "Standard",
+     "materials": "production palette",
+     "pose": "job phases, resolved by render.resolve_poses",
+     "renders": [
+      {
+       "file": "matrix/row_a_r0.png",
+       "sha256": "4f206225a7f1f286d098992f9f3b865267c0cbc133e22fad50e360f935b412df",
+       "bytes": 614780
+      },
+      {
+       "file": "matrix/row_a_r1.png",
+       "sha256": "5186aa85b58d3e6c3c8dab48d0addb6ee1b42cbe86d757612fdfc4fa0667b70d",
+       "bytes": 653478
+      }
+     ]
+    },
+    {
+     "cell": "B",
+     "note": "raytracing off, denoiser left on: isolates the tracer",
+     "raytracing": false,
+     "denoise": true,
+     "denoise_spatial": true,
+     "denoise_temporal": true,
+     "denoise_bilateral": true,
+     "deterministic": false,
+     "frame": 150,
+     "camera": "SideCam",
+     "resolution": [
+      760,
+      1040
+     ],
+     "samples": 16,
+     "view_transform": "Standard",
+     "materials": "production palette",
+     "pose": "job phases, resolved by render.resolve_poses",
+     "renders": [
+      {
+       "file": "matrix/row_b_r0.png",
+       "sha256": "66fb1fd1c0880eba5a6c0dd597298025b27b4f371d50df13eab2d4b190084bf8",
+       "bytes": 625030
+      },
+      {
+       "file": "matrix/row_b_r1.png",
+       "sha256": "6ab9fa8bec4c63d2cdc27d7762f24471baa27be3ef87d22ea2902eebe4fde5f0",
+       "bytes": 625117
+      }
+     ]
+    },
+    {
+     "cell": "C",
+     "note": "raytracing off, denoiser off: isolates the denoiser",
+     "raytracing": false,
+     "denoise": false,
+     "denoise_spatial": true,
+     "denoise_temporal": true,
+     "denoise_bilateral": true,
+     "deterministic": false,
+     "frame": 150,
+     "camera": "SideCam",
+     "resolution": [
+      760,
+      1040
+     ],
+     "samples": 16,
+     "view_transform": "Standard",
+     "materials": "production palette",
+     "pose": "job phases, resolved by render.resolve_poses",
+     "renders": [
+      {
+       "file": "matrix/row_c_r0.png",
+       "sha256": "0d39bd40f9f804e260c3f0bc3f301d82384146b1b5308b6b1495abbf754f06bd",
+       "bytes": 625027
+      },
+      {
+       "file": "matrix/row_c_r1.png",
+       "sha256": "505beb1b606b0d3784fea55a4943d186ef43a87cac1aca18c1ba961ba6cc930b",
+       "bytes": 625137
+      }
+     ]
+    },
+    {
+     "cell": "D",
+     "note": "raytracing on, denoiser off: tracer without its filter",
+     "raytracing": true,
+     "denoise": false,
+     "denoise_spatial": true,
+     "denoise_temporal": true,
+     "denoise_bilateral": true,
+     "deterministic": false,
+     "frame": 150,
+     "camera": "SideCam",
+     "resolution": [
+      760,
+      1040
+     ],
+     "samples": 16,
+     "view_transform": "Standard",
+     "materials": "production palette",
+     "pose": "job phases, resolved by render.resolve_poses",
+     "renders": [
+      {
+       "file": "matrix/row_d_r0.png",
+       "sha256": "d0204b8181ed7edcef9b52a59d65a2f684b3d6bb4613ab1a2d1e8798eb02a001",
+       "bytes": 623930
+      },
+      {
+       "file": "matrix/row_d_r1.png",
+       "sha256": "923c1380e218b90d7c1ecd009508324c51019b8437a536f598f738dcedcd0ac5",
+       "bytes": 624059
+      }
+     ]
+    }
+   ],
+   "blender": "4.2.23 LTS"
+  },
+  "skin_seams": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "frame": 1,
+   "resolution": [
+    900,
+    1200
+   ],
+   "controlled": {
+    "visible": "body shell only (all other meshes hidden)",
+    "shadows": false,
+    "film_transparent": true,
+    "asset_modified": false,
+    "weld": {
+     "verts_before": 41999,
+     "verts_after": 7095,
+     "threshold_m": 0.0005
+    }
+   },
+   "records": [
+    {
+     "tag": "s0_shipping",
+     "file": "skin_seams/rdl_s0_shipping.png",
+     "metrics": {
+      "subject_pixels": 84549,
+      "residual_std": 2.2588,
+      "residual_mean_abs": 1.3969,
+      "residual_p99": 11.693,
+      "strong_edge_fraction": 0.0794,
+      "plate_edge_fraction": 0.01724,
+      "mean_luminance": 156.774
+     }
+    },
+    {
+     "tag": "s1_shipping_repeat",
+     "file": "skin_seams/rdl_s1_shipping_repeat.png",
+     "metrics": {
+      "subject_pixels": 84533,
+      "residual_std": 2.2438,
+      "residual_mean_abs": 1.3852,
+      "residual_p99": 11.529,
+      "strong_edge_fraction": 0.07934,
+      "plate_edge_fraction": 0.01728,
+      "mean_luminance": 156.753
+     }
+    },
+    {
+     "tag": "s2_welded",
+     "file": "skin_seams/rdl_s2_welded.png",
+     "metrics": {
+      "subject_pixels": 84533,
+      "residual_std": 2.0654,
+      "residual_mean_abs": 0.9681,
+      "residual_p99": 10.707,
+      "strong_edge_fraction": 0.07721,
+      "plate_edge_fraction": 0.01782,
+      "mean_luminance": 157.145
+     }
+    },
+    {
+     "tag": "s3_welded_repeat",
+     "file": "skin_seams/rdl_s3_welded_repeat.png",
+     "metrics": {
+      "subject_pixels": 84533,
+      "residual_std": 2.0654,
+      "residual_mean_abs": 0.9681,
+      "residual_p99": 10.716,
+      "strong_edge_fraction": 0.07721,
+      "plate_edge_fraction": 0.01782,
+      "mean_luminance": 157.145
+     }
+    }
+   ],
+   "repeat_shipping": {
+    "changed_gt_8": 2,
+    "changed_fraction": 2e-05,
+    "max_delta": 9.0
+   },
+   "repeat_welded": {
+    "changed_gt_8": 0,
+    "changed_fraction": 0.0,
+    "max_delta": 4.0
+   },
+   "shipping_vs_welded": {
+    "changed_gt_8": 14752,
+    "changed_fraction": 0.16586,
+    "max_delta": 100.0
+   }
+  },
+  "weld": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "frame": 1,
+   "resolution": [
+    900,
+    1200
+   ],
+   "controlled": {
+    "shadows": false,
+    "reason": "shadow pass alternates frame brightness by ~9.4 levels per render call; removed so it cannot masquerade as the effect",
+    "film_transparent": true,
+    "subject_mask": "alpha > 0.9, eroded by 2 pixels",
+    "weld_ops": [
+     {
+      "object": "body",
+      "verts_before": 41999,
+      "verts_after": 7095
+     },
+     {
+      "object": "obliques",
+      "verts_before": 11581,
+      "verts_after": 3217
+     },
+     {
+      "object": "skeleton",
+      "verts_before": 3463,
+      "verts_after": 3049
+     }
+    ],
+    "asset_modified": false
+   },
+   "records": [
+    {
+     "tag": "w0_shipping",
+     "file": "weld/rdl_w0_shipping.png",
+     "metrics": {
+      "usable": true,
+      "subject_pixels": 113150,
+      "residual_std": 3.7132,
+      "residual_p99": 18.293,
+      "strong_edge_fraction": 0.06089,
+      "plate_edge_fraction": 0.00264,
+      "mean_luminance": 129.822
+     }
+    },
+    {
+     "tag": "w1_shipping_repeat",
+     "file": "weld/rdl_w1_shipping_repeat.png",
+     "metrics": {
+      "usable": true,
+      "subject_pixels": 113150,
+      "residual_std": 3.7071,
+      "residual_p99": 18.227,
+      "strong_edge_fraction": 0.06079,
+      "plate_edge_fraction": 0.00264,
+      "mean_luminance": 129.826
+     }
+    },
+    {
+     "tag": "w2_welded",
+     "file": "weld/rdl_w2_welded.png",
+     "metrics": {
+      "usable": true,
+      "subject_pixels": 113150,
+      "residual_std": 3.6142,
+      "residual_p99": 17.78,
+      "strong_edge_fraction": 0.06284,
+      "plate_edge_fraction": 0.00256,
+      "mean_luminance": 130.032
+     }
+    },
+    {
+     "tag": "w3_welded_repeat",
+     "file": "weld/rdl_w3_welded_repeat.png",
+     "metrics": {
+      "usable": true,
+      "subject_pixels": 113150,
+      "residual_std": 3.6128,
+      "residual_p99": 17.747,
+      "strong_edge_fraction": 0.0628,
+      "plate_edge_fraction": 0.00255,
+      "mean_luminance": 130.033
+     }
+    },
+    {
+     "tag": "w4_shipping_after_rebuild",
+     "file": "weld/rdl_w4_shipping_after_rebuild.png",
+     "metrics": {
+      "usable": true,
+      "subject_pixels": 113150,
+      "residual_std": 3.71,
+      "residual_p99": 18.227,
+      "strong_edge_fraction": 0.06084,
+      "plate_edge_fraction": 0.00263,
+      "mean_luminance": 129.824
+     }
+    }
+   ],
+   "repeat_shipping": {
+    "subject_pixels": 117643,
+    "changed_gt_8": 14,
+    "changed_fraction": 0.00012,
+    "max_delta": 34.0
+   },
+   "repeat_shipping_after_rebuild": {
+    "subject_pixels": 117643,
+    "changed_gt_8": 15,
+    "changed_fraction": 0.00013,
+    "max_delta": 27.0
+   },
+   "repeat_welded": {
+    "subject_pixels": 117643,
+    "changed_gt_8": 9,
+    "changed_fraction": 8e-05,
+    "max_delta": 17.0
+   },
+   "shipping_vs_welded": {
+    "subject_pixels": 117643,
+    "changed_gt_8": 10333,
+    "changed_fraction": 0.08783,
+    "max_delta": 100.0
+   }
+  },
+  "shadow_state": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "variant": "shipped",
+   "overrides": {},
+   "effective": {
+    "shadows": true,
+    "soft_shadows": true,
+    "shadow_high_bitdepth": false,
+    "shadow_ray_count": 1,
+    "shadow_step_count": 6,
+    "shadow_resolution_scale": 1.0,
+    "taa_reprojection": true,
+    "raytracing": false,
+    "denoise": true,
+    "samples": 16
+   },
+   "frames": [
+    {
+     "frame": 176,
+     "file": "shadow/rdl_shipped_f176.png",
+     "subject_mean": 69.768,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 177,
+     "file": "shadow/rdl_shipped_f177.png",
+     "subject_mean": 79.164,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 178,
+     "file": "shadow/rdl_shipped_f178.png",
+     "subject_mean": 79.164,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 179,
+     "file": "shadow/rdl_shipped_f179.png",
+     "subject_mean": 79.164,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 180,
+     "file": "shadow/rdl_shipped_f180.png",
+     "subject_mean": 79.164,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 181,
+     "file": "shadow/rdl_shipped_f181.png",
+     "subject_mean": 79.164,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 182,
+     "file": "shadow/rdl_shipped_f182.png",
+     "subject_mean": 69.768,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 183,
+     "file": "shadow/rdl_shipped_f183.png",
+     "subject_mean": 69.768,
+     "subject_pixels": 790400
+    },
+    {
+     "frame": 184,
+     "file": "shadow/rdl_shipped_f184.png",
+     "subject_mean": 79.164,
+     "subject_pixels": 790400
+    }
+   ],
+   "step_deltas_255": [
+    9.396,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -9.396,
+    0.0,
+    9.396
+   ],
+   "max_abs_step": 9.396,
+   "sign_flips_over_1_5": 0,
+   "constant_brightness": false
+  },
+  "frame_parity": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "base_frame": 180,
+   "sequence": [
+    {
+     "label": "first_render",
+     "frame": 180,
+     "file": "parity/rdl_first_render_f180.png"
+    },
+    {
+     "label": "same_frame_again",
+     "frame": 180,
+     "file": "parity/rdl_same_frame_again_f180.png"
+    },
+    {
+     "label": "next_frame",
+     "frame": 181,
+     "file": "parity/rdl_next_frame_f181.png"
+    },
+    {
+     "label": "back_to_base",
+     "frame": 180,
+     "file": "parity/rdl_back_to_base_f180.png"
+    },
+    {
+     "label": "base_again",
+     "frame": 180,
+     "file": "parity/rdl_base_again_f180.png"
+    },
+    {
+     "label": "previous_frame",
+     "frame": 179,
+     "file": "parity/rdl_previous_frame_f179.png"
+    }
+   ],
+   "comparisons_vs_first": [
+    {
+     "label": "same_frame_again",
+     "frame": 180,
+     "changed_above_8_255": 90198,
+     "max_delta_255": 190.0,
+     "mean_signed_255": [
+      10.835,
+      9.207,
+      8.148
+     ]
+    },
+    {
+     "label": "next_frame",
+     "frame": 181,
+     "changed_above_8_255": 90200,
+     "max_delta_255": 190.0,
+     "mean_signed_255": [
+      10.835,
+      9.208,
+      8.148
+     ]
+    },
+    {
+     "label": "back_to_base",
+     "frame": 180,
+     "changed_above_8_255": 0,
+     "max_delta_255": 2.0,
+     "mean_signed_255": [
+      -0.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "label": "base_again",
+     "frame": 180,
+     "changed_above_8_255": 90199,
+     "max_delta_255": 190.0,
+     "mean_signed_255": [
+      10.835,
+      9.208,
+      8.148
+     ]
+    },
+    {
+     "label": "previous_frame",
+     "frame": 179,
+     "changed_above_8_255": 0,
+     "max_delta_255": 4.0,
+     "mean_signed_255": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   ]
+  }
+ },
+ "visibility": {
+  "rdl": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "frame": 180,
+   "method": "scene.ray_cast per pixel, first hit, no shading",
+   "step": 2,
+   "sampled": 22564,
+   "front_most_counts": {
+    "body": 11262,
+    "skeleton": 340,
+    "muscle": 2413,
+    "equipment": 8549
+   },
+   "front_most_fraction": {
+    "body": 0.49911,
+    "skeleton": 0.01507,
+    "muscle": 0.10694,
+    "equipment": 0.37888
+   },
+   "skeleton_front_pixels": 340,
+   "skeleton_front_bbox": [
+    230,
+    314,
+    494,
+    912
+   ],
+   "skeleton_front_objects": {
+    "skeleton": 340
+   },
+   "muscle_front_pixels": 2413,
+   "muscle_front_objects": {
+    "back": 904,
+    "chest": 1,
+    "abs": 117,
+    "obliques": 930,
+    "biceps": 3,
+    "glutes": 326,
+    "calves": 132
+   },
+   "map": "visibility/rdl_visibility.png",
+   "colours": {
+    "body": [
+     150,
+     150,
+     158
+    ],
+    "muscle": [
+     205,
+     60,
+     60
+    ],
+    "skeleton": [
+     240,
+     236,
+     220
+    ],
+    "equipment": [
+     70,
+     120,
+     200
+    ],
+    "floor": [
+     25,
+     30,
+     36
+    ],
+    "other": [
+     120,
+     60,
+     160
+    ]
+   }
+  },
+  "row": {
+   "milestone": "WP1D.7",
+   "exercise": "barbell_row",
+   "frame": 150,
+   "method": "scene.ray_cast per pixel, first hit, no shading",
+   "step": 2,
+   "sampled": 27159,
+   "front_most_counts": {
+    "body": 15625,
+    "skeleton": 111,
+    "muscle": 891,
+    "equipment": 10532
+   },
+   "front_most_fraction": {
+    "body": 0.57532,
+    "skeleton": 0.00409,
+    "muscle": 0.03281,
+    "equipment": 0.38779
+   },
+   "skeleton_front_pixels": 111,
+   "skeleton_front_bbox": [
+    222,
+    208,
+    422,
+    912
+   ],
+   "skeleton_front_objects": {
+    "skeleton": 111
+   },
+   "muscle_front_pixels": 891,
+   "muscle_front_objects": {
+    "back": 384,
+    "chest": 5,
+    "shoulders": 17,
+    "obliques": 100,
+    "abs": 1,
+    "quads": 178,
+    "hamstrings": 1,
+    "calves": 205
+   },
+   "map": "visibility/row_visibility.png",
+   "colours": {
+    "body": [
+     150,
+     150,
+     158
+    ],
+    "muscle": [
+     205,
+     60,
+     60
+    ],
+    "skeleton": [
+     240,
+     236,
+     220
+    ],
+    "equipment": [
+     70,
+     120,
+     200
+    ],
+    "floor": [
+     25,
+     30,
+     36
+    ],
+    "other": [
+     120,
+     60,
+     160
+    ]
+   }
+  }
+ },
+ "grain": {
+  "ship_16spp": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "variant": "ship_16spp",
+   "overrides": {
+    "taa_render_samples": 16
+   },
+   "effective": {
+    "samples": 16,
+    "shadows": true,
+    "soft_shadows": true,
+    "shadow_rays": 1,
+    "shadow_resolution_scale": 1.0,
+    "raytracing": false,
+    "denoise": true,
+    "reprojection": true
+   },
+   "flat_pixels": 315809,
+   "grain_std": 0.283,
+   "grain_mean_abs": 0.246,
+   "grain_p99_abs": 0.7357,
+   "fraction_above_1_code": 0.0,
+   "fraction_above_2_code": 0.0,
+   "file": "grain_source/rdl_ship_16spp.png"
+  },
+  "ship_64spp": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "variant": "ship_64spp",
+   "overrides": {
+    "taa_render_samples": 64
+   },
+   "effective": {
+    "samples": 64,
+    "shadows": true,
+    "soft_shadows": true,
+    "shadow_rays": 1,
+    "shadow_resolution_scale": 1.0,
+    "raytracing": false,
+    "denoise": true,
+    "reprojection": true
+   },
+   "flat_pixels": 315757,
+   "grain_std": 0.283,
+   "grain_mean_abs": 0.246,
+   "grain_p99_abs": 0.7357,
+   "fraction_above_1_code": 0.0,
+   "fraction_above_2_code": 0.0,
+   "file": "grain_source/rdl_ship_64spp.png"
+  },
+  "ship_8spp": {
+   "milestone": "WP1D.7",
+   "exercise": "romanian_deadlift",
+   "variant": "ship_8spp",
+   "overrides": {
+    "taa_render_samples": 8
+   },
+   "effective": {
+    "samples": 8,
+    "shadows": true,
+    "soft_shadows": true,
+    "shadow_rays": 1,
+    "shadow_resolution_scale": 1.0,
+    "raytracing": false,
+    "denoise": true,
+    "reprojection": true
+   },
+   "flat_pixels": 315828,
+   "grain_std": 0.283,
+   "grain_mean_abs": 0.246,
+   "grain_p99_abs": 0.7357,
+   "fraction_above_1_code": 0.0,
+   "fraction_above_2_code": 0.0,
+   "file": "grain_source/rdl_ship_8spp.png"
+  }
+ },
+ "published": {
+  "milestone": "WP1D.7",
+  "sets": [
+   {
+    "name": "rdl_side",
+    "png": {
+     "usable": true,
+     "file": "rdl_side_final.png",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 980825,
+     "residual_std": 1.0009,
+     "residual_mean_abs": 0.4722,
+     "residual_p99": 4.7867,
+     "speckle_gt_2": 0.02658,
+     "speckle_gt_4": 0.01351,
+     "speckle_pixels_gt_2": 26066,
+     "block_edge_residual": 0.0051,
+     "block_interior_residual": -0.004,
+     "block_edge_ratio": 0.989
+    },
+    "jpg": {
+     "usable": true,
+     "file": "rdl_side_final.jpg",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 980000,
+     "residual_std": 0.8389,
+     "residual_mean_abs": 0.1393,
+     "residual_p99": 3.96,
+     "speckle_gt_2": 0.02296,
+     "speckle_gt_4": 0.00973,
+     "speckle_pixels_gt_2": 22499,
+     "block_edge_residual": 0.004,
+     "block_interior_residual": -0.0041,
+     "block_edge_ratio": 1.169
+    },
+    "jpeg_added_std": -0.162,
+    "jpeg_added_speckle_gt_2": -0.00362,
+    "jpeg_block_ratio": 1.169,
+    "png_block_ratio": 0.989
+   },
+   {
+    "name": "rdl_bottom",
+    "png": {
+     "usable": true,
+     "file": "rdl_bottom_final.png",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 981147,
+     "residual_std": 0.7133,
+     "residual_mean_abs": 0.4162,
+     "residual_p99": 2.8267,
+     "speckle_gt_2": 0.0165,
+     "speckle_gt_4": 0.00508,
+     "speckle_pixels_gt_2": 16185,
+     "block_edge_residual": -0.0009,
+     "block_interior_residual": -0.0001,
+     "block_edge_ratio": 0.999
+    },
+    "jpg": {
+     "usable": true,
+     "file": "rdl_bottom_final.jpg",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 980089,
+     "residual_std": 0.5236,
+     "residual_mean_abs": 0.085,
+     "residual_p99": 2.24,
+     "speckle_gt_2": 0.01161,
+     "speckle_gt_4": 0.00368,
+     "speckle_pixels_gt_2": 11382,
+     "block_edge_residual": -0.003,
+     "block_interior_residual": 0.0012,
+     "block_edge_ratio": 1.319
+    },
+    "jpeg_added_std": -0.1897,
+    "jpeg_added_speckle_gt_2": -0.00489,
+    "jpeg_block_ratio": 1.319,
+    "png_block_ratio": 0.999
+   },
+   {
+    "name": "row_side",
+    "png": {
+     "usable": true,
+     "file": "row_side_final.png",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 979181,
+     "residual_std": 0.7523,
+     "residual_mean_abs": 0.4476,
+     "residual_p99": 3.32,
+     "speckle_gt_2": 0.02577,
+     "speckle_gt_4": 0.00606,
+     "speckle_pixels_gt_2": 25230,
+     "block_edge_residual": 0.0076,
+     "block_interior_residual": -0.0016,
+     "block_edge_ratio": 0.992
+    },
+    "jpg": {
+     "usable": true,
+     "file": "row_side_final.jpg",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 978043,
+     "residual_std": 0.5371,
+     "residual_mean_abs": 0.1129,
+     "residual_p99": 2.6933,
+     "speckle_gt_2": 0.01712,
+     "speckle_gt_4": 0.0038,
+     "speckle_pixels_gt_2": 16741,
+     "block_edge_residual": 0.0047,
+     "block_interior_residual": -0.0,
+     "block_edge_ratio": 1.305
+    },
+    "jpeg_added_std": -0.2152,
+    "jpeg_added_speckle_gt_2": -0.00865,
+    "jpeg_block_ratio": 1.305,
+    "png_block_ratio": 0.992
+   },
+   {
+    "name": "row_front45",
+    "png": {
+     "usable": true,
+     "file": "row_front45_final.png",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 992283,
+     "residual_std": 0.933,
+     "residual_mean_abs": 0.4393,
+     "residual_p99": 4.0933,
+     "speckle_gt_2": 0.01971,
+     "speckle_gt_4": 0.01038,
+     "speckle_pixels_gt_2": 19559,
+     "block_edge_residual": 0.0005,
+     "block_interior_residual": 0.0015,
+     "block_edge_ratio": 1.002
+    },
+    "jpg": {
+     "usable": true,
+     "file": "row_front45_final.jpg",
+     "size": [
+      900,
+      1200
+     ],
+     "flat_pixels": 991300,
+     "residual_std": 0.7545,
+     "residual_mean_abs": 0.1093,
+     "residual_p99": 3.4,
+     "speckle_gt_2": 0.0181,
+     "speckle_gt_4": 0.00769,
+     "speckle_pixels_gt_2": 17946,
+     "block_edge_residual": -0.0008,
+     "block_interior_residual": 0.0023,
+     "block_edge_ratio": 1.268
+    },
+    "jpeg_added_std": -0.1785,
+    "jpeg_added_speckle_gt_2": -0.00161,
+    "jpeg_block_ratio": 1.268,
+    "png_block_ratio": 1.002
+   }
+  ],
+  "reencode": [
+   {
+    "set": "rdl_side",
+    "quality": 80,
+    "residual_std": 0.8389,
+    "speckle_gt_2": 0.02296,
+    "block_edge_ratio": 1.169,
+    "file": "published/reencode/rdl_side_final_q80.jpg"
+   },
+   {
+    "set": "rdl_side",
+    "quality": 90,
+    "residual_std": 0.941,
+    "speckle_gt_2": 0.02535,
+    "block_edge_ratio": 1.159,
+    "file": "published/reencode/rdl_side_final_q90.jpg"
+   },
+   {
+    "set": "rdl_side",
+    "quality": 95,
+    "residual_std": 1.0555,
+    "speckle_gt_2": 0.02725,
+    "block_edge_ratio": 1.062,
+    "file": "published/reencode/rdl_side_final_q95.jpg"
+   },
+   {
+    "set": "rdl_bottom",
+    "quality": 80,
+    "residual_std": 0.5236,
+    "speckle_gt_2": 0.01161,
+    "block_edge_ratio": 1.319,
+    "file": "published/reencode/rdl_bottom_final_q80.jpg"
+   },
+   {
+    "set": "rdl_bottom",
+    "quality": 90,
+    "residual_std": 0.6209,
+    "speckle_gt_2": 0.01421,
+    "block_edge_ratio": 1.235,
+    "file": "published/reencode/rdl_bottom_final_q90.jpg"
+   },
+   {
+    "set": "rdl_bottom",
+    "quality": 95,
+    "residual_std": 0.7616,
+    "speckle_gt_2": 0.01705,
+    "block_edge_ratio": 1.084,
+    "file": "published/reencode/rdl_bottom_final_q95.jpg"
+   },
+   {
+    "set": "row_side",
+    "quality": 80,
+    "residual_std": 0.5371,
+    "speckle_gt_2": 0.01712,
+    "block_edge_ratio": 1.305,
+    "file": "published/reencode/row_side_final_q80.jpg"
+   },
+   {
+    "set": "row_side",
+    "quality": 90,
+    "residual_std": 0.6371,
+    "speckle_gt_2": 0.02137,
+    "block_edge_ratio": 1.225,
+    "file": "published/reencode/row_side_final_q90.jpg"
+   },
+   {
+    "set": "row_side",
+    "quality": 95,
+    "residual_std": 0.797,
+    "speckle_gt_2": 0.02591,
+    "block_edge_ratio": 1.078,
+    "file": "published/reencode/row_side_final_q95.jpg"
+   },
+   {
+    "set": "row_front45",
+    "quality": 80,
+    "residual_std": 0.7545,
+    "speckle_gt_2": 0.0181,
+    "block_edge_ratio": 1.268,
+    "file": "published/reencode/row_front45_final_q80.jpg"
+   },
+   {
+    "set": "row_front45",
+    "quality": 90,
+    "residual_std": 0.8665,
+    "speckle_gt_2": 0.01973,
+    "block_edge_ratio": 1.196,
+    "file": "published/reencode/row_front45_final_q90.jpg"
+   },
+   {
+    "set": "row_front45",
+    "quality": 95,
+    "residual_std": 0.9844,
+    "speckle_gt_2": 0.02039,
+    "block_edge_ratio": 1.075,
+    "file": "published/reencode/row_front45_final_q95.jpg"
+   }
+  ]
+ },
+ "repeatability": {
+  "v1_production": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": true,
+    "raytracing": false,
+    "denoise": true,
+    "shadows": true,
+    "soft_shadows": true
+   }
+  },
+  "v2_no_reprojection": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": true,
+    "shadows": true,
+    "soft_shadows": true
+   }
+  },
+  "v3_no_reprojection_no_denoise": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": true,
+    "soft_shadows": true
+   }
+  },
+  "v4_reprojection_no_raytracing": {
+   "identical_hashes": false,
+   "distinct_hashes": 3,
+   "passes": 3,
+   "effective": null
+  },
+  "v5_none": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": null
+  },
+  "v4_no_raytracing": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": true,
+    "raytracing": false,
+    "denoise": true,
+    "shadows": true,
+    "soft_shadows": true
+   }
+  },
+  "v5_minimal": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": true,
+    "soft_shadows": true
+   }
+  },
+  "v6_minimal_no_shadows": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": false,
+    "soft_shadows": true
+   }
+  },
+  "v7_minimal_no_soft_shadows": {
+   "identical_hashes": false,
+   "distinct_hashes": 4,
+   "passes": 4,
+   "effective": {
+    "taa_reprojection": false,
+    "raytracing": false,
+    "denoise": false,
+    "shadows": true,
+    "soft_shadows": false
+   }
+  }
+ }
+}

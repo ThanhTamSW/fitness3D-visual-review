@@ -1,0 +1,67 @@
+{
+ "milestone": "WP1D.7",
+ "objects": {
+  "abs": {
+   "cross_side_vertices": 0
+  },
+  "back": {
+   "cross_side_vertices": 296,
+   "max_abs_x_m": 0.06655,
+   "p99_abs_x_m": 0.06453,
+   "median_abs_x_m": 0.0042,
+   "imbalance_gt_0_6": 0,
+   "outside_0_15m": 0
+  },
+  "biceps": {
+   "cross_side_vertices": 0
+  },
+  "body": {
+   "cross_side_vertices": 5828,
+   "max_abs_x_m": 0.09652,
+   "p99_abs_x_m": 0.08335,
+   "median_abs_x_m": 0.02115,
+   "imbalance_gt_0_6": 1839,
+   "outside_0_15m": 0
+  },
+  "calves": {
+   "cross_side_vertices": 0
+  },
+  "chest": {
+   "cross_side_vertices": 0
+  },
+  "glutes": {
+   "cross_side_vertices": 60,
+   "max_abs_x_m": 0.07842,
+   "p99_abs_x_m": 0.07842,
+   "median_abs_x_m": 0.01956,
+   "imbalance_gt_0_6": 0,
+   "outside_0_15m": 0
+  },
+  "hamstrings": {
+   "cross_side_vertices": 208,
+   "max_abs_x_m": 0.05826,
+   "p99_abs_x_m": 0.058,
+   "median_abs_x_m": 0.03358,
+   "imbalance_gt_0_6": 208,
+   "outside_0_15m": 0
+  },
+  "obliques": {
+   "cross_side_vertices": 0
+  },
+  "quads": {
+   "cross_side_vertices": 0
+  },
+  "shoulders": {
+   "cross_side_vertices": 0
+  },
+  "skeleton": {
+   "cross_side_vertices": 0
+  },
+  "triceps": {
+   "cross_side_vertices": 0
+  }
+ },
+ "all_max_abs_x_m": 0.09652,
+ "total_cross_side_vertices": 6392,
+ "total_outside_0_15m": 0
+}

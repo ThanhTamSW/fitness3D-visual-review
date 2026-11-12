@@ -1,0 +1,53 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16,
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_rays": 1
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v4_no_raytracing",
+   "note": "raytracing off, everything else as shipped",
+   "overrides": {
+    "use_raytracing": false
+   },
+   "effective": {
+    "taa_reprojection": true,
+    "raytracing": false,
+    "denoise": true,
+    "shadows": true,
+    "soft_shadows": true
+   },
+   "passes": 4,
+   "images": [
+    {
+     "file": "repeat/rdl_v4_no_raytracing_p0.png",
+     "sha256": "d347d97df170906297e2f1adc3d5bb892c2b19f8159199cceda10e0835e271ed"
+    },
+    {
+     "file": "repeat/rdl_v4_no_raytracing_p1.png",
+     "sha256": "8057002e3f2eb9d92de82968b7c195521afc9a44a95ec22f52246f4f8486c796"
+    },
+    {
+     "file": "repeat/rdl_v4_no_raytracing_p2.png",
+     "sha256": "8c3c9b2ff2c9a00e7f755251120a848606588d470519e3697cc8f6b8a2deab01"
+    },
+    {
+     "file": "repeat/rdl_v4_no_raytracing_p3.png",
+     "sha256": "3387b09be4a392d63d995e95c06891d42987f2b198c4f6fa9e8774e871c3b5ac"
+    }
+   ],
+   "distinct_hashes": 4
+  }
+ ]
+}

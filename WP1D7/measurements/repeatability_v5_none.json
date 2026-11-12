@@ -1,0 +1,38 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16
+ },
+ "passes": 4,
+ "single_variant_process": true,
+ "variants": [
+  {
+   "variant": "v5_none",
+   "note": "reprojection off, raytracing off, denoiser off",
+   "taa_reprojection": false,
+   "raytracing": false,
+   "denoise": false,
+   "passes": 4,
+   "hashes": [
+    "78c7384b79763bb1f06289ced1e739a923ba46be61fe4d0269e41a916147e767",
+    "ebbb6cd80559fd5f4515172eca566c1d4bb67e9ddda79495fe8c402f34344c17",
+    "f42689e716896c5bf267442cffe6a9643b7513a4466d7cda266183e002671387",
+    "73e6970222a5b1179339762b3ba1cdeac5dd494e04f010c4cac10ac4b2b5bfda"
+   ],
+   "files": [
+    "repeat/rdl_v5_none_p0.png",
+    "repeat/rdl_v5_none_p1.png",
+    "repeat/rdl_v5_none_p2.png",
+    "repeat/rdl_v5_none_p3.png"
+   ],
+   "identical": false,
+   "distinct_hashes": 4
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "barbell_row",
+ "frame": 150,
+ "method": "scene.ray_cast per pixel, first hit, no shading",
+ "step": 2,
+ "sampled": 27159,
+ "front_most_counts": {
+  "body": 15625,
+  "skeleton": 111,
+  "muscle": 891,
+  "equipment": 10532
+ },
+ "front_most_fraction": {
+  "body": 0.57532,
+  "skeleton": 0.00409,
+  "muscle": 0.03281,
+  "equipment": 0.38779
+ },
+ "skeleton_front_pixels": 111,
+ "skeleton_front_bbox": [
+  222,
+  208,
+  422,
+  912
+ ],
+ "skeleton_front_objects": {
+  "skeleton": 111
+ },
+ "muscle_front_pixels": 891,
+ "muscle_front_objects": {
+  "back": 384,
+  "chest": 5,
+  "shoulders": 17,
+  "obliques": 100,
+  "abs": 1,
+  "quads": 178,
+  "hamstrings": 1,
+  "calves": 205
+ },
+ "map": "visibility/row_visibility.png",
+ "colours": {
+  "body": [
+   150,
+   150,
+   158
+  ],
+  "muscle": [
+   205,
+   60,
+   60
+  ],
+  "skeleton": [
+   240,
+   236,
+   220
+  ],
+  "equipment": [
+   70,
+   120,
+   200
+  ],
+  "floor": [
+   25,
+   30,
+   36
+  ],
+  "other": [
+   120,
+   60,
+   160
+  ]
+ }
+}

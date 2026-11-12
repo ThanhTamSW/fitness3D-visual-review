@@ -1,0 +1,89 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "variant": "no_shadow_jitter",
+ "overrides": {
+  "use_shadow_jitter_viewport": false
+ },
+ "effective": {
+  "shadows": true,
+  "soft_shadows": true,
+  "shadow_high_bitdepth": false,
+  "shadow_ray_count": 1,
+  "shadow_step_count": 6,
+  "shadow_resolution_scale": 1.0,
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "samples": 16
+ },
+ "frames": [
+  {
+   "frame": 176,
+   "file": "shadow/rdl_no_shadow_jitter_f176.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 177,
+   "file": "shadow/rdl_no_shadow_jitter_f177.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 178,
+   "file": "shadow/rdl_no_shadow_jitter_f178.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 179,
+   "file": "shadow/rdl_no_shadow_jitter_f179.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 180,
+   "file": "shadow/rdl_no_shadow_jitter_f180.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 181,
+   "file": "shadow/rdl_no_shadow_jitter_f181.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 182,
+   "file": "shadow/rdl_no_shadow_jitter_f182.png",
+   "subject_mean": 69.768,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 183,
+   "file": "shadow/rdl_no_shadow_jitter_f183.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  },
+  {
+   "frame": 184,
+   "file": "shadow/rdl_no_shadow_jitter_f184.png",
+   "subject_mean": 79.164,
+   "subject_pixels": 790400
+  }
+ ],
+ "step_deltas_255": [
+  9.396,
+  -9.396,
+  0.0,
+  9.396,
+  -9.396,
+  0.0,
+  9.396,
+  0.0
+ ],
+ "max_abs_step": 9.396,
+ "sign_flips_over_1_5": 2,
+ "constant_brightness": false
+}

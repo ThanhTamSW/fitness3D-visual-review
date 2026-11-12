@@ -1,0 +1,73 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "method": "scene.ray_cast per pixel, first hit, no shading",
+ "step": 2,
+ "sampled": 22564,
+ "front_most_counts": {
+  "body": 11262,
+  "skeleton": 340,
+  "muscle": 2413,
+  "equipment": 8549
+ },
+ "front_most_fraction": {
+  "body": 0.49911,
+  "skeleton": 0.01507,
+  "muscle": 0.10694,
+  "equipment": 0.37888
+ },
+ "skeleton_front_pixels": 340,
+ "skeleton_front_bbox": [
+  230,
+  314,
+  494,
+  912
+ ],
+ "skeleton_front_objects": {
+  "skeleton": 340
+ },
+ "muscle_front_pixels": 2413,
+ "muscle_front_objects": {
+  "back": 904,
+  "chest": 1,
+  "abs": 117,
+  "obliques": 930,
+  "biceps": 3,
+  "glutes": 326,
+  "calves": 132
+ },
+ "map": "visibility/rdl_visibility.png",
+ "colours": {
+  "body": [
+   150,
+   150,
+   158
+  ],
+  "muscle": [
+   205,
+   60,
+   60
+  ],
+  "skeleton": [
+   240,
+   236,
+   220
+  ],
+  "equipment": [
+   70,
+   120,
+   200
+  ],
+  "floor": [
+   25,
+   30,
+   36
+  ],
+  "other": [
+   120,
+   60,
+   160
+  ]
+ }
+}

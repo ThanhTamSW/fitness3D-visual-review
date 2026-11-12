@@ -1,0 +1,115 @@
+{
+ "milestone": "WP1D.7",
+ "exercise": "romanian_deadlift",
+ "frame": 180,
+ "shipping_defaults": {
+  "taa_reprojection": true,
+  "raytracing": false,
+  "denoise": true,
+  "denoise_temporal": true,
+  "samples": 16
+ },
+ "passes": 3,
+ "variants": [
+  {
+   "variant": "v1_production",
+   "note": "as shipped: reprojection on, raytracing on, denoiser on",
+   "taa_reprojection": true,
+   "raytracing": true,
+   "denoise": true,
+   "passes": 3,
+   "hashes": [
+    "e4ec3a2f94aa6294fdb88dc97a7e8e3cc0f2a5f57aebae37e5acc485c66876e6",
+    "ff27ef374f892942ea5d021a1a1cc7ef64b258f7e68339739c719cec97bdf3ac",
+    "e39c6e9cc8d43ea0cb2c5d41434b0494d7c46e736c9f70a61e9be350e98d7292"
+   ],
+   "files": [
+    "repeat/rdl_v1_production_p0.png",
+    "repeat/rdl_v1_production_p1.png",
+    "repeat/rdl_v1_production_p2.png"
+   ],
+   "identical": false,
+   "distinct_hashes": 3
+  },
+  {
+   "variant": "v2_no_reprojection",
+   "note": "reprojection off, raytracing on, denoiser on",
+   "taa_reprojection": false,
+   "raytracing": true,
+   "denoise": true,
+   "passes": 3,
+   "hashes": [
+    "179018c3bb826bced4418b14e0c6e411887b5b4b2ad782aa56bf99dcf43765ee",
+    "ca4bfd1fb4f449ca55d253404bb87ef4549808e2ae504f147625909c32c3109b",
+    "4d680f5f997aae4e969201cb0d9f6fb607c21aec0f9ec8fc26aee41f2cf31ec4"
+   ],
+   "files": [
+    "repeat/rdl_v2_no_reprojection_p0.png",
+    "repeat/rdl_v2_no_reprojection_p1.png",
+    "repeat/rdl_v2_no_reprojection_p2.png"
+   ],
+   "identical": false,
+   "distinct_hashes": 3
+  },
+  {
+   "variant": "v3_no_reprojection_no_denoise",
+   "note": "reprojection off, raytracing on, denoiser off",
+   "taa_reprojection": false,
+   "raytracing": true,
+   "denoise": false,
+   "passes": 3,
+   "hashes": [
+    "0987c60d06d619324fb05ebea023b6b4c8d2d5d9124ae2cb489521c73a584f54",
+    "047f91965023562450bebadcf9f493d3357383fe6bc622d9a29fffc625195b91",
+    "574856117b0d8317bae6379c0f228a3d087591e2ee986a768d9e7c510eb7148f"
+   ],
+   "files": [
+    "repeat/rdl_v3_no_reprojection_no_denoise_p0.png",
+    "repeat/rdl_v3_no_reprojection_no_denoise_p1.png",
+    "repeat/rdl_v3_no_reprojection_no_denoise_p2.png"
+   ],
+   "identical": false,
+   "distinct_hashes": 3
+  },
+  {
+   "variant": "v4_reprojection_no_raytracing",
+   "note": "reprojection on, raytracing off, denoiser on",
+   "taa_reprojection": true,
+   "raytracing": false,
+   "denoise": true,
+   "passes": 3,
+   "hashes": [
+    "182b6a181ef85300c19d066ff6f38eec19afb0adc92a17f26b6eab4875ebc0f0",
+    "9cabc9a46556fff8ce96859dbd9ca5ac6a0d1d609ede6c9ac081cc743ccaa5ce",
+    "daac06fc6a40d0f6e78a5234e653811a74492fa3f86a327472ad112d7a0f0718"
+   ],
+   "files": [
+    "repeat/rdl_v4_reprojection_no_raytracing_p0.png",
+    "repeat/rdl_v4_reprojection_no_raytracing_p1.png",
+    "repeat/rdl_v4_reprojection_no_raytracing_p2.png"
+   ],
+   "identical": false,
+   "distinct_hashes": 3
+  },
+  {
+   "variant": "v5_none",
+   "note": "reprojection off, raytracing off, denoiser off",
+   "taa_reprojection": false,
+   "raytracing": false,
+   "denoise": false,
+   "passes": 3,
+   "hashes": [
+    "788f8858e6647e536793933582a1d44d13f497d3a8a4df113340c12725a41597",
+    "01220d00ffcf8aacebc0c71d770af900177411ca53bd12b7ca91362ff00589c4",
+    "11872cce00a7546a09b981fc644782bc129d1b5ee7f6040b64c35d478933b221"
+   ],
+   "files": [
+    "repeat/rdl_v5_none_p0.png",
+    "repeat/rdl_v5_none_p1.png",
+    "repeat/rdl_v5_none_p2.png"
+   ],
+   "identical": false,
+   "distinct_hashes": 3
+  }
+ ]
+}

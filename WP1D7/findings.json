@@ -1,0 +1,981 @@
+{
+ "milestone": "WP1D.7",
+ "status": "PREVIEW / AWAITING HUMAN REVIEW",
+ "model": {
+  "path": "build\\anatomy.glb",
+  "sha256": "83e3d08f14f52fa3d6f5bdd4b8b2ba29cb0e7158cffb405d81574a111d06b8f0",
+  "bytes": 3596440
+ },
+ "blender": "4.2.23 LTS",
+ "head_commit_note": "see docs/production/WP1D7_ANATOMY_OVERLAY_RENDER_INVESTIGATION.md",
+ "findings": [
+  {
+   "id": "A1",
+   "layer": "geometry",
+   "classification": "CONFIRMED",
+   "title": "The body shell is split into per-face vertices, so it cannot shade as one surface",
+   "detail": "body has 41999 vertices for 7159 unique positions and 14000 faces. The build pipeline decimates and exports the skin without a weld, so every triangle owns its own copy of each corner. Co-located vertices then receive different normals, and the surface shades as separate plates instead of a continuous skin. Welding in memory (0.5 mm threshold) changes 16.59% of the visible skin pixels at the reviewed frame.",
+   "measurement": {
+    "verts": 41999,
+    "unique_positions": 7159,
+    "duplicate_vertices": 34840,
+    "welded_components": 1,
+    "welded_verts": 7095,
+    "visible_skin_pixels_changed_fraction": 0.16586,
+    "repeat_shipping_changed_pixels": 2,
+    "repeat_welded_changed_pixels": 0
+   },
+   "control": "Shipping and welded were each rendered twice with shadows off. The repeats matched to 2 and 0 pixels out of 84549, so the 14752-pixel difference between shipping and welded is the weld and not render variance.",
+   "evidence": [
+    "measurements/anatomy_audit.json",
+    "measurements/skin_seams.json",
+    "skin_seams/rdl_s0_shipping.png",
+    "skin_seams/rdl_s2_welded.png",
+    "diagnostics/rdl_d6_wireframe.png",
+    "diagnostics/rdl_d7_normal_visualisation.png"
+   ]
+  },
+  {
+   "id": "A2",
+   "layer": "geometry",
+   "classification": "CONFIRMED",
+   "title": "The obliques mesh arrives shattered: 3,240 flat-shaded faces and 457 isolated spike vertices",
+   "detail": "obliques has 11581 vertices for 3267 unique positions and 6632 faces, of which 3240 are flat-shaded, so the mesh renders as facets. It also carries 453 vertices that sit more than 2 mm outside the skin with no protruding neighbour, which is what a spike looks like numerically: an isolated point above the surface, not a broad bulge.",
+   "measurement": {
+    "verts": 11581,
+    "unique_positions": 3267,
+    "flat_shaded_faces": 3240,
+    "faces": 6632,
+    "posed_spikes": 453,
+    "posed_beyond_2mm": 4020,
+    "posed_max_m": 0.0349
+   },
+   "control": "Every other muscle mesh is fully smooth-shaded and has zero isolated spikes; the same measurement with the same threshold separates obliques from them, so the threshold is not simply flagging all geometry.",
+   "evidence": [
+    "measurements/anatomy_audit.json",
+    "diagnostics/rdl_d2_muscle_only.png",
+    "diagnostics/row_d2_muscle_only.png",
+    "visibility/rdl_visibility.png"
+   ]
+  },
+  {
+   "id": "A3",
+   "layer": "geometry",
+   "classification": "CONFIRMED",
+   "title": "Muscle meshes and the skeleton sit outside the skin, and the skeleton is never hidden",
+   "detail": "Ray casting, which involves no shading at all, makes the skeleton the front-most surface on 340 sampled pixels of the RDL frame and 111 of the row frame; muscle meshes are front-most on 2413 and 891. The worst muscle protrusion in the reviewed pose is 46.3 mm (back). The skeleton is a separate ivory mesh that no production or review script hides, so any bone outside the skin renders as a pale patch. Adding it to the RDL diagnostic creates 548 warm pixels that were not there before.",
+   "measurement": {
+    "skeleton_front_pixels_rdl": 340,
+    "skeleton_front_pixels_row": 111,
+    "muscle_front_objects_rdl": {
+     "back": 904,
+     "chest": 1,
+     "abs": 117,
+     "obliques": 930,
+     "biceps": 3,
+     "glutes": 326,
+     "calves": 132
+    },
+    "muscle_front_objects_row": {
+     "back": 384,
+     "chest": 5,
+     "shoulders": 17,
+     "obliques": 100,
+     "abs": 1,
+     "quads": 178,
+     "hamstrings": 1,
+     "calves": 205
+    },
+    "skeleton_protrusion_posed_m": 0.0695,
+    "worst_muscle": "back",
+    "worst_muscle_protrusion_posed_m": 0.0463
+   },
+   "control": "The same ray cast on the same frame classified body, equipment and backdrop, so the classifier is not returning 'skeleton' for everything. The ivory count is checked against the controlled pair d3 (no skeleton) and d4 (skeleton added): warm pixels appear only when the skeleton is shown.",
+   "evidence": [
+    "measurements/anatomy_audit.json",
+    "visibility/rdl_visibility.json",
+    "visibility/row_visibility.json",
+    "visibility/rdl_visibility.png",
+    "diagnostics/rdl_d3_body_plus_muscle.png",
+    "diagnostics/rdl_d4_plus_skeleton.png",
+    "diagnostics/row_d3_body_plus_muscle.png",
+    "diagnostics/row_d4_plus_skeleton.png"
+   ]
+  },
+  {
+   "id": "A4",
+   "layer": "skinning",
+   "classification": "NOT ROOT CAUSE",
+   "title": "Skin weights are not the cause of the misplaced muscle patches",
+   "detail": "No vertex in any mesh is unweighted and no vertex carries a weight outside its slug's allowed bone set. 6392 vertices do hold both a left and a right bone, but all of them sit within 97 mm of the midline, which is the expected blend across the spine and pelvis rather than a leak onto the wrong limb. The maximum influence count is 4, inside the glTF budget. Skinning is therefore not the explanation for a patch localised to one shoulder or one hip.",
+   "measurement": {
+    "unweighted_vertices": 0,
+    "leaked_vertices": 0,
+    "max_influences": 4,
+    "cross_side_vertices": 6392,
+    "cross_side_max_abs_x_m": 0.097
+   },
+   "control": "The same audit runs on the skeleton, which is rigidly bound to one bone per part and reports zero cross-side vertices, so the measure does distinguish 'blends across the midline' from 'has no sided bones at all'.",
+   "evidence": [
+    "measurements/anatomy_audit.json"
+   ]
+  },
+  {
+   "id": "B1",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "title": "EEVEE's shadow pass alternates whole-frame brightness by ~9.4 levels on every render call",
+   "detail": "Nine consecutive frames rendered the way production does show a frame-to-frame brightness step of 9.40 levels in the shipping configuration. Disabling shadows makes the same nine frames constant to within 0.001 levels. Reprojection, soft shadows, shadow resolution, shadow ray count and step count all leave the step in place, so it is the shadow pass itself, not one of its tunables. The step follows the render call, not the frame number, so a sequential animation render puts adjacent frames in different states.",
+   "measurement": {
+    "shipping_series": [
+     69.768,
+     79.164,
+     79.164,
+     79.164,
+     79.164,
+     79.164,
+     69.768,
+     69.768,
+     79.164
+    ],
+    "shipping_max_step": 9.396,
+    "variant_max_steps": {
+     "shipped": 9.396,
+     "no_reprojection": 9.396,
+     "no_shadow_high_bitdepth": 9.396,
+     "no_shadow_jitter": 9.396,
+     "no_shadows": 0.001,
+     "no_soft_shadows": 9.396,
+     "shadow_rays_1": 9.396,
+     "shadow_scale_1": 9.396,
+     "shadow_steps_1": 9.396
+    },
+    "parity_sequence": [
+     90198,
+     90200,
+     0,
+     90199,
+     0
+    ]
+   },
+   "control": "The same frame rendered twice in a row changes; frame n, then n+1, then n again, returns to the first image's brightness. That is state in the render call, not in the pose, and every candidate switch was tested one process at a time.",
+   "evidence": [
+    "measurements/shadow_state.json",
+    "measurements/frame_parity.json",
+    "shadow/rdl_shipped_f179.png",
+    "shadow/rdl_shipped_f180.png",
+    "shadow/rdl_no_shadows_f180.png"
+   ]
+  },
+  {
+   "id": "B2",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "title": "The raytraced pass is non-deterministic; the same scene renders differently twice",
+   "detail": "With shadows off, cells A and D (raytracing on) differ between two renders of an unchanged scene by 36715 and 12280 pixels above 8 levels, while cells B and C (raytracing off) differ by 2 and 0. The instability therefore comes from the tracer, not from the frame, the camera or the pose. This reproduces WP1D.6's finding at the reviewed frame and separates it from the shadow defect above.",
+   "measurement": {
+    "repeat_differences": {
+     "A": 36715,
+     "B": 2,
+     "C": 0,
+     "D": 12280
+    },
+    "cells": [
+     {
+      "cell": "A",
+      "raytracing": true,
+      "denoise": true,
+      "deterministic": false
+     },
+     {
+      "cell": "B",
+      "raytracing": false,
+      "denoise": true,
+      "deterministic": false
+     },
+     {
+      "cell": "C",
+      "raytracing": false,
+      "denoise": false,
+      "deterministic": false
+     },
+     {
+      "cell": "D",
+      "raytracing": true,
+      "denoise": false,
+      "deterministic": false
+     }
+    ]
+   },
+   "control": "Cells B and C are the same scene with the tracer off: they repeat to 0-2 pixels. That is the noise floor, and the tracer's cells exceed it by three to four orders of magnitude.",
+   "evidence": [
+    "measurements/matrix.json",
+    "matrix/rdl_a_r0.png",
+    "matrix/rdl_a_r1.png",
+    "matrix/rdl_b_r0.png",
+    "matrix/rdl_c_r0.png",
+    "matrix/row_a_r0.png",
+    "matrix/row_a_r1.png"
+   ]
+  },
+  {
+   "id": "B3",
+   "layer": "render",
+   "classification": "NOT ROOT CAUSE",
+   "title": "Raytracing is not the cause of the grain in the reviewed JPEGs",
+   "detail": "WP1D.6 changed render.configure_render to ship with raytracing off, and the reviewed finals were rendered through that function(final_rdl/diagnostic_manifest.json records raytracing false). A setting that was already off when the images were made cannot explain marks in those images. Measured on the shipping configuration at 16 samples, grain on flat skin is at the 8-bit quantisation floor (residual std 0.283 levels), and the same scene with the tracer on reaches 0.361. The tracer is a real defect and stays off, but the grain the reviewer reported has another source.",
+   "measurement": {
+    "reviewed_raytracing": false,
+    "grain_shipping": 0.283,
+    "grain_raytracing_on": 0.3613,
+    "grain_shipping_64spp": 0.283
+   },
+   "control": "Both numbers come from the same metric on the same frame, camera and sample count; only the tracer differs. The reviewed PNGs are also measured with the same metric so the comparison crosses the milestones.",
+   "evidence": [
+    "measurements/anatomy_audit.json",
+    "measurements/published_grain.json",
+    "diagnostics/rdl_d5_neutral_material.png"
+   ]
+  },
+  {
+   "id": "B4",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "title": "The published WP1D.6 stills cannot be reproduced by re-running the script that made them",
+   "detail": "10_finals.py was re-run twice on the same model and job. The two runs disagree with each other on every still that contains muscle meshes or equipment, and the first run disagrees with the published PNG by up to 119323 pixels. The three close-ups reproduce exactly, and the body-only still reproduces to 29 pixels. Those are the shots taken with fewer visible surfaces and no plates, which is consistent with the shadow-call state measured in B1 rather than with a change to the asset or the script.",
+   "measurement": {
+    "shots": [
+     {
+      "file": "rdl_body_only.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 29,
+       "changed_fraction": 3e-05,
+       "max_delta": 24,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 957,
+       "changed_fraction": 0.00089,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_body_plus_muscle.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 61845,
+       "changed_fraction": 0.05726,
+       "max_delta": 88,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 49922,
+       "changed_fraction": 0.04622,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_bottom_final.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 51567,
+       "changed_fraction": 0.04775,
+       "max_delta": 113,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 55788,
+       "changed_fraction": 0.05166,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_equipment_full.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 32737,
+       "changed_fraction": 0.03031,
+       "max_delta": 106,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 86336,
+       "changed_fraction": 0.07994,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_front45_final.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 51160,
+       "changed_fraction": 0.04737,
+       "max_delta": 113,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 105754,
+       "changed_fraction": 0.09792,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_muscle_only.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 15881,
+       "changed_fraction": 0.0147,
+       "max_delta": 54,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 68380,
+       "changed_fraction": 0.06331,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_plate_only.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 94151,
+       "changed_fraction": 0.08718,
+       "max_delta": 185,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 7587,
+       "changed_fraction": 0.00702,
+       "bit_identical": false
+      }
+     },
+     {
+      "file": "rdl_side_final.png",
+      "run1_vs_run2": {
+       "changed_gt_8": 116511,
+       "changed_fraction": 0.10788,
+       "max_delta": 186,
+       "bit_identical": false
+      },
+      "run1_vs_published": {
+       "changed_gt_8": 119323,
+       "changed_fraction": 0.11048,
+       "bit_identical": false
+      }
+     }
+    ]
+   },
+   "control": "The close-up shots reproduce bit-for-bit across both runs, so the script, the model and the job are unchanged; the difference is in the render path those shots exercise, not in the inputs.",
+   "evidence": [
+    "measurements/reproduction.json"
+   ]
+  },
+  {
+   "id": "B5",
+   "layer": "render",
+   "classification": "LIKELY",
+   "title": "What the reviewer saw is mostly geometry and shadow state, with JPEG encoding adding block ringing",
+   "detail": "Three of the four reported stills contain warm ivory pixels, and the one that does not is the RDL side still whose background is clean; the skeleton is the only ivory object. The reviewed JPEGs also carry more 8x8 block-boundary residual than their own PNGs (ratio 1.17 on RDL side, 1.30 on row side), which is the encoder, not the renderer. This is LIKELY rather than CONFIRMED because the relative weight of the three contributions has not been measured on a video encode, which this milestone does not produce.",
+   "measurement": {
+    "published": [
+     {
+      "set": "rdl_side",
+      "png_std": 1.0009,
+      "jpg_std": 0.8389,
+      "block_ratio": 1.169
+     },
+     {
+      "set": "rdl_bottom",
+      "png_std": 0.7133,
+      "jpg_std": 0.5236,
+      "block_ratio": 1.319
+     },
+     {
+      "set": "row_side",
+      "png_std": 0.7523,
+      "jpg_std": 0.5371,
+      "block_ratio": 1.305
+     },
+     {
+      "set": "row_front45",
+      "png_std": 0.933,
+      "jpg_std": 0.7545,
+      "block_ratio": 1.268
+     }
+    ]
+   },
+   "control": "Re-encoding the published PNG at quality 90 and 95 reduces the block-boundary residual towards 1.0, which confirms that the extra boundary energy at quality 80 is the encoder.",
+   "evidence": [
+    "measurements/published_grain.json"
+   ]
+  }
+ ],
+ "experiments": {
+  "matrix": [
+   {
+    "cell": "A",
+    "raytracing": true,
+    "denoise": true,
+    "frame": 180,
+    "camera": "SideCam",
+    "resolution": [
+     760,
+     1040
+    ],
+    "samples": 16,
+    "view_transform": "Standard",
+    "materials": "production palette",
+    "pose": "job phases, resolved by render.resolve_poses",
+    "deterministic": false,
+    "renders": [
+     {
+      "file": "matrix/rdl_a_r0.png",
+      "sha256": "49f5f88881867a92a7bc7a89ebe2dc59dff35a4dcca58bc340398b5bc3336339"
+     },
+     {
+      "file": "matrix/rdl_a_r1.png",
+      "sha256": "0a2891c2464f05d21c729094f8a8e6937d0e36250833df35aa6d746a84f5aaad"
+     }
+    ]
+   },
+   {
+    "cell": "B",
+    "raytracing": false,
+    "denoise": true,
+    "frame": 180,
+    "camera": "SideCam",
+    "resolution": [
+     760,
+     1040
+    ],
+    "samples": 16,
+    "view_transform": "Standard",
+    "materials": "production palette",
+    "pose": "job phases, resolved by render.resolve_poses",
+    "deterministic": false,
+    "renders": [
+     {
+      "file": "matrix/rdl_b_r0.png",
+      "sha256": "1dafb5581c6a597d81b7ae45da005db88df249ac94a9fafc6da6b008865c0553"
+     },
+     {
+      "file": "matrix/rdl_b_r1.png",
+      "sha256": "f5b35e62b60a88ce20c16a564c2fc836b0f3a1bf3da2a1a71244aabacda20186"
+     }
+    ]
+   },
+   {
+    "cell": "C",
+    "raytracing": false,
+    "denoise": false,
+    "frame": 180,
+    "camera": "SideCam",
+    "resolution": [
+     760,
+     1040
+    ],
+    "samples": 16,
+    "view_transform": "Standard",
+    "materials": "production palette",
+    "pose": "job phases, resolved by render.resolve_poses",
+    "deterministic": false,
+    "renders": [
+     {
+      "file": "matrix/rdl_c_r0.png",
+      "sha256": "b6814894d3ffedd7efe5c73a081902f3d0013358aa2411c24ece17025ae46a00"
+     },
+     {
+      "file": "matrix/rdl_c_r1.png",
+      "sha256": "b9d0831aed4b1c9a7f737684f98ce8801f41d9515aca3176cf2d967c13a82dcf"
+     }
+    ]
+   },
+   {
+    "cell": "D",
+    "raytracing": true,
+    "denoise": false,
+    "frame": 180,
+    "camera": "SideCam",
+    "resolution": [
+     760,
+     1040
+    ],
+    "samples": 16,
+    "view_transform": "Standard",
+    "materials": "production palette",
+    "pose": "job phases, resolved by render.resolve_poses",
+    "deterministic": false,
+    "renders": [
+     {
+      "file": "matrix/rdl_d_r0.png",
+      "sha256": "ece8ec414c4538e143c41d232d913ea9a04cc4f17a98407584c407f28798201d"
+     },
+     {
+      "file": "matrix/rdl_d_r1.png",
+      "sha256": "709da991d496842fdf3682eca10123dff8e120b366306ead5cc5e7d80a92da15"
+     }
+    ]
+   }
+  ],
+  "diagnostics": [
+   {
+    "kind": "body_only",
+    "file": "diagnostics/rdl_d1_body_only.png",
+    "changed": [
+     "hide all muscle meshes, skeleton and equipment"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "skin surface alone: any dark or bright mark here is the skin itself",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "muscle_only",
+    "file": "diagnostics/rdl_d2_muscle_only.png",
+    "changed": [
+     "hide the body shell, skeleton and equipment"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "overlay alone: shows its own surface and boundary edges directly",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "body_plus_muscle",
+    "file": "diagnostics/rdl_d3_body_plus_muscle.png",
+    "changed": [
+     "hide the skeleton and equipment"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "the two surfaces that can intersect each other",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "body_plus_muscle_plus_skeleton",
+    "file": "diagnostics/rdl_d4_plus_skeleton.png",
+    "changed": [
+     "show the skeleton mesh that d3 hides"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "d3 plus one object: any new bright mark is the skeleton",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "neutral_material",
+    "file": "diagnostics/rdl_d5_neutral_material.png",
+    "changed": [
+     "one flat grey material on skin and muscle"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform",
+     "geometry",
+     "visibility"
+    ],
+    "note": "colours removed: a surviving mark is not a palette or specular effect",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "wireframe",
+    "file": "diagnostics/rdl_d6_wireframe.png",
+    "changed": [
+     "wireframe shader on skin and muscle"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform",
+     "geometry"
+    ],
+    "note": "triangle topology: shows whether an edge is a seam or a shading step",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "normal_visualisation",
+    "file": "diagnostics/rdl_d7_normal_visualisation.png",
+    "changed": [
+     "world-space normal shown as emission colour"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform",
+     "geometry"
+    ],
+    "note": "a seam in the normals is a split/incorrect normal, not a gap",
+    "exercise": "romanian_deadlift",
+    "frame": 180
+   },
+   {
+    "kind": "body_only",
+    "file": "diagnostics/row_d1_body_only.png",
+    "changed": [
+     "hide all muscle meshes, skeleton and equipment"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "skin surface alone: any dark or bright mark here is the skin itself",
+    "exercise": "barbell_row",
+    "frame": 150
+   },
+   {
+    "kind": "muscle_only",
+    "file": "diagnostics/row_d2_muscle_only.png",
+    "changed": [
+     "hide the body shell, skeleton and equipment"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "overlay alone: shows its own surface and boundary edges directly",
+    "exercise": "barbell_row",
+    "frame": 150
+   },
+   {
+    "kind": "body_plus_muscle",
+    "file": "diagnostics/row_d3_body_plus_muscle.png",
+    "changed": [
+     "hide the skeleton and equipment"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "the two surfaces that can intersect each other",
+    "exercise": "barbell_row",
+    "frame": 150
+   },
+   {
+    "kind": "body_plus_muscle_plus_skeleton",
+    "file": "diagnostics/row_d4_plus_skeleton.png",
+    "changed": [
+     "show the skeleton mesh that d3 hides"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform"
+    ],
+    "note": "d3 plus one object: any new bright mark is the skeleton",
+    "exercise": "barbell_row",
+    "frame": 150
+   },
+   {
+    "kind": "neutral_material",
+    "file": "diagnostics/row_d5_neutral_material.png",
+    "changed": [
+     "one flat grey material on skin and muscle"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform",
+     "geometry",
+     "visibility"
+    ],
+    "note": "colours removed: a surviving mark is not a palette or specular effect",
+    "exercise": "barbell_row",
+    "frame": 150
+   },
+   {
+    "kind": "wireframe",
+    "file": "diagnostics/row_d6_wireframe.png",
+    "changed": [
+     "wireframe shader on skin and muscle"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform",
+     "geometry"
+    ],
+    "note": "triangle topology: shows whether an edge is a seam or a shading step",
+    "exercise": "barbell_row",
+    "frame": 150
+   },
+   {
+    "kind": "normal_visualisation",
+    "file": "diagnostics/row_d7_normal_visualisation.png",
+    "changed": [
+     "world-space normal shown as emission colour"
+    ],
+    "held": [
+     "frame",
+     "camera",
+     "resolution",
+     "samples",
+     "lights",
+     "view_transform",
+     "geometry"
+    ],
+    "note": "a seam in the normals is a split/incorrect normal, not a gap",
+    "exercise": "barbell_row",
+    "frame": 150
+   }
+  ],
+  "held_fixed": {
+   "samples": 16,
+   "shadow_rays": 1,
+   "shadow_steps": 6,
+   "soft_shadows": true,
+   "shadows": false,
+   "view_transform": "Standard",
+   "look": "None",
+   "exposure": 0.0,
+   "gamma": 1.0,
+   "film_transparent": false,
+   "resolution": [
+    760,
+    1040
+   ],
+   "engine": "BLENDER_EEVEE_NEXT",
+   "camera": "SideCam",
+   "camera_ortho_scale": 2.23805,
+   "contact_shadow": false,
+   "fast_gi": false
+  }
+ },
+ "package": {
+  "diagnostics": [
+   "diagnostics/rdl_d1_body_only.png",
+   "diagnostics/rdl_d2_muscle_only.png",
+   "diagnostics/rdl_d3_body_plus_muscle.png",
+   "diagnostics/rdl_d4_plus_skeleton.png",
+   "diagnostics/rdl_d5_neutral_material.png",
+   "diagnostics/rdl_d6_wireframe.png",
+   "diagnostics/rdl_d7_normal_visualisation.png",
+   "diagnostics/row_d1_body_only.png",
+   "diagnostics/row_d2_muscle_only.png",
+   "diagnostics/row_d3_body_plus_muscle.png",
+   "diagnostics/row_d4_plus_skeleton.png",
+   "diagnostics/row_d5_neutral_material.png",
+   "diagnostics/row_d6_wireframe.png",
+   "diagnostics/row_d7_normal_visualisation.png"
+  ],
+  "matrix": [
+   "matrix/rdl_a_r0.png",
+   "matrix/rdl_a_r1.png",
+   "matrix/rdl_b_r0.png",
+   "matrix/rdl_b_r1.png",
+   "matrix/rdl_c_r0.png",
+   "matrix/rdl_c_r1.png",
+   "matrix/rdl_d_r0.png",
+   "matrix/rdl_d_r1.png",
+   "matrix/row_a_r0.png",
+   "matrix/row_a_r1.png",
+   "matrix/row_b_r0.png",
+   "matrix/row_b_r1.png",
+   "matrix/row_c_r0.png",
+   "matrix/row_c_r1.png",
+   "matrix/row_d_r0.png",
+   "matrix/row_d_r1.png"
+  ],
+  "visibility": [
+   "visibility/rdl_visibility.json",
+   "visibility/rdl_visibility.png",
+   "visibility/row_visibility.json",
+   "visibility/row_visibility.png"
+  ],
+  "skin_seams": [
+   "skin_seams/rdl_s0_shipping.png",
+   "skin_seams/rdl_s1_shipping_repeat.png",
+   "skin_seams/rdl_s2_welded.png",
+   "skin_seams/rdl_s3_welded_repeat.png"
+  ],
+  "weld": [
+   "weld/rdl_w0_shipping.png",
+   "weld/rdl_w1_shipping_repeat.png",
+   "weld/rdl_w1_welded.png",
+   "weld/rdl_w2_welded.png",
+   "weld/rdl_w2_welded_repeat.png",
+   "weld/rdl_w3_shipping_repeat.png",
+   "weld/rdl_w3_welded_repeat.png",
+   "weld/rdl_w4_shipping_after_rebuild.png"
+  ],
+  "shadow": [
+   "shadow/rdl_no_reprojection_f176.png",
+   "shadow/rdl_no_reprojection_f177.png",
+   "shadow/rdl_no_reprojection_f178.png",
+   "shadow/rdl_no_reprojection_f179.png",
+   "shadow/rdl_no_reprojection_f180.png",
+   "shadow/rdl_no_reprojection_f181.png",
+   "shadow/rdl_no_reprojection_f182.png",
+   "shadow/rdl_no_reprojection_f183.png",
+   "shadow/rdl_no_reprojection_f184.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f176.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f177.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f178.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f179.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f180.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f181.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f182.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f183.png",
+   "shadow/rdl_no_shadow_high_bitdepth_f184.png",
+   "shadow/rdl_no_shadow_jitter_f176.png",
+   "shadow/rdl_no_shadow_jitter_f177.png",
+   "shadow/rdl_no_shadow_jitter_f178.png",
+   "shadow/rdl_no_shadow_jitter_f179.png",
+   "shadow/rdl_no_shadow_jitter_f180.png",
+   "shadow/rdl_no_shadow_jitter_f181.png",
+   "shadow/rdl_no_shadow_jitter_f182.png",
+   "shadow/rdl_no_shadow_jitter_f183.png",
+   "shadow/rdl_no_shadow_jitter_f184.png",
+   "shadow/rdl_no_shadows_f176.png",
+   "shadow/rdl_no_shadows_f177.png",
+   "shadow/rdl_no_shadows_f178.png",
+   "shadow/rdl_no_shadows_f179.png",
+   "shadow/rdl_no_shadows_f180.png",
+   "shadow/rdl_no_shadows_f181.png",
+   "shadow/rdl_no_shadows_f182.png",
+   "shadow/rdl_no_shadows_f183.png",
+   "shadow/rdl_no_shadows_f184.png",
+   "shadow/rdl_no_soft_shadows_f176.png",
+   "shadow/rdl_no_soft_shadows_f177.png",
+   "shadow/rdl_no_soft_shadows_f178.png",
+   "shadow/rdl_no_soft_shadows_f179.png",
+   "shadow/rdl_no_soft_shadows_f180.png",
+   "shadow/rdl_no_soft_shadows_f181.png",
+   "shadow/rdl_no_soft_shadows_f182.png",
+   "shadow/rdl_no_soft_shadows_f183.png",
+   "shadow/rdl_no_soft_shadows_f184.png",
+   "shadow/rdl_shadow_rays_1_f176.png",
+   "shadow/rdl_shadow_rays_1_f177.png",
+   "shadow/rdl_shadow_rays_1_f178.png",
+   "shadow/rdl_shadow_rays_1_f179.png",
+   "shadow/rdl_shadow_rays_1_f180.png",
+   "shadow/rdl_shadow_rays_1_f181.png",
+   "shadow/rdl_shadow_rays_1_f182.png",
+   "shadow/rdl_shadow_rays_1_f183.png",
+   "shadow/rdl_shadow_rays_1_f184.png",
+   "shadow/rdl_shadow_scale_1_f176.png",
+   "shadow/rdl_shadow_scale_1_f177.png",
+   "shadow/rdl_shadow_scale_1_f178.png",
+   "shadow/rdl_shadow_scale_1_f179.png",
+   "shadow/rdl_shadow_scale_1_f180.png",
+   "shadow/rdl_shadow_scale_1_f181.png",
+   "shadow/rdl_shadow_scale_1_f182.png",
+   "shadow/rdl_shadow_scale_1_f183.png",
+   "shadow/rdl_shadow_scale_1_f184.png",
+   "shadow/rdl_shadow_steps_1_f176.png",
+   "shadow/rdl_shadow_steps_1_f177.png",
+   "shadow/rdl_shadow_steps_1_f178.png",
+   "shadow/rdl_shadow_steps_1_f179.png",
+   "shadow/rdl_shadow_steps_1_f180.png",
+   "shadow/rdl_shadow_steps_1_f181.png",
+   "shadow/rdl_shadow_steps_1_f182.png",
+   "shadow/rdl_shadow_steps_1_f183.png",
+   "shadow/rdl_shadow_steps_1_f184.png",
+   "shadow/rdl_shipped_f176.png",
+   "shadow/rdl_shipped_f177.png",
+   "shadow/rdl_shipped_f178.png",
+   "shadow/rdl_shipped_f179.png",
+   "shadow/rdl_shipped_f180.png",
+   "shadow/rdl_shipped_f181.png",
+   "shadow/rdl_shipped_f182.png",
+   "shadow/rdl_shipped_f183.png",
+   "shadow/rdl_shipped_f184.png"
+  ],
+  "repeat": [
+   "repeat/rdl_v1_production_p0.png",
+   "repeat/rdl_v1_production_p1.png",
+   "repeat/rdl_v1_production_p2.png",
+   "repeat/rdl_v1_production_p3.png",
+   "repeat/rdl_v2_no_reprojection_p0.png",
+   "repeat/rdl_v2_no_reprojection_p1.png",
+   "repeat/rdl_v2_no_reprojection_p2.png",
+   "repeat/rdl_v2_no_reprojection_p3.png",
+   "repeat/rdl_v3_no_reprojection_no_denoise_p0.png",
+   "repeat/rdl_v3_no_reprojection_no_denoise_p1.png",
+   "repeat/rdl_v3_no_reprojection_no_denoise_p2.png",
+   "repeat/rdl_v3_no_reprojection_no_denoise_p3.png",
+   "repeat/rdl_v4_no_raytracing_p0.png",
+   "repeat/rdl_v4_no_raytracing_p1.png",
+   "repeat/rdl_v4_no_raytracing_p2.png",
+   "repeat/rdl_v4_no_raytracing_p3.png",
+   "repeat/rdl_v4_reprojection_no_raytracing_p0.png",
+   "repeat/rdl_v4_reprojection_no_raytracing_p1.png",
+   "repeat/rdl_v4_reprojection_no_raytracing_p2.png",
+   "repeat/rdl_v5_minimal_p0.png",
+   "repeat/rdl_v5_minimal_p1.png",
+   "repeat/rdl_v5_minimal_p2.png",
+   "repeat/rdl_v5_minimal_p3.png",
+   "repeat/rdl_v5_none_p0.png",
+   "repeat/rdl_v5_none_p1.png",
+   "repeat/rdl_v5_none_p2.png",
+   "repeat/rdl_v5_none_p3.png",
+   "repeat/rdl_v6_minimal_no_shadows_p0.png",
+   "repeat/rdl_v6_minimal_no_shadows_p1.png",
+   "repeat/rdl_v6_minimal_no_shadows_p2.png",
+   "repeat/rdl_v6_minimal_no_shadows_p3.png",
+   "repeat/rdl_v7_minimal_no_soft_shadows_p0.png",
+   "repeat/rdl_v7_minimal_no_soft_shadows_p1.png",
+   "repeat/rdl_v7_minimal_no_soft_shadows_p2.png",
+   "repeat/rdl_v7_minimal_no_soft_shadows_p3.png"
+  ]
+ },
+ "not_verified": [
+  "Whether the shadow-pass brightness step is visible in an encoded video at normal playback speed. This milestone renders stills, not video.",
+  "Whether welding the asset in build_anatomy.py changes skinning anywhere else. Welding changes vertex indices, so weights would have to be migrated and every exercise re-measured; that is not attempted here.",
+  "The relative contribution of skeleton protrusion, muscle protrusion and JPEG ringing to what a reviewer perceives at 100% zoom. Each is measured separately; their perceptual sum is not."
+ ]
+}
