@@ -23,6 +23,18 @@ value of the set is the geometry comparison, not the artifact count.
 | D2 | on | on | all | `rdl_d2_shadow_off.png` |
 | D3 | on | on | all | `rdl_d3_samples_64.png` |
 
+### Correction: the D1 image is not a no-shadow control
+
+`12_matrix.py` rendered `d1_no_shadow` **before** setting
+`scene.eevee.use_shadows = False`, so D1 is another shadowed baseline, not a
+control. It is byte-identical to E0, which is how this was caught: both JPEGs
+have SHA-256 `ff6efa58…` (row: `0b38d8e2…`) and the source PNGs differ only at
+92.20 dB / 111.88 dB PSNR, i.e. visually the same picture.
+
+`d2_shadow_off` **is** the real no-shadow render. The script and the audit
+report are corrected; the published D1 image is left in place unaltered rather
+than silently replaced. Do not read D1 as evidence about shadows.
+
 `p` is `rdl` (frame 180) or `row` (frame 150).
 
 ## Controls that were run before the fix
