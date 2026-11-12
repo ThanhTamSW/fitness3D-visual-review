@@ -1,0 +1,112 @@
+{
+ "status": "PREVIEW / AWAITING HUMAN REVIEW",
+ "branch_note": "corrected sagittal camera and upright annotations",
+ "convention": {
+  "anterior": "-Y",
+  "posterior": "+Y",
+  "up": "Z",
+  "side_camera_view_direction": [
+   -1,
+   0,
+   0
+  ],
+  "anterior_screen_side": "left"
+ },
+ "images": [
+  {
+   "jpeg": "C:\\Users\\Admin\\AppData\\Local\\Temp\\kilo\\fitness3D-visual-review\\WP1D4/preview/rdl-side-v2-small-parts\\preview.jpg",
+   "quality": 45,
+   "size": [
+    1556,
+    2214
+   ],
+   "bytes": 183339,
+   "chunks": 11,
+   "base64_chars": 244452,
+   "sha256": "d63de98ab3160d38bab04597a49971bcc450ec69e1467a427feb8a214bbf6cab",
+   "sha256_reassembled": "d63de98ab3160d38bab04597a49971bcc450ec69e1467a427feb8a214bbf6cab",
+   "magic": "FF D8 FF",
+   "folder": "WP1D4/preview/rdl-side-v2-small-parts",
+   "name": "rdl_side_sheet",
+   "source": "review/wp1d4-forward-hinge/rdl_side_sheet.png",
+   "exercise": "romanian_deadlift",
+   "camera": "SideCam orthographic, sagittal (azimuth 0 deg from +X, looking -X)",
+   "frames": [
+    1,
+    90,
+    180,
+    270
+   ]
+  },
+  {
+   "jpeg": "C:\\Users\\Admin\\AppData\\Local\\Temp\\kilo\\fitness3D-visual-review\\WP1D4/preview/rdl-bottom-v2-small-parts\\preview.jpg",
+   "quality": 45,
+   "size": [
+    784,
+    1136
+   ],
+   "bytes": 46187,
+   "chunks": 3,
+   "base64_chars": 61584,
+   "sha256": "fdc6a85ced0be310765c6d0a80b6b12e835cfde55077275408ab4d6b9bae5b36",
+   "sha256_reassembled": "fdc6a85ced0be310765c6d0a80b6b12e835cfde55077275408ab4d6b9bae5b36",
+   "magic": "FF D8 FF",
+   "folder": "WP1D4/preview/rdl-bottom-v2-small-parts",
+   "name": "rdl_bottom_key_still",
+   "source": "review/wp1d4-forward-hinge/rdl_bottom_key_still.png",
+   "exercise": "romanian_deadlift",
+   "camera": "SideCam orthographic, sagittal (azimuth 0 deg from +X, looking -X)",
+   "frames": [
+    180
+   ]
+  },
+  {
+   "jpeg": "C:\\Users\\Admin\\AppData\\Local\\Temp\\kilo\\fitness3D-visual-review\\WP1D4/preview/row-side-v2-small-parts\\preview.jpg",
+   "quality": 32,
+   "size": [
+    1556,
+    3292
+   ],
+   "bytes": 244563,
+   "chunks": 14,
+   "base64_chars": 326084,
+   "sha256": "d5cb77613b85aaae407cd5c7fc1eaa4c421e9ec7414465ef0db58773d11abf47",
+   "sha256_reassembled": "d5cb77613b85aaae407cd5c7fc1eaa4c421e9ec7414465ef0db58773d11abf47",
+   "magic": "FF D8 FF",
+   "folder": "WP1D4/preview/row-side-v2-small-parts",
+   "name": "row_side_sheet",
+   "source": "review/wp1d4-forward-hinge/row_side_sheet.png",
+   "exercise": "barbell_row",
+   "camera": "SideCam orthographic, sagittal (azimuth 0 deg from +X, looking -X)",
+   "frames": [
+    1,
+    75,
+    150,
+    225,
+    300
+   ]
+  },
+  {
+   "jpeg": "C:\\Users\\Admin\\AppData\\Local\\Temp\\kilo\\fitness3D-visual-review\\WP1D4/preview/row-front45-v2-small-parts\\preview.jpg",
+   "quality": 45,
+   "size": [
+    924,
+    996
+   ],
+   "bytes": 45207,
+   "chunks": 3,
+   "base64_chars": 60276,
+   "sha256": "b1b4080081a987e40840466507642555fc51bc4a6ca2436c51ae19451dff284e",
+   "sha256_reassembled": "b1b4080081a987e40840466507642555fc51bc4a6ca2436c51ae19451dff284e",
+   "magic": "FF D8 FF",
+   "folder": "WP1D4/preview/row-front45-v2-small-parts",
+   "name": "row_front45_sheet",
+   "source": "review/wp1d4-forward-hinge/row_front45_sheet.png",
+   "exercise": "barbell_row",
+   "camera": "FrontCam orthographic, azimuth 45 deg",
+   "frames": [
+    150
+   ]
+  }
+ ]
+}
