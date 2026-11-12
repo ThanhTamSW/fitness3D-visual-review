@@ -6,7 +6,7 @@ This folder is the visual evidence for WP1D.6. It does not approve the RDL or th
 Barbell Row. Both remain `PREVIEW / AWAITING HUMAN REVIEW`.
 
 Code branch: `wp1d6/visual-artifact-audit`
-Code commit: `39943cca7fbee4db5135aa780381799abd1af5a4`
+Code commit: `4206ca8b36118142cfb191e101702639522583c8`
 Report: `docs/production/WP1D6_VISUAL_ARTIFACT_AUDIT.md`
 
 ## What was wrong
@@ -45,6 +45,14 @@ the source.
 | `diagnostics/rdl-equipment-full/` | RDL full scene |
 | `diagnostics/row-*` | the same five tests for the Barbell Row |
 | `diagnostics/isolation-matrix/` | M0-M3, E0-E4 and the shadow/sample controls |
+
+> **Correction: the D1 image is not a no-shadow control.** `12_matrix.py`
+> rendered `d1_no_shadow` before setting `use_shadows = False`, so it is a second
+> shadowed baseline. It is byte-identical to E0 (same SHA-256 `ff6efa58…`, row
+> `0b38d8e2…`; source PNGs differ only at 92.20 dB / 111.88 dB). `d2_shadow_off`
+> is the real control. Detail in `diagnostics/isolation-matrix/README.md`.
+
+
 | `diagnostics/plate-face-closeups/` | plate faces at 32 and 64 samples |
 | `diagnostics/overlay-closeups/` | the torso, back and shoulder overlays |
 | `final/rdl-side/`, `final/rdl-bottom/`, `final/rdl-front45/` | RDL final stills |
@@ -109,6 +117,12 @@ Full PNG hashes, JPEG hashes and per-image metadata are in
 
 ## Caveats
 
+- **The before/after pair is not resolution-matched.** The WP1D.5 stills are
+  760x1040; the WP1D.6 finals are 900x1200, so the artefact counts in that pair
+  differ by more than the tracer switch alone. The controlled comparison is
+  `diagnostics/isolation-matrix/` at a constant 760x1040: rdl body+muscle with
+  the tracer on carries 3,393 saturated pixels, and with it off, 0. Same frame,
+  same camera, same resolution, one variable.
 - The muscle meshes at partial role boundaries still show a thin shading step
   where muscle geometry sits just outside the skin. It is visible as a subtle
   edge, changes no muscle role, and is not fixed here because the task forbids
