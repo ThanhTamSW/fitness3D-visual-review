@@ -1,0 +1,126 @@
+{
+ "milestone": "WP1D.7",
+ "purpose": "Per-cell repeat difference for the A/B/C/D matrix, recomputed from the committed PNGs so the report can be checked against it",
+ "method": "abs(r0 - r1) on RGB, max across channels; >8 levels counts as changed, matching the report's threshold",
+ "threshold": 8,
+ "measurements": {
+  "romanian_deadlift": {
+   "cell_order": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "held_fixed_shadows": false,
+   "cells": {
+    "A": {
+     "raytracing": true,
+     "denoise": true,
+     "changed_gt_threshold": 36715,
+     "changed_any": 51733,
+     "max_delta": 232,
+     "bit_identical": false,
+     "files": [
+      "rdl_a_r0.png",
+      "rdl_a_r1.png"
+     ]
+    },
+    "B": {
+     "raytracing": false,
+     "denoise": true,
+     "changed_gt_threshold": 2,
+     "changed_any": 242,
+     "max_delta": 13,
+     "bit_identical": false,
+     "files": [
+      "rdl_b_r0.png",
+      "rdl_b_r1.png"
+     ]
+    },
+    "C": {
+     "raytracing": false,
+     "denoise": false,
+     "changed_gt_threshold": 0,
+     "changed_any": 232,
+     "max_delta": 8,
+     "bit_identical": false,
+     "files": [
+      "rdl_c_r0.png",
+      "rdl_c_r1.png"
+     ]
+    },
+    "D": {
+     "raytracing": true,
+     "denoise": false,
+     "changed_gt_threshold": 12280,
+     "changed_any": 28851,
+     "max_delta": 229,
+     "bit_identical": false,
+     "files": [
+      "rdl_d_r0.png",
+      "rdl_d_r1.png"
+     ]
+    }
+   }
+  },
+  "barbell_row": {
+   "cell_order": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "held_fixed_shadows": false,
+   "cells": {
+    "A": {
+     "raytracing": true,
+     "denoise": true,
+     "changed_gt_threshold": 38683,
+     "changed_any": 50763,
+     "max_delta": 231,
+     "bit_identical": false,
+     "files": [
+      "row_a_r0.png",
+      "row_a_r1.png"
+     ]
+    },
+    "B": {
+     "raytracing": false,
+     "denoise": true,
+     "changed_gt_threshold": 1,
+     "changed_any": 75,
+     "max_delta": 11,
+     "bit_identical": false,
+     "files": [
+      "row_b_r0.png",
+      "row_b_r1.png"
+     ]
+    },
+    "C": {
+     "raytracing": false,
+     "denoise": false,
+     "changed_gt_threshold": 0,
+     "changed_any": 62,
+     "max_delta": 7,
+     "bit_identical": false,
+     "files": [
+      "row_c_r0.png",
+      "row_c_r1.png"
+     ]
+    },
+    "D": {
+     "raytracing": true,
+     "denoise": false,
+     "changed_gt_threshold": 10279,
+     "changed_any": 22105,
+     "max_delta": 229,
+     "bit_identical": false,
+     "files": [
+      "row_d_r0.png",
+      "row_d_r1.png"
+     ]
+    }
+   }
+  }
+ }
+}

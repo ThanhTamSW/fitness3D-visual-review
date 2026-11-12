@@ -1,0 +1,402 @@
+{
+ "milestone": "WP1D.7",
+ "chunk_chars": 24000,
+ "images": [
+  {
+   "jpeg": "diagnostics/rdl_d1_body_only.jpg",
+   "folder": "diagnostics/rdl_d1_body_only-b64",
+   "bytes": 22957,
+   "base64_chars": 30612,
+   "chunks": 2,
+   "sha256": "496976ec32cd53ec0438d1225724608a89063e348aab3c247ff5aa3d991d4b95",
+   "last_chunk_chars": 6612
+  },
+  {
+   "jpeg": "diagnostics/rdl_d2_muscle_only.jpg",
+   "folder": "diagnostics/rdl_d2_muscle_only-b64",
+   "bytes": 21083,
+   "base64_chars": 28112,
+   "chunks": 2,
+   "sha256": "f44428fb6b650e57e8346271633de5df64c098ed566d85e161447f441a916cf5",
+   "last_chunk_chars": 4112
+  },
+  {
+   "jpeg": "diagnostics/rdl_d3_body_plus_muscle.jpg",
+   "folder": "diagnostics/rdl_d3_body_plus_muscle-b64",
+   "bytes": 24788,
+   "base64_chars": 33052,
+   "chunks": 2,
+   "sha256": "be058a5596355f673bc0a25b9c7f052bb1741561ce25ad9243d710dd7652b512",
+   "last_chunk_chars": 9052
+  },
+  {
+   "jpeg": "diagnostics/rdl_d4_plus_skeleton.jpg",
+   "folder": "diagnostics/rdl_d4_plus_skeleton-b64",
+   "bytes": 25462,
+   "base64_chars": 33952,
+   "chunks": 2,
+   "sha256": "c028caf10ffb50acf12c23d08fa47156d5bddf510e89635ceedc95a438da907e",
+   "last_chunk_chars": 9952
+  },
+  {
+   "jpeg": "diagnostics/rdl_d5_neutral_material.jpg",
+   "folder": "diagnostics/rdl_d5_neutral_material-b64",
+   "bytes": 22211,
+   "base64_chars": 29616,
+   "chunks": 2,
+   "sha256": "ce2ba231f9467dd23e7441e196b8b83b3792151dd6f99bca035203119c604fe2",
+   "last_chunk_chars": 5616
+  },
+  {
+   "jpeg": "diagnostics/rdl_d6_wireframe.jpg",
+   "folder": "diagnostics/rdl_d6_wireframe-b64",
+   "bytes": 17161,
+   "base64_chars": 22884,
+   "chunks": 1,
+   "sha256": "1a81afc2637715a8373ac38858e6391de22e5937ba3d8e6116a2e5599ce7c73b",
+   "last_chunk_chars": 22884
+  },
+  {
+   "jpeg": "diagnostics/rdl_d7_normal_visualisation.jpg",
+   "folder": "diagnostics/rdl_d7_normal_visualisation-b64",
+   "bytes": 27115,
+   "base64_chars": 36156,
+   "chunks": 2,
+   "sha256": "e1666b6f94c44280bf24e8e438c15bb15b71a8800de37e7f6a633af01750086e",
+   "last_chunk_chars": 12156
+  },
+  {
+   "jpeg": "diagnostics/row_d1_body_only.jpg",
+   "folder": "diagnostics/row_d1_body_only-b64",
+   "bytes": 24923,
+   "base64_chars": 33232,
+   "chunks": 2,
+   "sha256": "5e4932ed4dd5402b7845bca3820c42d4a243cab5fca104196188dfb83d1932a7",
+   "last_chunk_chars": 9232
+  },
+  {
+   "jpeg": "diagnostics/row_d2_muscle_only.jpg",
+   "folder": "diagnostics/row_d2_muscle_only-b64",
+   "bytes": 10050,
+   "base64_chars": 13400,
+   "chunks": 1,
+   "sha256": "e6d615422ea8d1c0ed7e257a5a0a45dd8113ab6973d09eaab9b991ef83ee3eb9",
+   "last_chunk_chars": 13400
+  },
+  {
+   "jpeg": "diagnostics/row_d3_body_plus_muscle.jpg",
+   "folder": "diagnostics/row_d3_body_plus_muscle-b64",
+   "bytes": 12458,
+   "base64_chars": 16612,
+   "chunks": 1,
+   "sha256": "fd6ff0103a9d823302e9e1e97f0c6fded8e31978f6e0915c4a3af92a06267476",
+   "last_chunk_chars": 16612
+  },
+  {
+   "jpeg": "diagnostics/row_d4_plus_skeleton.jpg",
+   "folder": "diagnostics/row_d4_plus_skeleton-b64",
+   "bytes": 27484,
+   "base64_chars": 36648,
+   "chunks": 2,
+   "sha256": "0d7b5eef3cc294c985225d60f3a89b617a2e8c7702d0ad6454b1912fafee3426",
+   "last_chunk_chars": 12648
+  },
+  {
+   "jpeg": "diagnostics/row_d5_neutral_material.jpg",
+   "folder": "diagnostics/row_d5_neutral_material-b64",
+   "bytes": 24482,
+   "base64_chars": 32644,
+   "chunks": 2,
+   "sha256": "75614ee3a2a4cea4cfedb62c4d8a424e90af29d25abd6a288b45952ed3a5842b",
+   "last_chunk_chars": 8644
+  },
+  {
+   "jpeg": "diagnostics/row_d6_wireframe.jpg",
+   "folder": "diagnostics/row_d6_wireframe-b64",
+   "bytes": 18043,
+   "base64_chars": 24060,
+   "chunks": 2,
+   "sha256": "3c8e483777836ef4ebfeec4af447de109a68ce3a2d6fd50d9e1eeeb25729f07b",
+   "last_chunk_chars": 60
+  },
+  {
+   "jpeg": "diagnostics/row_d7_normal_visualisation.jpg",
+   "folder": "diagnostics/row_d7_normal_visualisation-b64",
+   "bytes": 29763,
+   "base64_chars": 39684,
+   "chunks": 2,
+   "sha256": "536afe3b15d3a624a116de60e5831ea777046c4bcfe0a3676ce7228ba1bf9542",
+   "last_chunk_chars": 15684
+  },
+  {
+   "jpeg": "matrix/rdl_a_r0.jpg",
+   "folder": "matrix/rdl_a_r0-b64",
+   "bytes": 34127,
+   "base64_chars": 45504,
+   "chunks": 2,
+   "sha256": "3fac4e320865c70e80df0dd008e27f858c3179e2d9a2eadeee15ced20623836e",
+   "last_chunk_chars": 21504
+  },
+  {
+   "jpeg": "matrix/rdl_a_r1.jpg",
+   "folder": "matrix/rdl_a_r1-b64",
+   "bytes": 52997,
+   "base64_chars": 70664,
+   "chunks": 3,
+   "sha256": "8b34030399e68159e9d39d9f9761ff5c42cdf9a7564f09cbc1f20a999470835e",
+   "last_chunk_chars": 22664
+  },
+  {
+   "jpeg": "matrix/rdl_b_r0.jpg",
+   "folder": "matrix/rdl_b_r0-b64",
+   "bytes": 25402,
+   "base64_chars": 33872,
+   "chunks": 2,
+   "sha256": "018157653e2d8e9569858ad81f5c96cc7e96c8efbd5547cb6a12d576ff92d6aa",
+   "last_chunk_chars": 9872
+  },
+  {
+   "jpeg": "matrix/rdl_b_r1.jpg",
+   "folder": "matrix/rdl_b_r1-b64",
+   "bytes": 25387,
+   "base64_chars": 33852,
+   "chunks": 2,
+   "sha256": "70fcd214cb3b5704e9aea284220e1f0fd66a4ce4d902198e5a8b8273f8b75d7c",
+   "last_chunk_chars": 9852
+  },
+  {
+   "jpeg": "matrix/rdl_c_r0.jpg",
+   "folder": "matrix/rdl_c_r0-b64",
+   "bytes": 25385,
+   "base64_chars": 33848,
+   "chunks": 2,
+   "sha256": "d573d86fb2d86a2c555cef9ce038309ebf2a1162ff203daea759144d6621d491",
+   "last_chunk_chars": 9848
+  },
+  {
+   "jpeg": "matrix/rdl_c_r1.jpg",
+   "folder": "matrix/rdl_c_r1-b64",
+   "bytes": 25385,
+   "base64_chars": 33848,
+   "chunks": 2,
+   "sha256": "e3322de5fecc53332c4cc70f61fc724420fb646fa4b5bf54cc18d6036eb6316c",
+   "last_chunk_chars": 9848
+  },
+  {
+   "jpeg": "matrix/rdl_d_r0.jpg",
+   "folder": "matrix/rdl_d_r0-b64",
+   "bytes": 29277,
+   "base64_chars": 39036,
+   "chunks": 2,
+   "sha256": "76271a772f496888dfa06f32944adfa787fe067b2fd55c93305f55765df00c53",
+   "last_chunk_chars": 15036
+  },
+  {
+   "jpeg": "matrix/rdl_d_r1.jpg",
+   "folder": "matrix/rdl_d_r1-b64",
+   "bytes": 36425,
+   "base64_chars": 48568,
+   "chunks": 3,
+   "sha256": "13ed2e502e02435ab6f4334d24fe7ea319ba05cc224c6a3e2519cce2964cbe7f",
+   "last_chunk_chars": 568
+  },
+  {
+   "jpeg": "matrix/row_a_r0.jpg",
+   "folder": "matrix/row_a_r0-b64",
+   "bytes": 34657,
+   "base64_chars": 46212,
+   "chunks": 2,
+   "sha256": "dab88c98e59f30ddd1566186091b4188df75abafbd916666307dc96638bc0c77",
+   "last_chunk_chars": 22212
+  },
+  {
+   "jpeg": "matrix/row_a_r1.jpg",
+   "folder": "matrix/row_a_r1-b64",
+   "bytes": 55345,
+   "base64_chars": 73796,
+   "chunks": 4,
+   "sha256": "be67c74a720fcf43275a2dad626f18c7e14e426adcc48724fba19263f1d49d8b",
+   "last_chunk_chars": 1796
+  },
+  {
+   "jpeg": "matrix/row_b_r0.jpg",
+   "folder": "matrix/row_b_r0-b64",
+   "bytes": 25683,
+   "base64_chars": 34244,
+   "chunks": 2,
+   "sha256": "14fbe801020d4ae902a18a018a29572c692b9d863d45fb290ddbabae5923328e",
+   "last_chunk_chars": 10244
+  },
+  {
+   "jpeg": "matrix/row_b_r1.jpg",
+   "folder": "matrix/row_b_r1-b64",
+   "bytes": 25700,
+   "base64_chars": 34268,
+   "chunks": 2,
+   "sha256": "b678fb0333dfabd824061e78dd40c2255df8e6da9611a25647ca727794e2d5fd",
+   "last_chunk_chars": 10268
+  },
+  {
+   "jpeg": "matrix/row_c_r0.jpg",
+   "folder": "matrix/row_c_r0-b64",
+   "bytes": 25693,
+   "base64_chars": 34260,
+   "chunks": 2,
+   "sha256": "975300fdc076369a0a4cd371a603d8c7bc919c332aad850dda210b8be8e8286a",
+   "last_chunk_chars": 10260
+  },
+  {
+   "jpeg": "matrix/row_c_r1.jpg",
+   "folder": "matrix/row_c_r1-b64",
+   "bytes": 25678,
+   "base64_chars": 34240,
+   "chunks": 2,
+   "sha256": "955e3fb85e250c6ec546947ccd71bf09a0b7cdfe6b1752bf9ec5a0ecd29d1c96",
+   "last_chunk_chars": 10240
+  },
+  {
+   "jpeg": "matrix/row_d_r0.jpg",
+   "folder": "matrix/row_d_r0-b64",
+   "bytes": 29127,
+   "base64_chars": 38836,
+   "chunks": 2,
+   "sha256": "d8b38f4725f3d5929b558165a54de569a585ad7ba04142bc818c98e5b339ecbf",
+   "last_chunk_chars": 14836
+  },
+  {
+   "jpeg": "matrix/row_d_r1.jpg",
+   "folder": "matrix/row_d_r1-b64",
+   "bytes": 35273,
+   "base64_chars": 47032,
+   "chunks": 2,
+   "sha256": "39ddc94703af874420c72c9381c19663228749edf75eaea282f1b3750259dbd6",
+   "last_chunk_chars": 23032
+  },
+  {
+   "jpeg": "shadow/rdl_no_reprojection_f180.jpg",
+   "folder": "shadow/rdl_no_reprojection_f180-b64",
+   "bytes": 25192,
+   "base64_chars": 33592,
+   "chunks": 2,
+   "sha256": "232b76453931236f6747a87cb9647cdfcae2ab71806476380d3dd11acee2a620",
+   "last_chunk_chars": 9592
+  },
+  {
+   "jpeg": "shadow/rdl_no_shadows_f180.jpg",
+   "folder": "shadow/rdl_no_shadows_f180-b64",
+   "bytes": 25391,
+   "base64_chars": 33856,
+   "chunks": 2,
+   "sha256": "222d27d2f2c8475858833868f582d49ad9c271f1d1b428ce87ff331f3a8a6046",
+   "last_chunk_chars": 9856
+  },
+  {
+   "jpeg": "shadow/rdl_no_soft_shadows_f180.jpg",
+   "folder": "shadow/rdl_no_soft_shadows_f180-b64",
+   "bytes": 25172,
+   "base64_chars": 33564,
+   "chunks": 2,
+   "sha256": "fdfe8313ec9f0cebe1e1b2ad174bf53ef9e2ce541809d0d11d3bf6b0d683e84a",
+   "last_chunk_chars": 9564
+  },
+  {
+   "jpeg": "shadow/rdl_shadow_rays_1_f180.jpg",
+   "folder": "shadow/rdl_shadow_rays_1_f180-b64",
+   "bytes": 25163,
+   "base64_chars": 33552,
+   "chunks": 2,
+   "sha256": "62da66bba93bdae30695aef3a1e281563446a52bbc5f8b070c5b6a92b627a3f9",
+   "last_chunk_chars": 9552
+  },
+  {
+   "jpeg": "shadow/rdl_shipped_f178.jpg",
+   "folder": "shadow/rdl_shipped_f178-b64",
+   "bytes": 25157,
+   "base64_chars": 33544,
+   "chunks": 2,
+   "sha256": "2c5b29cb8793c52245e6deab81424719d7523ad070ff67e9fe7eefd52778bf03",
+   "last_chunk_chars": 9544
+  },
+  {
+   "jpeg": "shadow/rdl_shipped_f179.jpg",
+   "folder": "shadow/rdl_shipped_f179-b64",
+   "bytes": 25184,
+   "base64_chars": 33580,
+   "chunks": 2,
+   "sha256": "8112e8b840abde3cfebace5157a0f95a9fa74e995510fe58d3e5d493ae8f9349",
+   "last_chunk_chars": 9580
+  },
+  {
+   "jpeg": "shadow/rdl_shipped_f180.jpg",
+   "folder": "shadow/rdl_shipped_f180-b64",
+   "bytes": 25175,
+   "base64_chars": 33568,
+   "chunks": 2,
+   "sha256": "531e113545353616782ba96c96ebe5d4b63509df4d2782a8cda185629538285c",
+   "last_chunk_chars": 9568
+  },
+  {
+   "jpeg": "shadow/rdl_shipped_f181.jpg",
+   "folder": "shadow/rdl_shipped_f181-b64",
+   "bytes": 25183,
+   "base64_chars": 33580,
+   "chunks": 2,
+   "sha256": "f230bffc6c5dfd31df22c21b56313df5582dc6ef5914ba597f1d27c54d77c2a7",
+   "last_chunk_chars": 9580
+  },
+  {
+   "jpeg": "skin_seams/rdl_s0_shipping.jpg",
+   "folder": "skin_seams/rdl_s0_shipping-b64",
+   "bytes": 32286,
+   "base64_chars": 43048,
+   "chunks": 2,
+   "sha256": "6faa7be4e04b7901c2ab543ce87b80630878732dc2fda0ecc8afa3ba56aa1868",
+   "last_chunk_chars": 19048
+  },
+  {
+   "jpeg": "skin_seams/rdl_s1_shipping_repeat.jpg",
+   "folder": "skin_seams/rdl_s1_shipping_repeat-b64",
+   "bytes": 32256,
+   "base64_chars": 43008,
+   "chunks": 2,
+   "sha256": "082ffc8de031606562fed48605ec44aa8f3a8ea0d337ea07e2ab852859e5efc3",
+   "last_chunk_chars": 19008
+  },
+  {
+   "jpeg": "skin_seams/rdl_s2_welded.jpg",
+   "folder": "skin_seams/rdl_s2_welded-b64",
+   "bytes": 30335,
+   "base64_chars": 40448,
+   "chunks": 2,
+   "sha256": "7c369c6d32d04f0379e000db61dbac9dc827dc7b19ba9fe9f5545d6151d19e3e",
+   "last_chunk_chars": 16448
+  },
+  {
+   "jpeg": "skin_seams/rdl_s3_welded_repeat.jpg",
+   "folder": "skin_seams/rdl_s3_welded_repeat-b64",
+   "bytes": 30328,
+   "base64_chars": 40440,
+   "chunks": 2,
+   "sha256": "1f6293e667f274311543e7ac9c1875c17923c48c45135867e86969904ae40348",
+   "last_chunk_chars": 16440
+  },
+  {
+   "jpeg": "visibility/rdl_visibility.jpg",
+   "folder": "visibility/rdl_visibility-b64",
+   "bytes": 9956,
+   "base64_chars": 13276,
+   "chunks": 1,
+   "sha256": "43265648357efad3e79285c42fafbd043c28b4908cbe0d92656aae425f2c44ad",
+   "last_chunk_chars": 13276
+  },
+  {
+   "jpeg": "visibility/row_visibility.jpg",
+   "folder": "visibility/row_visibility-b64",
+   "bytes": 9818,
+   "base64_chars": 13092,
+   "chunks": 1,
+   "sha256": "33bcfb9019972da6991bdc886b122a7d0f117b15de382eb71fb9b0eb0304e555",
+   "last_chunk_chars": 13092
+  }
+ ]
+}

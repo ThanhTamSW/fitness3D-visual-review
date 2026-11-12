@@ -26,6 +26,18 @@ Each PNG has a `.jpg` beside it for inline viewing. The PNG is the authoritative
 file; the JPEG is a preview encoded at quality 88 and is not used for any
 measurement.
 
+Each `.jpg` also has a `-b64/` folder beside it holding `part-000.txt`,
+`part-001.txt`, ... — the same base64 chunking WP1D6 uses, so an image can be
+rebuilt by a client that cannot fetch binary. All 44 sets were verified by
+reading the chunk files back, decoding, checking `FF D8 FF`, and comparing
+SHA-256 against the JPEG before chunking. No set needs more than 4 chunks or
+more than 24,000 characters per chunk. The per-image hashes are in
+`measurements/chunk_manifest.json`.
+
+```bash
+cat part-*.txt | tr -d '\n' | base64 -d > rebuilt.jpg
+```
+
 ## How to read the evidence
 
 Grain and seams were measured on the PNGs, never on the JPEGs. The reviewed
@@ -35,7 +47,7 @@ the renderer with the encoder.
 
 ## What the evidence shows
 
-- The body shell ships as per-face split vertices: 41,999 vertices for 7,159
+- The body shell ships as per-face split vertices: 41,999 vertices for 7,160
   unique positions. Welding it in memory changes 16.6% of the skin's pixels.
 - `obliques` ships with 3,240 of 6,632 faces flat-shaded and 453 isolated spike
   vertices outside the skin.
