@@ -88,10 +88,12 @@ what was superseded and why.
   smooth" reading. 3,320 faces are fully faceted and the 3,240 sit inside them;
   the counts are not complements, because 6,632 − 3,240 = 3,392. It also carries
   453 isolated spike vertices in the row pose (457 at rest).
-- The `skeleton` mesh is opaque ivory, is never hidden in production renders,
-  and protrudes up to 69.5 mm through the skin. Ray casting makes it front-most
-  on 340 sampled pixels of 22,564 in RDL and 111 of 27,159 in the row. Adding it
-  to the diagnostic creates 548 warm pixels in RDL and 4,754 in the row.
+- The `skeleton` mesh is opaque ivory, protruded up to 69.5 mm through the skin,
+  and was **not hidden** in production renders when this audit was written. Ray
+  casting makes it front-most on 340 sampled pixels of 22,564 in RDL and 111 of
+  27,159 in the row. Adding it to the diagnostic creates 548 warm pixels in RDL
+  and 4,754 in the row. Those are geometry measurements and are unaffected by
+  WP1D.8. **WP1D.8 then hid it from the production render** (see "F1 implemented" below).
 - The shadow pass alternates whole-frame brightness by 9.4 levels on every
   render call. Turning shadows off is the only tested switch that removes the
   step; it does not make the render byte-identical.
@@ -114,8 +116,50 @@ and that file disagree, the file wins.
 RDL: **PREVIEW / AWAITING HUMAN REVIEW**.
 Barbell Row: **PREVIEW / AWAITING HUMAN REVIEW**.
 
-No anatomy GLB, rig, pose, camera or production pipeline change was made.
-F1–F4 in the report remain proposals; none is implemented.
+No anatomy GLB, rig, pose, camera or production pipeline change was made by
+WP1D.7 or WP1D.7.1.
+
+## F1 implemented (WP1D.8)
+
+`ThanhTamSW/fitness3D`, branch `wp1d6/visual-artifact-audit`.
+Evidence: `review/wp1d8-skeleton-visibility/` in the code repository.
+
+F1 — hide the skeleton mesh from production renders — is implemented.
+**F2, F3 and F4 remain proposals; none is implemented.** Nothing here approves an
+exercise.
+
+What the audit established before the change: `skeleton` is a separate skinned
+`MESH` (3,463 verts, 5,805 faces, 20 vertex groups, one armature modifier
+pointing at `AnatomyRig`), parented to that armature. It is not the armature, so
+hiding it cannot disturb animation. No exercise requires a visible skeleton; the
+browser's skeleton mode is a viewer toggle, not a render output. The opt-in is
+`show_skeleton` on a spec, a validated boolean, defaulting to `false`.
+
+Measured on the production camera, 1920x1080, 32 samples, WP1D.7 reviewed
+frames, two passes differing only in `hide_render`:
+
+| Exercise | Frame | Skeleton-only coverage | Ivory px shown → hidden | Changed px > 8 | Noise floor |
+|---|---:|---:|---|---:|---:|
+| Romanian deadlift | 180 | 53,842 | 1,190 → 531 | 2,758 | 0 |
+| Barbell row | 150 | 65,053 | 2,000 → 1,206 | 2,672 | 1 |
+
+Hiding does not zero the ivory classifier: the remaining pixels are body
+palette. 2,060 of the RDL's 2,758 changed pixels and 2,005 of the row's 2,672 lie
+inside the skeleton's own silhouette, against a noise floor of 0 and 1. The rest
+is the same object at the anti-aliased silhouette edge and in its cast shadow
+(581 brightened / 43 darkened RDL, 597 / 37 row). The rig kept animating while
+hidden: chest travel 0.203 m RDL, `upperarm.L` 0.183 m row.
+
+The ray-cast 340/111 figures in this README are unchanged and remain correct:
+`scene.ray_cast` ignores `hide_render` (it returns the mesh with the flag set,
+and returns nothing only for `hide_viewport`/`hide_set`), so the count still
+sees the mesh. It describes geometry; it does not describe what the render
+draws. The proposed F1 test — "skeleton front-pixels = 0" — rested on that
+mistake and was replaced by rendered-pixel checks.
+
+The 69.5 mm protrusion, the muscle spikes, the shadow oscillation and the JPEG
+ringing are all still present. F1 removes the pale patches the skeleton caused;
+it does not fix the anatomy.
 
 ## Superseded figures — do not quote these
 
