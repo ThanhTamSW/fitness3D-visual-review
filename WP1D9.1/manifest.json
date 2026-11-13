@@ -1,0 +1,210 @@
+{
+ "milestone": "WP1D.9.1",
+ "chunk_chars": 24000,
+ "images": [
+  {
+   "png": "rdl_r1_f0053.png",
+   "jpg": "rdl_r1_f0053.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "43ee5a366893a2ea23adea05a4649d399efeb7e99993b36bbc0440bdb03f93cb",
+   "jpg_sha256": "52106cf9c0df7ffe8c9b0a7beafc3276f3a3dcd72f32ea9886e22a08c87e188d",
+   "jpg_bytes": 104803,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_r1_f0054.png",
+   "jpg": "rdl_r1_f0054.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "be67e8378c05838e72ccbc0ae1271ac17198473f011e667ea9fc95731ccce69b",
+   "jpg_sha256": "4b1cf0d7fc4c841be931ce23f29bde43394d53978a35bc43064b0c814a6688b3",
+   "jpg_bytes": 99393,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_r1_f0055.png",
+   "jpg": "rdl_r1_f0055.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "a468e563a94576fe83d96815076f9d54ff938e088225d069b225afa69ff00115",
+   "jpg_sha256": "f94143a242d7ceb31fde6eb67604fd63baa9d48ecbc687f73d2a5515fccd4b22",
+   "jpg_bytes": 101704,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_r1_f0066.png",
+   "jpg": "rdl_r1_f0066.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "26d866f094e1e5d7e900f710c4e9a20fdd87b621dbb0b34aa44598d4225c7b2d",
+   "jpg_sha256": "712a9a6c9df9e7af87b9303715e573057ca0ea0f4dcdbcf025226248b73adb0c",
+   "jpg_bytes": 99609,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_r1_f0067.png",
+   "jpg": "rdl_r1_f0067.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "2328860871f6196a438b62d5ea539ab20443e01f53b4e39019262ce73a22005d",
+   "jpg_sha256": "e83b77a7f307272507aa01861fb1d120bc6a52dfec496e44a53a88b431b8f231",
+   "jpg_bytes": 99930,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_r1_f0068.png",
+   "jpg": "rdl_r1_f0068.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "a87cacbcfd5c215185e7297e3bbd5c98cbdeba17fa66fa7abd70f3e34177f66a",
+   "jpg_sha256": "b28cacce2c2523d99dd642db1404fcb58bd896cc9f3222f10daa310402108a6a",
+   "jpg_bytes": 100067,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_shipped_f0053.png",
+   "jpg": "rdl_shipped_f0053.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "057e58e92141f4451c30ea80792363e929efd8aa1d54b1cc64db932a3601a37c",
+   "jpg_sha256": "42410342ea1406c0775f58f5cae1ba5889ac0c35c913a5a85f23ed76e868bb57",
+   "jpg_bytes": 100701,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_shipped_f0054.png",
+   "jpg": "rdl_shipped_f0054.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "2c98d2eb7ab4c44d7f2cc4593ea29596b2d91fe1665090194d1e8200d1ed159e",
+   "jpg_sha256": "ce2ecb360f857f857e67224bf05dedcd54cb7e8876068d403d24c8d6f6f598e9",
+   "jpg_bytes": 100818,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_shipped_f0055.png",
+   "jpg": "rdl_shipped_f0055.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "3e373b058e53dc320fa9040b3347d0cb0aeeb3d505d5af597c47b34c387066d6",
+   "jpg_sha256": "f579f3ef7e351e8047eaf7fa99cb6491370e178afc9065c1cfda1bda8c8d924e",
+   "jpg_bytes": 100739,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_shipped_f0066.png",
+   "jpg": "rdl_shipped_f0066.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "d620f1042f962073e2b870961c0d8ada0cd01299983158711531640ddf4afa60",
+   "jpg_sha256": "f021b73da867bb62770931f87f4503e0e066c172fc39f137e416832e59bf0aa9",
+   "jpg_bytes": 102642,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_shipped_f0067.png",
+   "jpg": "rdl_shipped_f0067.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "3eb348ccb2eaa7c350aadca8d692feac74c35699e9f81b3bf006804c0c1c1ba2",
+   "jpg_sha256": "d69731c5d49323cd93e37242658bfe04a80f73988f663584c6cae7d1138153cb",
+   "jpg_bytes": 99939,
+   "chunks": 6
+  },
+  {
+   "png": "rdl_shipped_f0068.png",
+   "jpg": "rdl_shipped_f0068.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "a51710fc1b6efe24815fa03c80282b31ae066393698692bc4e60fc7652f98ab0",
+   "jpg_sha256": "c84f18466c521115a060ed0a4464053e082a13c53b8f65f5c49013ba6c75190a",
+   "jpg_bytes": 100054,
+   "chunks": 6
+  },
+  {
+   "png": "row_shipped_f0081.png",
+   "jpg": "row_shipped_f0081.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "6592e729c38b5ae73e55c4f90f752e0b03ac34d604a5c98aeee617b90bb10dd6",
+   "jpg_sha256": "e6f1704ef94650820cca8997b5755c7209304ae6b25bfd17ab44a4e7d45464e3",
+   "jpg_bytes": 112348,
+   "chunks": 7
+  },
+  {
+   "png": "row_shipped_f0082.png",
+   "jpg": "row_shipped_f0082.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "757ea3e708fda52df47f30b25f87c0f0b5cd617bf21d4f64a1c609e8b03c00da",
+   "jpg_sha256": "8f97aeb368f2219535e80c7ee37d3e5282240377c3a34d130fcb25eefb55641f",
+   "jpg_bytes": 105057,
+   "chunks": 6
+  },
+  {
+   "png": "row_shipped_f0249.png",
+   "jpg": "row_shipped_f0249.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "8fa40f502501a08cec5d41b13a9a335691534dcd7cb68c6e6ee06f0aa0b5cd29",
+   "jpg_sha256": "bfd65be8807966120c9162b87b9603129fbf21917fc9e1d731ba1e5baf06dedc",
+   "jpg_bytes": 105556,
+   "chunks": 6
+  },
+  {
+   "png": "row_shipped_f0250.png",
+   "jpg": "row_shipped_f0250.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "90f0158b9107377d014a634cbe18ff3cabc32344def25557f1f7e6eee5722284",
+   "jpg_sha256": "9bc4156fac022b228943f961f486c5b7cef4c4706dab3335291e564ad9751642",
+   "jpg_bytes": 112154,
+   "chunks": 7
+  },
+  {
+   "png": "row_shipped_f0251.png",
+   "jpg": "row_shipped_f0251.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "ade1204b05c1a8f73a87908ab66868b0057d4583deade05f1234dc10be63eaec",
+   "jpg_sha256": "c710f4ca8f3e629f5a9ece0e0bde870213ed9d1e14358c096648653cd81fa195",
+   "jpg_bytes": 105452,
+   "chunks": 6
+  }
+ ]
+}
