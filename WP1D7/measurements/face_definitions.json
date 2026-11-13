@@ -1,0 +1,52 @@
+{
+ "milestone": "WP1D.7",
+ "revision": "WP1D.7.1",
+ "purpose": "Reconcile the two published obliques face counts, and pin the body-shell normal statistics to one measurement",
+ "model": {
+  "path": "build\\anatomy.glb",
+  "sha256": "83e3d08f14f52fa3d6f5bdd4b8b2ba29cb0e7158cffb405d81574a111d06b8f0",
+  "bytes": 3596440
+ },
+ "blender": "4.2.23 LTS",
+ "definitions": {
+  "flat_faces_use_smooth_false": "polygon.use_smooth is False after Blender's glTF import. glTF has no shading flag; io_scene_gltf2 derives it in NORMALS mode by testing each corner normal against the face normal. Property of the import.",
+  "faces_with_non_uniform_corner_normals": "The three corner normals of the triangle are not all identical, read from the NORMAL accessor. This is the reviewer's 'not smooth' count.",
+  "faces_with_all_corners_on_face_normal": "All three corner normals equal the geometric face normal: the face is painted with exactly its own plane normal.",
+  "positions_with_disagreement_gt_30": "Shared positions carrying at least two corner normals more than 30 degrees apart.",
+  "corners_away_from_first_gt_30": "At each shared position, corners differing from the first corner listed there. Order-dependent; this is what produced the report's 2,366."
+ },
+ "a2_obliques": {
+  "faces": 6632,
+  "faces_with_uniform_corner_normals": 3320,
+  "faces_with_non_uniform_corner_normals": 3312,
+  "faces_with_all_corners_on_face_normal": 3320,
+  "corner_normal_dot_tolerance": 0.9999,
+  "positions_with_disagreement_gt_30": 806,
+  "corners_away_from_first_gt_30": 1972,
+  "max_disagreement_deg": 178.2,
+  "flat_faces_use_smooth_false": 3240,
+  "imported_verts": 11581,
+  "unique_positions_float32": 3267,
+  "faces_faceted_but_flagged_smooth": 80,
+  "reconciliation": "3,312 = 6632 - 3320: the faces that are not fully faceted, which is the reviewer's 'not smooth' reading. 3,240 = faces flagged flat by the glTF import. The flat set sits inside the 3320 fully faceted faces, so the 3,312 and 3,240 are different definitions of different things, not two attempts at one number. 6,632 - 3,240 = 3,392, not 3,312."
+ },
+ "a1_body": {
+  "faces": 14000,
+  "faces_with_uniform_corner_normals": 5,
+  "faces_with_non_uniform_corner_normals": 13995,
+  "faces_with_all_corners_on_face_normal": 1,
+  "corner_normal_dot_tolerance": 0.9999,
+  "positions_with_disagreement_gt_30": 1177,
+  "corners_away_from_first_gt_30": 2366,
+  "max_disagreement_deg": 173.1,
+  "geometric_edges": 21219,
+  "edges_shared_by_two_faces": 20781,
+  "split_edges": 20781,
+  "split_edges_with_normal_disagreement_gt_30": 760,
+  "unique_positions_float32": 7160,
+  "verts": 41999,
+  "duplicate_vertices_float32": 34839,
+  "flat_faces_use_smooth_false": 0,
+  "note": "The 2,366 in the A1 table is corners_away_from_first_gt_30: corners, not pairs. The mutual-pair count is positions_with_disagreement_gt_30."
+ }
+}

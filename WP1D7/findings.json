@@ -14,11 +14,18 @@
    "layer": "geometry",
    "classification": "CONFIRMED",
    "title": "The body shell is split into per-face vertices, so it cannot shade as one surface",
-   "detail": "body has 41999 vertices for 7159 unique positions and 14000 faces. The build pipeline decimates and exports the skin without a weld, so every triangle owns its own copy of each corner. Co-located vertices then receive different normals, and the surface shades as separate plates instead of a continuous skin. Welding in memory (0.5 mm threshold) changes 16.59% of the visible skin pixels at the reviewed frame.",
+   "detail": "body has 41999 vertices for 7160 unique positions and 14000 faces. The build pipeline decimates and exports the skin without a weld, so every triangle owns its own copy of each corner. Co-located vertices then receive different normals, and the surface shades as separate plates instead of a continuous skin. Welding in memory (0.5 mm threshold) changes 16.59% of the visible skin pixels at the reviewed frame. 1177 shared positions carry corner normals more than 30 degrees apart, counted as 2366 corner normals away from the first corner at their own position, and 20781 geometric edges are split on both sides.",
    "measurement": {
     "verts": 41999,
-    "unique_positions": 7159,
-    "duplicate_vertices": 34840,
+    "unique_positions": 7160,
+    "duplicate_vertices": 34839,
+    "unique_positions_grid_estimate": 7159,
+    "duplicate_vertices_grid_estimate": 34840,
+    "unique_positions_float32": 7160,
+    "duplicate_vertices_float32": 34839,
+    "positions_with_normal_disagreement_gt_30": 1177,
+    "corners_away_from_first_gt_30": 2366,
+    "split_edges_with_normal_disagreement_gt_30": 760,
     "welded_components": 1,
     "welded_verts": 7095,
     "visible_skin_pixels_changed_fraction": 0.16586,
@@ -39,20 +46,27 @@
    "id": "A2",
    "layer": "geometry",
    "classification": "CONFIRMED",
-   "title": "The obliques mesh arrives shattered: 3,240 flat-shaded faces and 457 isolated spike vertices",
-   "detail": "obliques has 11581 vertices for 3267 unique positions and 6632 faces, of which 3240 are flat-shaded, so the mesh renders as facets. It also carries 453 vertices that sit more than 2 mm outside the skin with no protruding neighbour, which is what a spike looks like numerically: an isolated point above the surface, not a broad bulge.",
+   "title": "The obliques mesh arrives shattered: 3,240 flat-shaded faces and 453 isolated posed spike vertices",
+   "detail": "obliques has 11581 vertices for 3267 unique positions and 6632 faces. Two face counts are published and both are correct: 3240 faces are flagged flat by the glTF import (glTF stores no shading flag, so Blender derives it from the corner normals), and 3312 faces carry corner normals that are not all identical, which is the reviewer's 'not smooth' reading. 3320 faces are painted with exactly their own plane normal, so the two sets overlap without being complements: 6,632 - 3,240 = 3,392. The mesh also carries 453 vertices that sit more than 2 mm outside the skin with no protruding neighbour in the row pose (457 in the rest pose), which is what a spike looks like numerically: an isolated point above the surface, not a broad bulge.",
    "measurement": {
     "verts": 11581,
     "unique_positions": 3267,
     "flat_shaded_faces": 3240,
+    "flat_faces_use_smooth_false": 3240,
+    "faces_with_non_uniform_corner_normals": 3312,
+    "faces_with_all_corners_on_face_normal": 3320,
+    "faces_faceted_but_flagged_smooth": 80,
     "faces": 6632,
     "posed_spikes": 453,
+    "rest_spikes": 457,
     "posed_beyond_2mm": 4020,
-    "posed_max_m": 0.0349
+    "posed_max_m": 0.0349,
+    "definition_file": "measurements/face_definitions.json"
    },
    "control": "Every other muscle mesh is fully smooth-shaded and has zero isolated spikes; the same measurement with the same threshold separates obliques from them, so the threshold is not simply flagging all geometry.",
    "evidence": [
     "measurements/anatomy_audit.json",
+    "measurements/face_definitions.json",
     "diagnostics/rdl_d2_muscle_only.png",
     "diagnostics/row_d2_muscle_only.png",
     "visibility/rdl_visibility.png"
@@ -63,7 +77,7 @@
    "layer": "geometry",
    "classification": "CONFIRMED",
    "title": "Muscle meshes and the skeleton sit outside the skin, and the skeleton is never hidden",
-   "detail": "Ray casting, which involves no shading at all, makes the skeleton the front-most surface on 340 sampled pixels of the RDL frame and 111 of the row frame; muscle meshes are front-most on 2413 and 891. The worst muscle protrusion in the reviewed pose is 46.3 mm (back). The skeleton is a separate ivory mesh that no production or review script hides, so any bone outside the skin renders as a pale patch. Adding it to the RDL diagnostic creates 548 warm pixels that were not there before.",
+   "detail": "Ray casting, which involves no shading at all, makes the skeleton the front-most surface on 340 sampled pixels of the RDL frame and 111 of the row frame; muscle meshes are front-most on 2413 and 891. The worst muscle protrusion in the reviewed pose is 46.3 mm (back). The skeleton is a separate ivory mesh that no production or review script hides, so any bone outside the skin renders as a pale patch. Adding it to the RDL diagnostic creates 548 warm pixels that were not there before (4754 on the row). The maps sampled 22564 and 27159 pixels.",
    "measurement": {
     "skeleton_front_pixels_rdl": 340,
     "skeleton_front_pixels_row": 111,
@@ -87,6 +101,10 @@
      "calves": 205
     },
     "skeleton_protrusion_posed_m": 0.0695,
+    "warm_pixels_added_rdl": 548,
+    "warm_pixels_added_row": 4754,
+    "sampled_pixels_rdl": 22564,
+    "sampled_pixels_row": 27159,
     "worst_muscle": "back",
     "worst_muscle_protrusion_posed_m": 0.0463
    },
@@ -180,6 +198,12 @@
      "C": 0,
      "D": 12280
     },
+    "repeat_differences_row": {
+     "A": 38683,
+     "B": 1,
+     "C": 0,
+     "D": 10279
+    },
     "cells": [
      {
       "cell": "A",
@@ -242,7 +266,7 @@
    "layer": "render",
    "classification": "CONFIRMED",
    "title": "The published WP1D.6 stills cannot be reproduced by re-running the script that made them",
-   "detail": "10_finals.py was re-run twice on the same model and job. The two runs disagree with each other on every still that contains muscle meshes or equipment, and the first run disagrees with the published PNG by up to 119323 pixels. The three close-ups reproduce exactly, and the body-only still reproduces to 29 pixels. Those are the shots taken with fewer visible surfaces and no plates, which is consistent with the shadow-call state measured in B1 rather than with a change to the asset or the script.",
+   "detail": "10_finals.py was re-run twice on the same model and job. The two runs disagree with each other on every still that contains muscle meshes or equipment, and the first run disagrees with the published PNG by up to 119323 pixels. The body-only still reproduces to 29 pixels, and the three plate/overlay close-ups were quoted as 0 and 0 in an earlier draft but appear in no measurement file, so they are no longer claimed. The surviving differences are consistent with the shadow-call state measured in B1 rather than with a change to the asset or the script.",
    "measurement": {
     "shots": [
      {
@@ -359,7 +383,7 @@
      }
     ]
    },
-   "control": "The close-up shots reproduce bit-for-bit across both runs, so the script, the model and the job are unchanged; the difference is in the render path those shots exercise, not in the inputs.",
+   "control": "The body-only still reproduces to tens of pixels out of 900x1200, so the script, the model and the job are unchanged; the difference is in the render path the multi-shot stills exercise, not in the inputs. The close-up rows that an earlier draft called bit-reproducible were removed for lack of a measurement.",
    "evidence": [
     "measurements/reproduction.json"
    ]

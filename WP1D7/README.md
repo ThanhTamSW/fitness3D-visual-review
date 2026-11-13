@@ -1,14 +1,21 @@
 # WP1D.7 — Anatomy Overlay & Render Artifact Investigation
 
 Status: **PREVIEW / AWAITING HUMAN REVIEW**
+Revision: **WP1D.7.1** (evidence reconciliation and documentation sync)
 
 This folder holds the diagnostic evidence for WP1D.7. The findings, the numbers
 and the proposed fixes are in the code repository:
 
+`ThanhTamSW/fitness3D`, branch `wp1d6/visual-artifact-audit` @ `0ca5731`,
 `docs/production/WP1D7_ANATOMY_OVERLAY_RENDER_INVESTIGATION.md`
 
 Nothing here approves an exercise. Both exercises remain
 `PREVIEW / AWAITING HUMAN REVIEW`.
+
+WP1D.7.1 changed no image, render or measurement. It reconciled the documents
+with the artefacts already published, and rewrote this README against
+`measurements/matrix_repeat.json` and the code repository's report. The
+superseded figures stay recorded in the report's §12, not silently dropped.
 
 ## Folder map
 
@@ -18,9 +25,12 @@ Nothing here approves an exercise. Both exercises remain
 | `matrix/` | The required raytracing x denoise table, A/B/C/D, two renders per cell |
 | `visibility/` | Ray-cast front-most surface maps: no shading, no materials, no denoiser |
 | `skin_seams/` | Body shell only, shipping vs welded surface, each rendered twice |
-| `shadow/` | Frames proving the shadow-pass brightness step, and one control per candidate switch |
-| `measurements/` | Every JSON the report quotes, plus `anatomy_audit.json` and `cross_side.json` |
+| `shadow/` | Frames proving the shadow-pass brightness step, plus one frame per candidate switch |
+| `measurements/` | Every JSON the report quotes, plus `anatomy_audit.json`, `cross_side.json` and `face_definitions.json` |
 | `findings.json` | The same findings in machine-readable form, with evidence paths |
+
+`weld/` and `repeat/` are **not** published here. They are regenerable from the
+PNGs and scripts in the code repository, and the report says so.
 
 Each PNG has a `.jpg` beside it for inline viewing. The PNG is the authoritative
 file; the JPEG is a preview encoded at quality 88 and is not used for any
@@ -45,21 +55,59 @@ WP1D.6 JPEGs were encoded at quality 80, and that encode adds 8x8 block ringing
 on its own (`measurements/published_grain.json`), so measuring a JPEG would mix
 the renderer with the encoder.
 
+## The raytracing x denoise matrix
+
+Two renders of an unchanged scene per cell, shadows off so the B1 oscillation
+cannot contaminate the comparison. Pixels differing by more than 8 levels:
+
+| Cell | Ray tracing | Denoise | Romanian deadlift | Barbell row |
+|---|---|---|---|---:|
+| A | ON | ON | 36,715 | 38,683 |
+| B | OFF | ON | 2 | 1 |
+| C | OFF | OFF | 0 | 0 |
+| D | ON | OFF | 12,280 | 10,279 |
+
+Source: `measurements/matrix_repeat.json`, recomputed from `matrix/*.png` with
+`abs(r0 - r1)` on RGB, max across channels. No cell is byte-identical; cells B
+and C sit at the 8-bit floor and cells A and D are three to four orders of
+magnitude above it. An earlier revision of this README carried different tracer
+counts that appeared in no measurement file; §12 (V1, V9) of the report records
+what was superseded and why.
+
 ## What the evidence shows
 
 - The body shell ships as per-face split vertices: 41,999 vertices for 7,160
-  unique positions. Welding it in memory changes 16.6% of the skin's pixels.
-- `obliques` ships with 3,240 of 6,632 faces flat-shaded and 453 isolated spike
-  vertices outside the skin.
+  unique float32 positions. Welding it in memory changes 16.6% of the skin's
+  pixels. 1,177 shared positions carry corner normals more than 30° apart (2,366
+  corner normals away from the first corner at their position); 760 split edges
+  disagree across the seam.
+- `obliques` publishes two different face counts and both are correct.
+  **3,240** faces are flagged flat by Blender's glTF import, which derives the
+  flag from the corner normals because glTF stores no shading flag. **3,312**
+  faces carry corner normals that are not all identical, which is the "not
+  smooth" reading. 3,320 faces are fully faceted and the 3,240 sit inside them;
+  the counts are not complements, because 6,632 − 3,240 = 3,392. It also carries
+  453 isolated spike vertices in the row pose (457 at rest).
 - The `skeleton` mesh is opaque ivory, is never hidden in production renders,
   and protrudes up to 69.5 mm through the skin. Ray casting makes it front-most
-  on 340 sampled pixels in RDL and 111 in the row.
+  on 340 sampled pixels of 22,564 in RDL and 111 of 27,159 in the row. Adding it
+  to the diagnostic creates 548 warm pixels in RDL and 4,754 in the row.
 - The shadow pass alternates whole-frame brightness by 9.4 levels on every
-  render call. Turning shadows off is the only tested switch that removes it.
+  render call. Turning shadows off is the only tested switch that removes the
+  step; it does not make the render byte-identical.
 - The raytraced pass is non-deterministic: two renders of an unchanged scene
-  differ by 14,215 pixels with the tracer on and 1 with it off.
+  differ by the counts in the matrix above.
 - Ray tracing is **not** the cause of the grain in the reviewed stills: those
   were rendered with the tracer already off.
+- The published WP1D.6 stills cannot be reproduced by re-running their own
+  script. The surviving differences are consistent with the shadow-pass defect.
+
+## Definitions behind the numbers
+
+`measurements/face_definitions.json` records each definition used above, the
+corner-normal dot tolerance, and the asset hash it was measured on. It is the
+file to read before quoting any face or normal count. If a number in this README
+and that file disagree, the file wins.
 
 ## Status
 
@@ -67,3 +115,23 @@ RDL: **PREVIEW / AWAITING HUMAN REVIEW**.
 Barbell Row: **PREVIEW / AWAITING HUMAN REVIEW**.
 
 No anatomy GLB, rig, pose, camera or production pipeline change was made.
+F1–F4 in the report remain proposals; none is implemented.
+
+## Superseded figures — do not quote these
+
+Kept so the earlier revision of this README stays auditable rather than being
+silently rewritten. Every row below was replaced by a figure that has a
+measurement file behind it.
+
+| Where | Superseded value | Replaced by | Why |
+|---|---|---|---|
+| This README, B2 | tracer on differs by `14,215` px; tracer off by `1` px | 36,715 / 2 / 0 / 12,280 (RDL), 38,683 / 1 / 0 / 10,279 (row) | No measurement file contained the old figures; recomputing from the committed PNGs gives the new ones |
+| This README, B2 | "B and C are deterministic" | counts reported as magnitude | Both cells differ by 1–2 px, so no cell has equal hashes |
+| Report A1 | 7,159 unique / 34,840 duplicate vertices | 7,160 / 34,839 | The old values came from a grid approximation, not exact float32 |
+| Report A2 | 457 spikes in the title, 453 in the measurement | 453 posed, 457 at rest | Title and field disagreed; both poses now stated |
+| Report A3 | row views sampled 22,564 px | 27,159 px | The RDL count had been copied into the row column |
+| Report A3 | row adds 4,761 warm pixels | 4,754 px | 4,761 appears in no measurement file |
+| Report B4 | three close-ups reproduce bit-for-bit (`0 \| 0`) | rows withdrawn | The shots are in no measurement file; the two committed close-up runs differ |
+
+Full text of each correction, with the file that now holds the source, is in §12
+of `docs/production/WP1D7_ANATOMY_OVERLAY_RENDER_INVESTIGATION.md`.
