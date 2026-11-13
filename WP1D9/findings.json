@@ -1,0 +1,219 @@
+{
+ "milestone": "WP1D.9",
+ "status": "PREVIEW / AWAITING HUMAN REVIEW",
+ "scope": "diagnostic only: no production setting changed, F3 not implemented",
+ "root_cause_resolved": true,
+ "findings": [
+  {
+   "id": "C1",
+   "title": "The 9.4-level shadow step is a diluted measurement of a much larger body-level shadow flip",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "control": "The same WP1D.7 frames measured through the alpha subject mask instead of the 0.06-luminance mask: the defect frame moves 100,370 pixels by up to 255 levels, and the subject mean drops 35.28 levels, not 9.4",
+   "detail": "WP1D.7's subject mask was `luminance > 0.06` on an opaque 760x1040 frame with a 0.06-grey backdrop, so it selected all 790,400 pixels. 88% of that mean was flat backdrop, which divided the real step by roughly nine. The defect was real; the published magnitude understated it.",
+   "evidence": [
+    "measurements/series.json",
+    "evidence/consecutive_shipped__0183.png",
+    "evidence/consecutive_shipped__0184.png"
+   ],
+   "measurements": {
+    "wp1d7_reported_step_levels": 9.396,
+    "wp1d9_subject_step_levels": 35.2531,
+    "wp1d9_worst_frame_drop_levels": 35.2808,
+    "changed_pixels": 100370,
+    "max_channel_delta": 255
+   }
+  },
+  {
+   "id": "C2",
+   "title": "The defect is nondeterministic render-call state, not a frame-number pattern or exposure change",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "control": "Same frame 180 rendered four times in one process is byte-identical (one SHA-256 across four files, max step 0). Four separate processes over the same 15 frames produced 0, 1, 1 and 2 defect frames on different frame numbers.",
+   "detail": "The same-frame repeat proves the renderer is deterministic when the scene and call order are fixed. The variation between processes therefore comes from state the renderer keeps across calls, which is also why rendering frames 190..176 in descending order moved the defect to frame 183 instead of 188.",
+   "evidence": [
+    "measurements/series.json",
+    "evidence/same_frame_shipped__0180__r0.png"
+   ],
+   "measurements": {
+    "same_frame_replicates": 4,
+    "same_frame_distinct_hashes": 1,
+    "production_runs_with_defect": "2/4",
+    "defect_frames": "2 of 60",
+    "ascending_defect_frame": 188,
+    "descending_defect_frame": 183
+   }
+  },
+  {
+   "id": "C3",
+   "title": "The shadow pass owns the defect: disabling shadows removes it entirely",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "control": "The identical frame list rendered with `scene.eevee.use_shadows = False` produces a 0.0113-level maximum step and no defect frame, against 35.2531 with shadows on",
+   "detail": "This is the only single switch that removes the defect. Every shadow tunable tested (soft shadows, jitter, ray count, filter radius, high bitdepth, maximum resolution, buffer bias, pool size) leaves a step, and some make it much worse, so the defect belongs to how the shadow pass is evaluated rather than to any one exposed quality setting.",
+   "evidence": [
+    "measurements/series.json",
+    "evidence/consecutive_no_shadows__0176.png",
+    "evidence/consecutive_shipped__0183.png"
+   ],
+   "measurements": {
+    "shadows_on_max_step": 35.2531,
+    "shadows_off_max_step": 0.0113,
+    "shadows_off_defect_frames": 0
+   }
+  },
+  {
+   "id": "C4",
+   "title": "The defect is a large cast shadow appearing on the torso, carried mostly by the equipment",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "control": "Hiding the barbell, plates and collars from the render removes it (0.0006-level step over two runs); leaving them in the image but disabling their shadow still defects once in five runs, so the caster's presence in the shadow pass, not its pixels, is what matters",
+   "detail": "In the worst frame the unlit region grows from 7,706 to 52,112 pixels, 32% of the subject, and that region brightens by 61.29 levels when the frame recovers. A grid map of the difference puts the change on the torso under the bar, not on the silhouette. Hiding only the plates does not remove it, so the shaft is also a caster.",
+   "evidence": [
+    "measurements/series.json",
+    "evidence/consecutive_shipped__0183.png",
+    "evidence/consecutive_plates_hidden__0176.png"
+   ],
+   "measurements": {
+    "shadow_pixels_normal_frame": 7706,
+    "shadow_pixels_defect_frame": 52112,
+    "shadow_fraction_of_subject": 0.3221,
+    "shadow_region_mean_delta": 61.2946,
+    "plates_hidden_max_step": 0.0006
+   }
+  },
+  {
+   "id": "C5",
+   "title": "The defect is not universal: the barbell row is stable in every measured run",
+   "layer": "render",
+   "classification": "CONFIRMED",
+   "control": "The row rendered over 15 consecutive frames has a 0.0117-level maximum step and a 0.0328-level total range, with and without shadows",
+   "detail": "The row hinge holds the torso at a fixed lean with the bar path close to the body, so the moving caster does not sweep a large shadow across the torso. Any remedy therefore has to be justified on the exercises that do defect, not on a global assumption.",
+   "evidence": [
+    "measurements/series.json",
+    "evidence/consecutive_row_shipped__0146.png"
+   ],
+   "measurements": {
+    "row_max_step": 0.0117,
+    "row_range": 0.0328,
+    "rdl_max_step": 35.2531
+   }
+  },
+  {
+   "id": "C6",
+   "title": "Reducing the shadow resolution scale removes the defect in every measured run",
+   "layer": "render",
+   "classification": "LIKELY",
+   "control": "Four separate processes at `shadow_resolution_scale = 0.5` produced 0 defect frames across 60 frames, against 2 defect frames in 60 at the shipped 1.0; this is a small sample for an intermittent defect and needs a longer run before it is treated as a fix",
+   "detail": "This is the strongest isolated candidate. It is a renderer-only change, it keeps self-shadowing and contact cues, and it slightly softens shadow edges. It must be confirmed with more frames and on the other exercises before any implementation.",
+   "evidence": [
+    "measurements/series.json"
+   ],
+   "measurements": {
+    "scale_1_0_defect_frames": "2 of 60",
+    "scale_0_5_defect_frames": "0 of 60",
+    "scale_0_5_max_step": 0.0118
+   }
+  },
+  {
+   "id": "C7",
+   "title": "The internal reason the shadow pass loses a page is not isolated",
+   "layer": "render",
+   "classification": "UNCONFIRMED",
+   "control": "None available at this level: the evidence is behavioural (pool size changes severity, scale changes incidence) and Blender exposes no counter for shadow page allocation failure through bpy",
+   "detail": "A larger pool made the defect much worse (94.53 at 1024, 35.20 at 256, 6.44 at 16), which is the opposite of a simple out-of-memory story and is not explained by this milestone. The report must not claim a mechanism beyond what the controlled runs show.",
+   "evidence": [
+    "measurements/series.json"
+   ],
+   "measurements": {
+    "pool_16_max_step": 6.4406,
+    "pool_256_max_step": 35.2037,
+    "pool_512_max_step": 35.2531,
+    "pool_1024_max_step": 94.5272
+   }
+  }
+ ],
+ "remedies": [
+  {
+   "id": "R1",
+   "name": "Reduce shadow resolution scale",
+   "change": "scene.eevee.shadow_resolution_scale 1.0 -> 0.5 in configure_render",
+   "expected_effect": "0 defect frames in 60 measured; largest single lever found",
+   "artifacts": "Softer, lower-detail shadow edges; possible peter-panning at small contact areas",
+   "performance": "Neutral to slightly faster (fewer shadow texels)",
+   "isolated_to_renderer": true,
+   "affects_every_exercise": true,
+   "recommendation": "Preferred candidate, pending a longer confirmation run"
+  },
+  {
+   "id": "R2",
+   "name": "Stop the equipment casting shadows",
+   "change": "Set visible_shadow = False on the barbell, plates and collars",
+   "expected_effect": "Hiding them removes the step entirely; disabling only their shadow still defected once in five runs, so this is unproven",
+   "artifacts": "The bar and plates lose their grounding shadow and float visually",
+   "performance": "Slightly faster",
+   "isolated_to_renderer": true,
+   "affects_every_exercise": "Only exercises with equipment",
+   "recommendation": "Not recommended: it removes real depth cues the lifter reads"
+  },
+  {
+   "id": "R3",
+   "name": "Increase shadow pool size",
+   "change": "scene.eevee.shadow_pool_size 512 -> 1024",
+   "expected_effect": "Made the defect worse: 94.53-level steps and 9 of 60 defect frames",
+   "artifacts": "Large whole-torso shadow",
+   "performance": "More shadow memory",
+   "isolated_to_renderer": true,
+   "affects_every_exercise": true,
+   "recommendation": "Rejected by measurement"
+  },
+  {
+   "id": "R4",
+   "name": "Tune soft shadows, jitter, rays, filter radius, bit depth, bias or maximum resolution",
+   "change": "One setting per run, all other settings fixed",
+   "expected_effect": "None removes the defect; filter radius 4, maximum resolution 2 mm and bias 0 each still defect",
+   "artifacts": "Each carries its own quality cost for no measured gain",
+   "performance": "Negligible",
+   "isolated_to_renderer": true,
+   "affects_every_exercise": true,
+   "recommendation": "Rejected by measurement"
+  },
+  {
+   "id": "R5",
+   "name": "Disable shadows (F3 as originally proposed)",
+   "change": "scene.eevee.use_shadows = False",
+   "expected_effect": "0.0113-level step, no defect frames: the only setting that removes it outright",
+   "artifacts": "Loses all self-shadowing and the body's depth cues; the figure flattens under three area lights",
+   "performance": "Faster",
+   "isolated_to_renderer": true,
+   "affects_every_exercise": true,
+   "recommendation": "Fallback only. The measured visual cost is a loss of form, and WP1D.9 did not establish that R1 is insufficient"
+  },
+  {
+   "id": "R6",
+   "name": "Keep shadows unchanged",
+   "change": "None",
+   "expected_effect": "The defect persists in roughly half the measured production runs, with steps up to 35 levels",
+   "artifacts": "A torso-wide shadow flash in the shipped clip",
+   "performance": "None",
+   "isolated_to_renderer": true,
+   "affects_every_exercise": "RDL measured; row stable",
+   "recommendation": "Not acceptable for a 30 fps clip, given the measured magnitude"
+  }
+ ],
+ "playback": {
+  "shr_clip": "playback/consecutive_shipped.mp4",
+  "row_clip": "playback/consecutive_row_shipped.mp4",
+  "fps": 30,
+  "source_frames": 15,
+  "duration_seconds": 0.5,
+  "limitation": "A 15-frame, 0.5-second diagnostic clip is a real 30 fps playback test of those frames, not a full production video. The reported step is a per-frame difference measured on the retained PNGs; the clip is the human-viewable form of the same frames, and the flicker verdict rests on the measurements, not on viewing the clip."
+ },
+ "not_verified": [
+  "The internal shadow-page failure that loses or misallocates the caster's shadow",
+  "Whether R1 holds over a full 360-frame render and on the other eight exercises",
+  "Whether the human eye reads a 35-level torso flash at 30 fps as flicker; no viewer study was run",
+  "Whether a single defect frame in a 12-second clip is noticeable when embedded in motion, as opposed to the isolated 0.5 s clip",
+  "The row's stability across runs other than the one measured"
+ ]
+}
