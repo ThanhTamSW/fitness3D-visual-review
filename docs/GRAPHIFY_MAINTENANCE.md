@@ -108,3 +108,36 @@ and renders nothing when the CDN is blocked.
   classifications are the record; the graph is an index of that record.
 - Do not merge this graph into the main repository's graph.
 - Do not install Graphify Git hooks or watchers.
+
+## Staleness after WP1D.9.1 republish (2026-11-14)
+
+The graph is **stale** and deliberately not refreshed.
+
+WP1D.9.1 was re-run over 20 serial full-length renders and its result changed
+from "partially validated" to "R1 rejected". That rewrote
+`WP1D9.1/README.md`, `WP1D9.1/WP1D9_1_SHADOW_SCALE_VALIDATION.md` and
+`WP1D9.1/manifest.json`, and added 20 evidence images. 110 files have changed
+since this graph was built at `95d876c`.
+
+The graph still describes the four-run version. Concretely, it does not know
+that:
+
+- `barbell_squat`, `bicep_curl`, `hip_thrust` and `pallof_press` are part of the
+  validation at all; it indexes only RDL and row evidence.
+- The decision is `R1 REJECTED`, not `PARTIALLY VALIDATED`.
+- The dark-frame confound has a corrected conclusion: serial runs drop lighting
+  passes too, so the earlier "serial is clean" claim is superseded.
+
+**Why it was not refreshed:** the review graph is 100% semantic content (83
+document, 38 concept, 11 rationale nodes, zero code). A refresh needs a semantic
+pass and no LLM backend is configured. Running `graphify update` here would
+re-extract code — of which there is none — and cannot add the new documents.
+
+**What a reader should do:** treat `WP1D9.1/README.md` and the report as the
+record, and this graph as an index of the pre-2026-11-14 state. Do not cite the
+graph for the current WP1D.9.1 decision.
+
+**To clear it:** run a semantic re-extraction with a configured backend, then
+validate with `tools/graphify/refresh-graph.js --semantic` before replacing the
+graph. The refresh tool refuses an evidence-repository refresh without the
+semantic flag precisely so this cannot be done by accident.
