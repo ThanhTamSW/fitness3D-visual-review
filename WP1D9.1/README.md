@@ -2,99 +2,99 @@
 
 **Status: PREVIEW / AWAITING HUMAN REVIEW**
 
-Decision: **`PARTIALLY VALIDATED — MORE TESTING REQUIRED`**
+Decision: **`R1 REJECTED — IMPROVES 2, DEGRADES 3, 1 UNMEASURABLE`**
 
 R1 (`shadow_resolution_scale = 0.5`) is **not** implemented in production. This
 folder is the validation evidence, not a shipped change.
 
 ## The result in one table
 
-Serial full-length renders, one Blender process at a time, adjacent-frame step
-on the eroded alpha subject, 2.0-level defect threshold from WP1D.9:
+20 serial full-length renders, one Blender process at a time, adjacent-frame
+step on the eroded alpha subject, 2.0-level defect threshold from WP1D.9.
+"Defects" counts steps over that threshold across all runs of a configuration.
 
-| Exercise | Variant | Frames | Max step | Defect |
-|---|---|---:|---:|---|
-| RDL | shipped | 360 | 32.94 | yes |
-| RDL | R1 | 360 | **21.83** | **yes** |
-| Row | shipped | 300 | 23.79 | yes |
-| Row | R1 | 300 | **0.06** | **no** |
+| Exercise | Runs (base/R1) | Baseline peak | Baseline defects | R1 peak | R1 defects | Verdict |
+|---|---:|---:|---:|---:|---:|---|
+| Barbell row | 1 / 2 | 23.79 | 12 | **0.06** | **0** | **IMPROVED** |
+| Barbell squat | 1 / 2 | 31.10 | 76 | **4.36** | **15** | **IMPROVED** |
+| Hip thrust | 1 / 2 | 10.12 | 8 | **32.69** | **52** | **WORSE** |
+| Pallof press | 1 / 2 | 25.62 | 56 | 11.70 | **315** | **WORSE** |
+| Romanian deadlift | 2 / 3 | 32.94 | 26 | 22.48 | **147** | **WORSE** |
+| Bicep curl | 1 / 2 | — | — | — | — | **UNMEASURABLE** |
 
-**R1 clears the row and does not clear the Romanian deadlift.** On RDL it
-reduces the excursion from 32.94 to 21.83 levels — still ten times the
-threshold — without changing its shape. RDL is the exercise that motivated the
-work, so this is partial.
+**R1 is not a global setting.** It clears the row and the squat, and makes hip
+thrust, pallof press and the Romanian deadlift worse. RDL is the exercise that
+motivated the work: its peak falls 32.94 → 22.48 while its defect count rises
+26 → 147, because a smaller shadow map makes each excursion shallower and more
+frequent. A peak-only reading gets that backwards.
 
-## Why the first pass was thrown away
+## Two corrections
 
-The first pass ran three Blender processes at once to save wall time. In 6 of 7
-runs that produced frames where the subject rendered at mean ~23 instead of
-~119 with an identical alpha silhouette (same 172,589 subject pixels; RGB max
-42 instead of 255). GPU contention, not a shadow. Serialising removed it: 0
-dark frames in every serial run.
+The earlier four-run version of this report said R1 was "partially validated"
+and that serialising removed the dark frames. Both claims are corrected here
+rather than quietly dropped.
 
-Both passes are kept. The parallel numbers are labelled invalid in the code
-repository's `measurements/confound.json` rather than deleted, because a
-measurement you discard silently is one you cannot learn from.
+**1. Serial rendering does not remove the dark frames.** The 20-run serial
+corpus contains them too: `barbell_squat` R1 run b dropped 254 of 360 frames,
+`romanian_deadlift` R1 run c dropped 1, two baselines dropped 1–2. So
+concurrency is not the cause; it changes the frequency, not the existence. The
+mechanism is unexplained and is listed as an open question.
 
-## Interval frames worth looking at
+A dropped frame renders the subject at mean 19–27 with RGB max ≤ 43 while the
+alpha silhouette is byte-identical to its neighbours. Pairing one with a lit
+neighbour fabricates a ~97-level step. On RDL run c that single pair produced a
+raw maximum of 96.90 and inverted the verdict. The aggregator now measures
+between consecutive **lit** frames only, and reports both the raw and the
+lit-only maximum so the exclusion is auditable.
 
-| File | What it shows |
+**2. The tracked summary was built from the invalid parallel pass.** It reported
+Row R1 max 98.95; the serial value is 0.06. The aggregator now refuses to read
+`timing/`, defaults to `timing-serial/`, and the runner refuses `--parallel`
+other than 1. Tests enforce all three.
+
+**3. Bicep curl is unmeasurable, not clean.** Its scene renders at subject
+median 27 in *both* variants (whole-frame luminance max 38). With a threshold
+calibrated on lit scenes it produces no detectable steps, which would read as
+"R1 fixed it". It is reported as unmeasurable instead.
+
+## Frames to look at
+
+`evidence/` holds 20 PNGs, each with a JPEG and a base64 chunk set that verifies
+against the manifest hash. They are chosen to show every claim and every
+correction:
+
+| What | Frames |
 |---|---|
-| `rdl_shipped_f0066.png` / `f0067` | the shipped defect: 119.9 → 86.9 → 119.8 |
-| `rdl_r1_f0053.png` / `f0054` | the same event under R1: 115.9 → 97.8 → 119.6 |
-| `rdl_shipped_f0053..55`, `f0068` | neighbouring frames for contrast |
-| `rdl_r1_f0055`, `f0066..68` | neighbouring frames under R1 |
-| `row_shipped_f0249..251` | the row defect at frame 250 |
-| `row_shipped_f0081`, `f0082` | a second row event |
+| Row: baseline peak vs clean R1 | `barbell_row_ship_runa_f0250`, `barbell_row_r1_runb_f0102` |
+| Squat: R1 improvement | `barbell_squat_ship_runa_f0162`, `barbell_squat_r1_runa_f0026` |
+| Squat: a lit frame next to dropouts | `..._r1_runb_f0005` (lit), `f0050` and `f0100` (dropouts) |
+| RDL: R1 still defective | `romanian_deadlift_ship_runa_f0066`, `..._r1_runb_f0032` |
+| RDL: the dropout that inverted the verdict | `..._r1_runc_f0280`, `f0281`, `f0300` |
+| Hip thrust / pallof: R1 degradation | `hip_thrust_ship_runa_f0334`, `..._r1_runa_f0025`, `pallof_press_*` |
+| Bicep curl: uniformly dark | `bicep_curl_ship_runa_f0100`, `..._r1_runa_f0300` |
 
-Each `.png` is the render; each `.jpg` is a quality-88 preview for inline
-viewing; each `-b64/` folder holds the JPEG as base64 chunks, so an image can
-be rebuilt by a client that cannot fetch binary:
+Four of the original runs predate this session and their PNGs were removed; the
+frames the earlier report quoted survive in the code repository's tracked
+`evidence/` directory and are republished from there.
 
-```bash
-cat part-*.txt | tr -d '\n' | base64 -d > rebuilt.jpg
+## Reproducing
+
+```
+node review/wp1d9-1-shadow-scale-validation/build-jobs.js
+node review/wp1d9-1-shadow-scale-validation/run_full.js --out timing-serial
+node review/wp1d9-1-shadow-scale-validation/aggregate.js --from timing-serial
+python tools/wp1d9_1_package.py
 ```
 
-## Hashes
+Serial wall time: 197 minutes for 16 runs (~11–15 min each). The per-frame JSON
+is tracked; the PNGs are not, so a clone can rebuild every number but not the
+pixels without re-rendering.
 
-`manifest.json` carries the PNG and JPEG SHA-256 for every image, plus chunk
-counts. All 17 chunk sets were verified by reading the files back, decoding,
-checking `FF D8 FF`, and comparing SHA-256 against the JPEG before chunking.
-No image needs more than 7 chunks or more than 24,000 characters per chunk.
+## What is still unknown
 
-## Shadow quality
-
-| Metric | RDL shipped | RDL R1 | Row shipped | Row R1 |
-|---|---:|---:|---:|---:|
-| Shadow fraction of subject | 0.04756 | 0.04546 | 0.04617 | 0.04545 |
-| Shadow mean brightness | 43.91 | 43.90 | 44.36 | 44.49 |
-| Lit mean brightness | 122.36 | 121.93 | 123.28 | 123.70 |
-
-Coverage drops ~4% on RDL and ~1.6% on Row; darkness is unchanged, so
-self-shadowing survives and R1 is not equivalent to disabling shadows.
-
-**These are pixel metrics, not a verdict.** Nobody has looked at these images
-and decided the softer shadow is acceptable. No viewer study was run and no
-playback clip was produced. Whether a 4% coverage loss is visible at 30 fps is
-open.
-
-## Unverified
-
-- The internal EEVEE Next shadow allocation mechanism is still unexplained.
-- **One serial run per exercise-variant.** The row result rests on a single
-  300-frame run; a defect seen in 2 of 4 earlier runs needs more than one clean
-  run before it can be called absent.
-- Shadow quality at scales other than 0.5 is not measured.
-- Only RDL and Row are in scope; the other six exercises cannot produce a
-  moving-equipment cast shadow, and the reasons are in the code repository's
-  `plan.js`.
-
-## Reproducibility, stated honestly
-
-The PNGs here are the cited frames. The full ~3,000-frame sequences (~3.5 GB)
-are not published: they are in the code repository's `timing*/raw/` trees,
-gitignored, regenerable with `run_full.js`. `manifest.json` carries the SHA-256
-of every PNG here, and every reported number comes from the per-frame
-measurement JSON that **is** tracked.
-
-Tracking issue: [#1](https://github.com/ThanhTamSW/fitness3D/issues/1) — open.
+- The EEVEE Next shadow mechanism. R1 moving peak and defect frequency in
+  opposite directions on different exercises is inconsistent with a simple
+  "resolution affects shadow stability" model.
+- The dropped-lighting-pass cause. Not concurrency, as the serial corpus shows.
+- Whether any of this is perceptible. **Nobody has looked at these images.**
+  Every statement above is numeric.

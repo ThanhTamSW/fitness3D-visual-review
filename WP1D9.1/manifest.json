@@ -1,210 +1,350 @@
 {
  "milestone": "WP1D.9.1",
+ "status": "PREVIEW / AWAITING HUMAN REVIEW",
  "chunk_chars": 24000,
+ "max_chunks": 18,
+ "note": "Frames chosen to show each claimed result and each correction: the baseline and R1 peaks the report quotes, the serial dropout frames the aggregator excludes, and the uniformly dark bicep curl scene that makes that exercise unmeasurable.",
  "images": [
   {
-   "png": "rdl_r1_f0053.png",
-   "jpg": "rdl_r1_f0053.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "43ee5a366893a2ea23adea05a4649d399efeb7e99993b36bbc0440bdb03f93cb",
-   "jpg_sha256": "52106cf9c0df7ffe8c9b0a7beafc3276f3a3dcd72f32ea9886e22a08c87e188d",
-   "jpg_bytes": 104803,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_r1_f0054.png",
-   "jpg": "rdl_r1_f0054.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "be67e8378c05838e72ccbc0ae1271ac17198473f011e667ea9fc95731ccce69b",
-   "jpg_sha256": "4b1cf0d7fc4c841be931ce23f29bde43394d53978a35bc43064b0c814a6688b3",
-   "jpg_bytes": 99393,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_r1_f0055.png",
-   "jpg": "rdl_r1_f0055.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "a468e563a94576fe83d96815076f9d54ff938e088225d069b225afa69ff00115",
-   "jpg_sha256": "f94143a242d7ceb31fde6eb67604fd63baa9d48ecbc687f73d2a5515fccd4b22",
-   "jpg_bytes": 101704,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_r1_f0066.png",
-   "jpg": "rdl_r1_f0066.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "26d866f094e1e5d7e900f710c4e9a20fdd87b621dbb0b34aa44598d4225c7b2d",
-   "jpg_sha256": "712a9a6c9df9e7af87b9303715e573057ca0ea0f4dcdbcf025226248b73adb0c",
-   "jpg_bytes": 99609,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_r1_f0067.png",
-   "jpg": "rdl_r1_f0067.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "2328860871f6196a438b62d5ea539ab20443e01f53b4e39019262ce73a22005d",
-   "jpg_sha256": "e83b77a7f307272507aa01861fb1d120bc6a52dfec496e44a53a88b431b8f231",
-   "jpg_bytes": 99930,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_r1_f0068.png",
-   "jpg": "rdl_r1_f0068.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "a87cacbcfd5c215185e7297e3bbd5c98cbdeba17fa66fa7abd70f3e34177f66a",
-   "jpg_sha256": "b28cacce2c2523d99dd642db1404fcb58bd896cc9f3222f10daa310402108a6a",
-   "jpg_bytes": 100067,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_shipped_f0053.png",
-   "jpg": "rdl_shipped_f0053.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "057e58e92141f4451c30ea80792363e929efd8aa1d54b1cc64db932a3601a37c",
-   "jpg_sha256": "42410342ea1406c0775f58f5cae1ba5889ac0c35c913a5a85f23ed76e868bb57",
-   "jpg_bytes": 100701,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_shipped_f0054.png",
-   "jpg": "rdl_shipped_f0054.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "2c98d2eb7ab4c44d7f2cc4593ea29596b2d91fe1665090194d1e8200d1ed159e",
-   "jpg_sha256": "ce2ecb360f857f857e67224bf05dedcd54cb7e8876068d403d24c8d6f6f598e9",
-   "jpg_bytes": 100818,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_shipped_f0055.png",
-   "jpg": "rdl_shipped_f0055.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "3e373b058e53dc320fa9040b3347d0cb0aeeb3d505d5af597c47b34c387066d6",
-   "jpg_sha256": "f579f3ef7e351e8047eaf7fa99cb6491370e178afc9065c1cfda1bda8c8d924e",
-   "jpg_bytes": 100739,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_shipped_f0066.png",
-   "jpg": "rdl_shipped_f0066.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "d620f1042f962073e2b870961c0d8ada0cd01299983158711531640ddf4afa60",
-   "jpg_sha256": "f021b73da867bb62770931f87f4503e0e066c172fc39f137e416832e59bf0aa9",
-   "jpg_bytes": 102642,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_shipped_f0067.png",
-   "jpg": "rdl_shipped_f0067.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "3eb348ccb2eaa7c350aadca8d692feac74c35699e9f81b3bf006804c0c1c1ba2",
-   "jpg_sha256": "d69731c5d49323cd93e37242658bfe04a80f73988f663584c6cae7d1138153cb",
-   "jpg_bytes": 99939,
-   "chunks": 6
-  },
-  {
-   "png": "rdl_shipped_f0068.png",
-   "jpg": "rdl_shipped_f0068.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "a51710fc1b6efe24815fa03c80282b31ae066393698692bc4e60fc7652f98ab0",
-   "jpg_sha256": "c84f18466c521115a060ed0a4464053e082a13c53b8f65f5c49013ba6c75190a",
-   "jpg_bytes": 100054,
-   "chunks": 6
-  },
-  {
-   "png": "row_shipped_f0081.png",
-   "jpg": "row_shipped_f0081.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "6592e729c38b5ae73e55c4f90f752e0b03ac34d604a5c98aeee617b90bb10dd6",
-   "jpg_sha256": "e6f1704ef94650820cca8997b5755c7209304ae6b25bfd17ab44a4e7d45464e3",
-   "jpg_bytes": 112348,
-   "chunks": 7
-  },
-  {
-   "png": "row_shipped_f0082.png",
-   "jpg": "row_shipped_f0082.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "757ea3e708fda52df47f30b25f87c0f0b5cd617bf21d4f64a1c609e8b03c00da",
-   "jpg_sha256": "8f97aeb368f2219535e80c7ee37d3e5282240377c3a34d130fcb25eefb55641f",
-   "jpg_bytes": 105057,
-   "chunks": 6
-  },
-  {
-   "png": "row_shipped_f0249.png",
-   "jpg": "row_shipped_f0249.jpg",
-   "size": [
-    1920,
-    1080
-   ],
-   "png_sha256": "8fa40f502501a08cec5d41b13a9a335691534dcd7cb68c6e6ee06f0aa0b5cd29",
-   "jpg_sha256": "bfd65be8807966120c9162b87b9603129fbf21917fc9e1d731ba1e5baf06dedc",
-   "jpg_bytes": 105556,
-   "chunks": 6
-  },
-  {
-   "png": "row_shipped_f0250.png",
-   "jpg": "row_shipped_f0250.jpg",
+   "png": "barbell_row_ship_runa_f0250.png",
+   "jpg": "barbell_row_ship_runa_f0250.jpg",
    "size": [
     1920,
     1080
    ],
    "png_sha256": "90f0158b9107377d014a634cbe18ff3cabc32344def25557f1f7e6eee5722284",
-   "jpg_sha256": "9bc4156fac022b228943f961f486c5b7cef4c4706dab3335291e564ad9751642",
-   "jpg_bytes": 112154,
-   "chunks": 7
+   "jpg_sha256": "7d74c57e9ddb82d8b7680fd34e58749d5d54247afc8fbfae207bab904180ad81",
+   "jpg_bytes": 55937,
+   "chunks": 4,
+   "exercise": "barbell_row",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 250,
+   "reason": "baseline peak 23.79"
   },
   {
-   "png": "row_shipped_f0251.png",
-   "jpg": "row_shipped_f0251.jpg",
+   "png": "barbell_row_ship_runa_f0249.png",
+   "jpg": "barbell_row_ship_runa_f0249.jpg",
    "size": [
     1920,
     1080
    ],
-   "png_sha256": "ade1204b05c1a8f73a87908ab66868b0057d4583deade05f1234dc10be63eaec",
-   "jpg_sha256": "c710f4ca8f3e629f5a9ece0e0bde870213ed9d1e14358c096648653cd81fa195",
-   "jpg_bytes": 105452,
-   "chunks": 6
+   "png_sha256": "8fa40f502501a08cec5d41b13a9a335691534dcd7cb68c6e6ee06f0aa0b5cd29",
+   "jpg_sha256": "cd11b27cb6171870181f8555819f536a792c33707e79d7a340767c3f59677808",
+   "jpg_bytes": 49807,
+   "chunks": 3,
+   "exercise": "barbell_row",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 249,
+   "reason": "frame before the peak"
+  },
+  {
+   "png": "barbell_row_r1_runb_f0102.png",
+   "jpg": "barbell_row_r1_runb_f0102.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "476cb3997602da65174f55599da26cebcb892bc74da488b333d91a12d3b39a25",
+   "jpg_sha256": "e3361861809f449cedd386a12aa84e5efc6c1d70668a4e030fe1093d35fcea1b",
+   "jpg_bytes": 49746,
+   "chunks": 3,
+   "exercise": "barbell_row",
+   "variant": "shadow_scale_05",
+   "run": "runb",
+   "frame": 102,
+   "reason": "R1 peak 0.06 (run a's frames are gone; run b agrees)"
+  },
+  {
+   "png": "barbell_squat_ship_runa_f0162.png",
+   "jpg": "barbell_squat_ship_runa_f0162.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "70349d3493500ba05701dff08880bb3235650c88ef77068ef793e40f310f8cf2",
+   "jpg_sha256": "5f66c85cf9f5847b92cb3faf0c1fefba5e503ec9bf795c910d3661099867b2f1",
+   "jpg_bytes": 70156,
+   "chunks": 4,
+   "exercise": "barbell_squat",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 162,
+   "reason": "baseline peak 31.10"
+  },
+  {
+   "png": "barbell_squat_r1_runa_f0026.png",
+   "jpg": "barbell_squat_r1_runa_f0026.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "d88626f750d19db02dda129b83c79c5d63f19fc16d364136382241d8bc0876b6",
+   "jpg_sha256": "b569a539d070545b4d03ec4c3cb0cac8eb8053bf6ec41dcec67f4e4c88a7970c",
+   "jpg_bytes": 66936,
+   "chunks": 4,
+   "exercise": "barbell_squat",
+   "variant": "shadow_scale_05",
+   "run": "runa",
+   "frame": 26,
+   "reason": "R1 peak 4.36"
+  },
+  {
+   "png": "barbell_squat_r1_runb_f0005.png",
+   "jpg": "barbell_squat_r1_runb_f0005.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "5f84d2b1dd7e9c340c4009ddb140e54a8a41819915002343f515875ca60106be",
+   "jpg_sha256": "6b0868534a51f71ae5418562a4488744a53a487754a566eb4afba68c1b18f8eb",
+   "jpg_bytes": 64369,
+   "chunks": 4,
+   "exercise": "barbell_squat",
+   "variant": "shadow_scale_05",
+   "run": "runb",
+   "frame": 5,
+   "reason": "run b frame 5: lit (RGB max 255)"
+  },
+  {
+   "png": "barbell_squat_r1_runb_f0050.png",
+   "jpg": "barbell_squat_r1_runb_f0050.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "2a90fe8506357ab85112b34b26768782d7e673180534d935d159341570719aef",
+   "jpg_sha256": "dc84816d41cc651072442bcd264d9d839c74ded77fa4c560daef210968e9ddf9",
+   "jpg_bytes": 28012,
+   "chunks": 2,
+   "exercise": "barbell_squat",
+   "variant": "shadow_scale_05",
+   "run": "runb",
+   "frame": 50,
+   "reason": "run b frame 50: dropout (RGB max 43)"
+  },
+  {
+   "png": "barbell_squat_r1_runb_f0100.png",
+   "jpg": "barbell_squat_r1_runb_f0100.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "65bae2914901763dc996deb603628e36197f8407257e1c6fa8f44ead129077f0",
+   "jpg_sha256": "86e206c27b2c865e0b152a412003ad65c2590d8b1c17ca2aa591865854c3ea63",
+   "jpg_bytes": 28280,
+   "chunks": 2,
+   "exercise": "barbell_squat",
+   "variant": "shadow_scale_05",
+   "run": "runb",
+   "frame": 100,
+   "reason": "run b frame 100: dropout"
+  },
+  {
+   "png": "romanian_deadlift_ship_runa_f0066.png",
+   "jpg": "romanian_deadlift_ship_runa_f0066.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "d620f1042f962073e2b870961c0d8ada0cd01299983158711531640ddf4afa60",
+   "jpg_sha256": "5a8ea88e148f752005872913ea72d02ee6d4f2719e7c9b8d31f0d116bc1dcd26",
+   "jpg_bytes": 46916,
+   "chunks": 3,
+   "exercise": "romanian_deadlift",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 66,
+   "reason": "baseline peak 32.94"
+  },
+  {
+   "png": "romanian_deadlift_r1_runa_f0054.png",
+   "jpg": "romanian_deadlift_r1_runa_f0054.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "be67e8378c05838e72ccbc0ae1271ac17198473f011e667ea9fc95731ccce69b",
+   "jpg_sha256": "7a8041b715bb91b922ea30a9d1b022596284ae9b72984a1e6a0308a806248815",
+   "jpg_bytes": 44627,
+   "chunks": 3,
+   "exercise": "romanian_deadlift",
+   "variant": "shadow_scale_05",
+   "run": "runa",
+   "frame": 54,
+   "reason": "R1 peak 21.83"
+  },
+  {
+   "png": "romanian_deadlift_r1_runb_f0032.png",
+   "jpg": "romanian_deadlift_r1_runb_f0032.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "bf5799691a065d074ca4b14773f07847d5c9f2aa1a3e5ed372da4a1c09d3840c",
+   "jpg_sha256": "6c9809d3cb062576dcd6f4b0739d4b4b1adc70f70aa44b693e89140d9f5cf272",
+   "jpg_bytes": 48949,
+   "chunks": 3,
+   "exercise": "romanian_deadlift",
+   "variant": "shadow_scale_05",
+   "run": "runb",
+   "frame": 32,
+   "reason": "R1 run b peak 22.48"
+  },
+  {
+   "png": "romanian_deadlift_r1_runc_f0280.png",
+   "jpg": "romanian_deadlift_r1_runc_f0280.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "6b31440e63ead14ea8bbe1525d1920369f610ed4abe4f700d494e912b71300ee",
+   "jpg_sha256": "98eb8b9721eb6772be2e380f4fec07f1914f4dadfb571acb7da81b865ff140ef",
+   "jpg_bytes": 21539,
+   "chunks": 2,
+   "exercise": "romanian_deadlift",
+   "variant": "shadow_scale_05",
+   "run": "runc",
+   "frame": 280,
+   "reason": "dropout: raw max 96.90 artefact"
+  },
+  {
+   "png": "romanian_deadlift_r1_runc_f0281.png",
+   "jpg": "romanian_deadlift_r1_runc_f0281.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "2623dbbbec10191c0061f8ce5ab9af11a824483552e7f675395eedad5f7ff44d",
+   "jpg_sha256": "bb38bee9a104213e2ec7589fefb414b580e0ff5b6396f2665428e7f93d736d7f",
+   "jpg_bytes": 45465,
+   "chunks": 3,
+   "exercise": "romanian_deadlift",
+   "variant": "shadow_scale_05",
+   "run": "runc",
+   "frame": 281,
+   "reason": "frame after the dropout"
+  },
+  {
+   "png": "romanian_deadlift_r1_runc_f0300.png",
+   "jpg": "romanian_deadlift_r1_runc_f0300.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "fe0ce84a69d5cea1140c5baf38d4f229ceb8732b7e2238280ac85db45e48a9fc",
+   "jpg_sha256": "8d2ef93ceeaf4cdf5f063f6a068742dd7eb30c14141277cf8d3cab058b940871",
+   "jpg_bytes": 44940,
+   "chunks": 3,
+   "exercise": "romanian_deadlift",
+   "variant": "shadow_scale_05",
+   "run": "runc",
+   "frame": 300,
+   "reason": "R1 run c genuine peak 22.41"
+  },
+  {
+   "png": "hip_thrust_ship_runa_f0334.png",
+   "jpg": "hip_thrust_ship_runa_f0334.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "acd4e74fecbb5c31b5c9046992b538a9fec88fe3525f6a582d0494bd504ff0b4",
+   "jpg_sha256": "db5c8059a431e40c85449ef525526e2a5d140305c3535ed5665750f376e74ec0",
+   "jpg_bytes": 41251,
+   "chunks": 3,
+   "exercise": "hip_thrust",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 334,
+   "reason": "baseline peak 10.12"
+  },
+  {
+   "png": "hip_thrust_r1_runa_f0025.png",
+   "jpg": "hip_thrust_r1_runa_f0025.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "9fc964cfe34a677346d6c73216f97989dd0a514daa5e59fbb612630d09c6fdaf",
+   "jpg_sha256": "2c479aedfad0ee2781ab6db2940e3076edaa653429df0b12a6016d02f68e7333",
+   "jpg_bytes": 47990,
+   "chunks": 3,
+   "exercise": "hip_thrust",
+   "variant": "shadow_scale_05",
+   "run": "runa",
+   "frame": 25,
+   "reason": "R1 peak 32.69 (worse)"
+  },
+  {
+   "png": "pallof_press_ship_runa_f0277.png",
+   "jpg": "pallof_press_ship_runa_f0277.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "2b13c1d712734b419fc59a11e86ceed6db22b104fe4002dd49e31f9a9bf68306",
+   "jpg_sha256": "2a85215faf668258860c196e564793363a050e090a30948083a0d70824cf66df",
+   "jpg_bytes": 59540,
+   "chunks": 4,
+   "exercise": "pallof_press",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 277,
+   "reason": "baseline peak 25.62"
+  },
+  {
+   "png": "pallof_press_r1_runa_f0233.png",
+   "jpg": "pallof_press_r1_runa_f0233.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "25fea2a3befe140ffd4cc9af8d4accd81d88c816ffcf825cc4b8449f069f2ee5",
+   "jpg_sha256": "39ddefb33b917771735a7b2c6f168c27331022c6717fc14ac3cec2993bd68010",
+   "jpg_bytes": 51524,
+   "chunks": 3,
+   "exercise": "pallof_press",
+   "variant": "shadow_scale_05",
+   "run": "runa",
+   "frame": 233,
+   "reason": "R1 peak 9.26, 158 defects"
+  },
+  {
+   "png": "bicep_curl_ship_runa_f0100.png",
+   "jpg": "bicep_curl_ship_runa_f0100.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "f97fe72552675ec0705cbbc903db00bfab0d60c86c49c823aa2c9900d3cd342a",
+   "jpg_sha256": "68351b0eceae1f3c37551f354c1af2529f2a0da20a7a8240c92f658a1ce4cf50",
+   "jpg_bytes": 23461,
+   "chunks": 2,
+   "exercise": "bicep_curl",
+   "variant": "shipped",
+   "run": "runa",
+   "frame": 100,
+   "reason": "uniformly dark scene (median 27)"
+  },
+  {
+   "png": "bicep_curl_r1_runa_f0300.png",
+   "jpg": "bicep_curl_r1_runa_f0300.jpg",
+   "size": [
+    1920,
+    1080
+   ],
+   "png_sha256": "23875ed5a30da4cb06e13044fc9c4f40dd9b96e4476c3db0fa61f797378946a2",
+   "jpg_sha256": "9b941e437c98bae3b1d91a98f755d18a49f7d7fea1d56e382664c842a13270c9",
+   "jpg_bytes": 52412,
+   "chunks": 3,
+   "exercise": "bicep_curl",
+   "variant": "shadow_scale_05",
+   "run": "runa",
+   "frame": 300,
+   "reason": "the rare lit exception"
   }
- ]
+ ],
+ "failures": []
 }
