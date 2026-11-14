@@ -392,9 +392,10 @@ function runGraphifyExtract({ root, outDir, codeOnly, semantic }) {
   return path.join(outDir, 'graphify-out', 'graph.json');
 }
 
-function refresh(repo, semantic, allowSemanticLoss) {
-  const root = repoRoot(repo);
-  const policy = policyFor(repo);
+function refresh(repo, semantic, allowSemanticLoss, { root: rootOverride, extract, policy: policyOverride } = {}) {
+  const root = rootOverride || repoRoot(repo);
+  const policy = policyOverride || policyFor(repo);
+  const runExtract = extract || runGraphifyExtract;
   const tmpOut = fs.mkdtempSync(path.join(os.tmpdir(), 'graphify-refresh-'));
   try {
     const result = refreshGraph({
@@ -403,12 +404,11 @@ function refresh(repo, semantic, allowSemanticLoss) {
       semantic,
       allowSemanticLoss,
       produce: ({ outPath }) => {
-        runGraphifyExtract({ root, outDir: tmpOut, codeOnly: !semantic, semantic });
+        runExtract({ root, outDir: tmpOut, codeOnly: !semantic, semantic });
         return path.join(tmpOut, 'graphify-out', 'graph.json');
       }
     });
     printRefreshResult(result);
-    if (!result.ok) process.exitCode = 1;
     return result;
   } finally {
     fs.rmSync(tmpOut, { recursive: true, force: true });
@@ -465,9 +465,11 @@ function main() {
     case 'community':
       community(args.repo, args.json, args.out, args.graph);
       break;
-    case 'refresh':
-      refresh(args.repo, Boolean(args.semantic), Boolean(args.allowSemanticLoss));
+    case 'refresh': {
+      const result = refresh(args.repo, Boolean(args.semantic), Boolean(args.allowSemanticLoss));
+      if (!result.ok) process.exitCode = 1;
       break;
+    }
     case 'restore': {
       if (!args.backup) throw new Error('restore requires --backup <path>');
       const root = repoRoot(args.repo);
@@ -501,6 +503,7 @@ if (require.main === module) {
 
 module.exports = {
   audit,
+  refreshInternal: refresh,
   community,
   refresh,
   compare,
