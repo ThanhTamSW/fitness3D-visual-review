@@ -13,20 +13,26 @@ folder is the validation evidence, not a shipped change.
 step on the eroded alpha subject, 2.0-level defect threshold from WP1D.9.
 "Defects" counts steps over that threshold across all runs of a configuration.
 
-| Exercise | Runs (base/R1) | Baseline peak | Baseline defects | R1 peak | R1 defects | Verdict |
-|---|---:|---:|---:|---:|---:|---|
-| Barbell row | 1 / 2 | 23.79 | 12 | **0.06** | **0** | **IMPROVED** |
-| Barbell squat | 1 / 2 | 31.10 | 76 | **4.36** | **15** | **IMPROVED** |
-| Hip thrust | 1 / 2 | 10.12 | 8 | **32.69** | **52** | **WORSE** |
-| Pallof press | 1 / 2 | 25.62 | 56 | 11.70 | **315** | **WORSE** |
-| Romanian deadlift | 2 / 3 | 32.94 | 26 | 22.48 | **147** | **WORSE** |
-| Bicep curl | 1 / 2 | — | — | — | — | **UNMEASURABLE** |
+| Exercise | Runs (base/R1) | Baseline peak | Baseline rate | R1 peak | R1 rate | Ratio | Verdict |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Barbell row | 1 / 2 | 23.79 | 40.13 | **0.06** | **0.00** | **0.00×** | **IMPROVED** |
+| Barbell squat | 1 / 2 | 31.10 | 211.70 | **4.36** | **38.36** | **0.18×** | **IMPROVED** |
+| Hip thrust | 1 / 2 | 10.12 | 22.54 | **32.69** | 72.42 | **3.21×** | **WORSE** |
+| Pallof press | 1 / 2 | 25.62 | 188.55 | 11.70 | **526.76** | **2.79×** | **WORSE** |
+| Romanian deadlift | 2 / 3 | 32.94 | 36.21 | 22.48 | **136.74** | **3.78×** | **WORSE** |
+| Bicep curl | 1 / 2 | — | — | — | — | — | **UNMEASURABLE** |
+
+Rate = defect events per 1,000 usable lit frame pairs. The configurations have
+different run counts (RDL has 2 baseline runs and 3 R1 runs), so raw totals
+would reward whichever variant was rendered more often. The normalisation does
+not change any verdict — it confirms that the conclusion rests on the effect,
+not on sample size.
 
 **R1 is not a global setting.** It clears the row and the squat, and makes hip
 thrust, pallof press and the Romanian deadlift worse. RDL is the exercise that
-motivated the work: its peak falls 32.94 → 22.48 while its defect count rises
-26 → 147, because a smaller shadow map makes each excursion shallower and more
-frequent. A peak-only reading gets that backwards.
+motivated the work: its peak falls 32.94 → 22.48 while its defect **rate** rises
+**3.78×**, because a smaller shadow map makes each excursion shallower and more
+likely. A peak-only reading gets that backwards.
 
 ## Two corrections
 

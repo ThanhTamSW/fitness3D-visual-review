@@ -107,17 +107,26 @@ empty gap: lit subjects measure 85–125, dropped frames 19–27.
 ## 4. Results, 20 serial runs, 6,660 frames
 
 Lit frames only. Adjacent-frame step on the eroded alpha subject; defect
-threshold 2.0 levels imported from WP1D.9. "Defects" counts steps ≥ 2.0 across
-all runs of that configuration.
+threshold 2.0 levels imported from WP1D.9.
 
-| Exercise | Runs (base/R1) | Baseline peak | Baseline defects | R1 peak | R1 defects | Verdict |
-|---|---:|---:|---:|---:|---:|---|
-| Barbell row | 1 / 2 | 23.79 | 12 | **0.06** | **0** | **IMPROVED** |
-| Barbell squat | 1 / 2 | 31.10 | 76 | **4.36** | **15** | **IMPROVED** |
-| Hip thrust | 1 / 2 | 10.12 | 8 | **32.69** | **52** | **WORSE** |
-| Pallof press | 1 / 2 | 25.62 | 56 | 11.70 | **315** | **WORSE** |
-| Romanian deadlift | 2 / 3 | 32.94 | 26 | 22.48 | **147** | **WORSE** |
-| Bicep curl | 1 / 2 | — | — | — | — | **UNMEASURABLE** |
+Defect counts are normalised to **events per 1,000 lit frame pairs**, because
+the configurations have different run counts (RDL has 2 baseline runs and 3 R1
+runs). Comparing raw totals across unequal sample sizes would inflate whichever
+variant happened to be run more often — that error is avoided here, not
+corrected afterwards.
+
+| Exercise | Runs (base/R1) | Baseline peak | Baseline rate | R1 peak | R1 rate | Ratio | Verdict |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Barbell row | 1 / 2 | 23.79 | 40.13 | **0.06** | **0.00** | **0.00×** | **IMPROVED** |
+| Barbell squat | 1 / 2 | 31.10 | 211.70 | **4.36** | **38.36** | **0.18×** | **IMPROVED** |
+| Hip thrust | 1 / 2 | 10.12 | 22.54 | **32.69** | 72.42 | **3.21×** | **WORSE** |
+| Pallof press | 1 / 2 | 25.62 | 188.55 | 11.70 | **526.76** | **2.79×** | **WORSE** |
+| Romanian deadlift | 2 / 3 | 32.94 | 36.21 | 22.48 | **136.74** | **3.78×** | **WORSE** |
+| Bicep curl | 1 / 2 | — | — | — | — | — | **UNMEASURABLE** |
+
+The normalisation does not overturn any verdict, which is the point of doing it:
+the raw totals (RDL 26 → 147) and the rates (36.21 → 136.74) agree, so the
+conclusion rests on the effect and not on how many runs each side received.
 
 ### Run-to-run consistency
 
@@ -134,9 +143,9 @@ comparison usable:
 | Barbell squat | R1 | 4.36, 3.31 | 1.06 |
 
 So R1 genuinely halves the RDL **peak** (32.94 → ~22) and the second datum
-confirms it. But the peak is not the whole defect: RDL R1 has **147** defect
-events against the baseline's 26. A smaller shadow map makes each excursion
-shallower and makes them more frequent.
+confirms it. But the peak is not the whole defect: at **3.78× the baseline
+defect rate**, RDL R1 has more excursions, each shallower. A smaller shadow map
+makes a lost shadow less costly when it happens and more likely to happen.
 
 That is the decision-relevant fact, and it is why a peak-only reading gets the
 answer backwards.
