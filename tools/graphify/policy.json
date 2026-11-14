@@ -1,0 +1,43 @@
+{
+  "_comment": "Regression thresholds for node tools/graphify/graphify.js refresh. These are NOT the graph's permanent truth: they are the WP-GRAPHIFY-02 measured baseline with tolerance. Changing them for a real restructuring needs explicit approval and a dated note in docs/production/GRAPHIFY.md.",
+  "_measured": "Measured against the committed baselines printed by `node tools/graphify/graphify.js audit --repo <name>`.",
+  "main": {
+    "repoType": "code",
+    "minNodes": 2000,
+    "minLinks": 3000,
+    "shrinkTolerance": 0.15,
+    "preserveSemanticShare": true,
+    "semanticShrinkTolerance": 0.05,
+    "minSemanticNodes": 50,
+    "requireSemanticNodes": false,
+    "requiredNodeIds": [
+      "production_scripts_produce_produce",
+      "production_scripts_render",
+      "production_scripts_attach",
+      "production_scripts_equipment_lib",
+      "production_scripts_lib_job",
+      "production_scripts_lib_qc",
+      "production_scripts_grounding",
+      "tools_blender_build_anatomy",
+      "tools_blender_export_animation",
+      "apps_script_api_api"
+    ],
+    "requiredFileTypes": ["code"]
+  },
+  "review": {
+    "repoType": "evidence",
+    "minNodes": 100,
+    "minLinks": 150,
+    "shrinkTolerance": 0.05,
+    "minSemanticNodes": 80,
+    "requireSemanticNodes": true,
+    "requiredNodeIds": [
+      "wp1d7_findings_b1",
+      "wp1d9_findings_c1",
+      "wp1d6_readme_f1",
+      "wp1d7_measurements_chunk_manifest_wp1d7_meas_chunk_manifest",
+      "readme_preview_awaiting_human_review"
+    ],
+    "requiredFileTypes": ["document", "concept"]
+  }
+}
