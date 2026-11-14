@@ -1,0 +1,31 @@
+# Graphify indexing scope for the fitness3D visual-review evidence repository.
+# This repo has no .gitignore, so every rule here is load-bearing: without them
+# the raw evidence payloads would be sent to semantic extraction.
+
+.git/
+graphify-out/
+
+# Raw image payloads and video. The review repo tracks these as evidence, but
+# they carry no textual structure; the manifests, measurements and READMEs that
+# cite them stay in scope.
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.mov
+*.avi
+*.webm
+*.pdf
+
+# Base64 image chunk dumps (part-NNN.txt under *-b64/ and *-parts/ folders, and
+# *.b64.txt). These are encoded pixels, not text, and would otherwise be read as
+# .txt documents by the semantic pass.
+**/*-b64/
+**/*-parts/part-*.txt
+*.b64.txt
+
+# Playback recordings derived from the probe frames.
+WP1D9/playback/*.mp4
+WP1D9/playback/*.txt
